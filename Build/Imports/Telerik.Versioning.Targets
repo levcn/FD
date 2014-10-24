@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="GenerateVersionInfo" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Import Project="config.targets" Condition=" '$(ConfigFileImported)' == '' " />
+	<Import Project="Telerik.BuildTasks.Targets" Condition=" '$(TelerikBuildTasksImported)' == '' "/>
+
+	<PropertyGroup>
+		<TelerikVersioningTargetsImported>true</TelerikVersioningTargetsImported>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateVersionInfoDependsOn>
+			BeforeGenerateVersionInfo;
+			GenerateVersionInfoCore;
+			AfterGenerateVersionInfo;
+		</GenerateVersionInfoDependsOn>
+	</PropertyGroup>
+
+	<Target Name="BeforeGenerateVersionInfo">
+	</Target>
+
+	<Target Name="AfterGenerateVersionInfo">
+	</Target>
+
+	<Target Name="GenerateVersionInfo" DependsOnTargets="$(GenerateVersionInfoDependsOn)" />
+
+	<Target Name="GenerateVersionInfoCore">
+
+		<PropertyGroup>
+			<WPFFrameworkVersionForVersionGeneration Condition=" '$(WPFFrameworkVersionForVersionGeneration)' == '' ">$(WPFFrameworkVersion)</WPFFrameworkVersionForVersionGeneration>
+		</PropertyGroup>
+
+		<!--
+		    GenerateReleaseVersionNumber parameters:
+			Quarter - set in the format yyyy.q.sp, defaults to year and quarter evaulated from the current date, e.g. 2008.3.1 is Q3 2008 SP1
+			ReleaseDate - any culture-invariant DateTime format (e.g. Jan 15, 2009), defaults to current date.
+			FrameworkVersion - directly goes in the output of the version number generated, defaults to 3.5 for WPF and 2.0 for Silverlight
+			Technology - defines the technology for which the current build runs (WPF or Silverlight), defaults to WPF
+		-->
+
+		<Message Importance="high" Text="Version is: $(VersionYear).$(VersionReleaseNumber).$(VersionServicePackNumber)" />
+		<Message Importance="high" Text="FrameworkVersion: $(WPFFrameworkVersion),$(SLFrameworkVersion)" />
+
+		<GenerateReleaseVersionNumber Quarter="$(VersionYear).$(VersionReleaseNumber).$(VersionServicePackNumber)" ReleaseDate="$(ReleaseDate)" FrameworkVersion="$(WPFFrameworkVersionForVersionGeneration),$(SLFrameworkVersion)" Technology="$(DefineConstants)" >
+			<Output TaskParameter="VersionString" PropertyName="VersionString" />
+			<Output TaskParameter="VersionQNumber" PropertyName="VersionQNumber" />
+			<Output TaskParameter="VersionYear" PropertyName="VersionYear" />
+			<Output TaskParameter="VersionSPNumber" PropertyName="VersionSPNumber" />
+			<Output TaskParameter="VersionMonthDay" PropertyName="VersionMonthDay" />
+			<Output TaskParameter="ProductVersionName" PropertyName="ProductVersionName"/>
+			<Output TaskParameter="ServicePackString" PropertyName="ServicePackString"/>
+		</GenerateReleaseVersionNumber>
+		<Message Importance="high" Text="FinalVersion: $(VersionString)" />
+	</Target>
+</Project>

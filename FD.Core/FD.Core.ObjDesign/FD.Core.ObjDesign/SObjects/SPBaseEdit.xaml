@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ProjectCreater.SObjects.SPBaseEdit"
+             x:Name="aa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="6,11,0,0" TextWrapping="Wrap" Text="存储过程显示名：" VerticalAlignment="Top"/>
+        <TextBox GotFocus="UIElement_OnGotFocus" LostFocus="ObjectName_OnLostFocus" IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" HorizontalAlignment="Stretch" Height="23" Margin="107,10,10,0" TextWrapping="Wrap" Text="{Binding Path=StoredProcedure.ObjectName,ElementName=aa,Mode=TwoWay,UpdateSourceTrigger=Explicit}" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="30,37,0,0" TextWrapping="Wrap" Text="存储过程名：" VerticalAlignment="Top"/>
+        <TextBox GotFocus="UIElement_OnGotFocus" IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" PreviewTextInput="UIElement_OnPreviewTextInput" LostFocus="ObjectCode_OnLostFocus" TextChanged="EDataCode_OnTextChanged" HorizontalAlignment="Stretch" Height="23" Margin="107,37,10,0" TextWrapping="Wrap" Text="{Binding Path=StoredProcedure.ObjectCode,ElementName=aa,Mode=TwoWay,UpdateSourceTrigger=Explicit}" VerticalAlignment="Top"/>
+
+<!--        <TextBlock HorizontalAlignment="Left" Margin="18,65,0,0" TextWrapping="Wrap" Text="数据库表名称：" VerticalAlignment="Top"/>-->
+<!--        <TextBox GotFocus="UIElement_OnGotFocus" LostFocus="ObjectTableName_OnLostFocus"  IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Name="keyTableName" HorizontalAlignment="Stretch" Height="23" Margin="107,65,10,0" TextWrapping="Wrap" Text="{Binding StoredProcedure.KeyTableName, ElementName=aa, Mode=TwoWay,UpdateSourceTrigger=Explicit}" VerticalAlignment="Top"/>-->
+
+        <TextBlock TextAlignment="Right" HorizontalAlignment="Left" Margin="18,65,0,0" TextWrapping="Wrap" Text="备注：" VerticalAlignment="Top" Width="84"/>
+        <TextBox IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" HorizontalAlignment="Stretch" Height="88" Margin="107,65,10,0" TextWrapping="Wrap" Text="{Binding Path=StoredProcedure.Remark,ElementName=aa,Mode=TwoWay}" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

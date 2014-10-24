@@ -1,0 +1,238 @@
+[
+    {
+        "IsSelected": false,
+        "IsExpanded": false,
+        "ID": "3897559c-6b11-46af-9278-b70b5cafc938",
+        "PageUrl": "$DeskTop.xaml",
+        "ImageUrl": "Images/study.png",
+        "ImageUrl2": "Images/study2.png",
+        "Name": "Page2",
+        "OrderID": 0
+    },
+    {
+        "IsSelected": true,
+        "Children": [
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "ef2d247a-7cf3-4101-8e39-89a328269557",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "课程资源课程资源",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "f5d14b97-abd1-4e57-a844-b97616a4c6a6",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "课程内容",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "a8645f35-0f49-40df-bafa-d5c59acc50b1",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "课程考试",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "Children": [
+                    {
+                        "IsSelected": true,
+                        "IsExpanded": false,
+                        "ID": "b617d52c-95ad-44c4-85ea-654f71f0a283",
+                        "PageUrl": "$SilverlightControl1.xaml",
+                        "Name": "报表1报表1报表1",
+                        "OrderID": 0
+                    },
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "bd7eee17-ef55-4da2-8846-73ded79b5086",
+                        "PageUrl": "$SilverlightControl2.xaml",
+                        "Name": "报表2",
+                        "OrderID": 0
+                    }
+                ],
+                "IsExpanded": false,
+                "ID": "52093fbc-f0f5-4ff8-b859-0ef03e64bd35",
+                "PageUrl": "$SilverlightControl2.xaml",
+                "Name": "试题",
+                "OrderID": 0,
+                "StyleName": "SubFrame_Style3"
+            },
+            {
+                "IsSelected": false,
+                "Children": [
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "aeca4ab6-4199-41db-97c1-b10526c3f00b",
+                        "PageUrl": "$SilverlightControl1.xaml",
+                        "Name": "报表1",
+                        "OrderID": 0
+                    },
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "46148f5c-1462-41b4-a3fa-0ba7d288c497",
+                        "PageUrl": "$SilverlightControl2.xaml",
+                        "Name": "报表2",
+                        "OrderID": 0
+                    }
+                ],
+                "IsExpanded": false,
+                "ID": "ba7cd973-b02c-451f-b07a-c1c33d72cdbf",
+                "PageUrl": "$SilverlightControl2.xaml",
+                "Name": "试题列表",
+                "OrderID": 0
+            }
+        ],
+        "IsExpanded": false,
+        "ID": "48ea9b3e-2715-42b9-9f26-2ad52eb34350",
+        "PageUrl": "$SilverlightControl1.xaml",
+        "ImageUrl": "Images/Course.png",
+        "ImageUrl2": "Images/Course2.png",
+        "Name": "Page1",
+        "OrderID": 0,
+        "StyleName": "SubFrame_Style2"
+    },
+    {
+        "IsSelected": true,
+        "Children": [
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "b4efb0af-7f12-4786-88ef-b556995d3a10",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "组织机构",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "Children": [
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "6df562ee-3831-489f-bb83-14953b3ed78d",
+                        "PageUrl": "$SilverlightControl1.xaml",
+                        "Name": "角色类别",
+                        "OrderID": 0
+                    },
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "8129a433-4a78-47e2-a37c-976b7e3a8409",
+                        "PageUrl": "$SilverlightControl2.xaml",
+                        "Name": "角色设置",
+                        "OrderID": 0
+                    }
+                ],
+                "IsExpanded": false,
+                "ID": "0c74bcf9-43fb-4020-87f9-226c92c1ab45",
+                "PageUrl": "$SilverlightControl2.xaml",
+                "Name": "角色管理",
+                "OrderID": 0,
+                "StyleName": "SubFrame_Style2"
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "562650bf-7e4c-4f73-b738-12c687ac16d3",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "员工管理",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "635a3f0d-539d-4f1c-af91-6d03498a3c2f",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "功能管理",
+                "OrderID": 0
+            }
+        ],
+        "IsExpanded": false,
+        "ID": "2bfd936e-bf5f-4927-b27c-92298947e1ca",
+        "PageUrl": "$SilverlightControl1.xaml",
+        "ImageUrl": "Images/Course.png",
+        "ImageUrl2": "Images/Course2.png",
+        "Name": "Page1",
+        "OrderID": 0
+    },
+    {
+        "IsSelected": false,
+        "IsExpanded": false,
+        "ID": "4ea9bdfa-e563-4198-868b-ad033d368647",
+        "PageUrl": "$MessageTest.xaml",
+        "ImageUrl": "Images/study.png",
+        "ImageUrl2": "Images/study2.png",
+        "Name": "Page2",
+        "OrderID": 0
+    },
+    {
+        "IsSelected": false,
+        "Children": [
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "16423645-f307-4653-adb6-d490c449df79",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "组织机构",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "Children": [
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "9581de15-7b0f-4c83-a80c-b979383005f8",
+                        "PageUrl": "$SilverlightControl1.xaml",
+                        "Name": "角色类别",
+                        "OrderID": 0
+                    },
+                    {
+                        "IsSelected": false,
+                        "IsExpanded": false,
+                        "ID": "235a52c2-cd1a-4137-8fbb-99dcfbaef8b0",
+                        "PageUrl": "$SilverlightControl2.xaml",
+                        "Name": "角色设置",
+                        "OrderID": 0
+                    }
+                ],
+                "IsExpanded": false,
+                "ID": "e75e0bff-d4ab-4dd6-ac01-b6e2cef8d11f",
+                "PageUrl": "$SilverlightControl2.xaml",
+                "Name": "角色管理",
+                "OrderID": 0,
+                "StyleName": "SubFrame_Style2"
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "9a390d0e-c946-444a-8e2f-d64d51ca2019",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "员工管理",
+                "OrderID": 0
+            },
+            {
+                "IsSelected": false,
+                "IsExpanded": false,
+                "ID": "65be91b2-e2f7-4857-b35c-306e3282ee61",
+                "PageUrl": "$SilverlightControl1.xaml",
+                "Name": "功能管理",
+                "OrderID": 0
+            }
+        ],
+        "IsExpanded": false,
+        "ID": "80a86d90-2dd1-4ee0-a98a-ff8449e1b1af",
+        "PageUrl": "$SilverlightControl2.xaml",
+        "ImageUrl": "Images/admin.png",
+        "ImageUrl2": "Images/admin2.png",
+        "Name": "Page3",
+        "OrderID": 0
+    }
+]

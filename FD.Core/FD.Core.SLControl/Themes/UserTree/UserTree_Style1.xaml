@@ -1,0 +1,90 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor1="clr-namespace:SLControls.Editor1"
+    xmlns:controls="clr-namespace:StaffTrain.FwClass.Controls"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FD.Core.SLControl;Component/Themes/Main.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="sl:UserTree">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"></Setter>
+        <Setter Property="FontSize" Value="{StaticResource FontSize_Bigger}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                <ControlTemplate TargetType="sl:UserTree">
+                        <Grid>
+                            <Grid.Resources>
+                            <telerik:HierarchicalDataTemplate  x:Key="TreeViewMainEditTemplate" ItemsSource="{Binding Children,Mode=TwoWay}">
+<!--                                LostFocus="TextBox_LostFocus_1" KeyDown="TextBox_OnKeyDown"-->
+                                <TextBox telerik:StyleManager.Theme="{StaticResource Theme}" x:Name="textBox" Text="{Binding Text,Mode=TwoWay}"   ></TextBox>
+                            </telerik:HierarchicalDataTemplate>
+                                <!-- Template for Read mode for TreeViewItem IsThreeState="{Binding HasSubcomponents}"-->
+                            <telerik:HierarchicalDataTemplate x:Key="TreeViewMainReadTemplate" ItemsSource="{Binding Children,Mode=TwoWay}">
+                                    <StackPanel Margin="-20 0 0 0" Orientation="Horizontal">
+<!--                                    Click="ItemCheckbox_Click"-->
+                                    <CheckBox Visibility="{Binding RelativeSource={RelativeSource TemplatedParent},Path=CheckBoxVisibility,Mode=TwoWay}" x:Name="checkBox" IsTabStop="False"   
+                            IsThreeState="False"
+                                              telerik:StyleManager.Theme="{StaticResource Theme}" 
+                            IsEnabled="{Binding RelativeSource={RelativeSource TemplatedParent} , Mode=TwoWay,Path=CheckBoxIsEnabled}"
+                            IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                              />
+                                        <!--                Text="{Binding Text, Converter={StaticResource toolTipConverter},ConverterParameter=20}"-->
+                                        
+<!--                                    MouseRightButtonDown="TreeViewMain_MouseRightButtonDown"-->
+<!--    MouseRightButtonUp="TreeViewMain_MouseRightButtonUp"-->
+<!--    MouseLeftButtonDown="TreeViewMain_MouseLeftButtonDown" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave"-->
+                                    <TextBlock VerticalAlignment="Center" FontFamily="{StaticResource FontFamily}" Margin="0,0,0,0" Text="{Binding Text}" ToolTipService.ToolTip="{Binding Text,Mode=TwoWay}">
+                                        </TextBlock >
+                                    </StackPanel>
+                                </telerik:HierarchicalDataTemplate>
+                        </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="FocusVisualElement"
+												Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border Padding="{TemplateBinding Padding}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" x:Name="LayoutRoot" >
+                                <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderThickness="0" BorderBrush="{x:Null}">-->
+<!--                                IsOptionElementsEnabled="True"-->
+                                <telerik:RadTreeView IsLineEnabled="True" IsRootLinesEnabled="True" BorderThickness="0" x:Name="TreeViewMain" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"
+                                                     ItemsSource="{TemplateBinding DataSource}"
+ItemTemplate="{StaticResource TreeViewMainReadTemplate}">
+                                </telerik:RadTreeView>
+                                <!--</ScrollViewer>-->
+                                <!--        TreeViewDragDropTarget有问题 会导致GC无法回收所有父亲控件-->
+                                <!--        <toolkit:TreeViewDragDropTarget Margin="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" AllowDrop="True"  >-->
+                                <!--        </toolkit:TreeViewDragDropTarget>-->
+
+                            </Grid>
+
+                        </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+</ResourceDictionary>

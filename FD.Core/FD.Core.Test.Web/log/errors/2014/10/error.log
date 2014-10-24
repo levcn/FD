@@ -1,0 +1,94 @@
+文件“E:\Levcn\FD\FD.Core\FD.Core.Test.Web\Resourse\PageConfig\Default\MainPage1\Page.cfg”正由另一进程使用，因此该进程无法访问此文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   在 System.IO.File.WriteAllText(String path, String contents)
+   在 StaffTrain.SVFw.UIPage.PageAction.SavePageConfig(PageConfig pc) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\UIPage\PageAction.cs:行号 33
+   在 lambda_method(Closure , IController , Object[] )
+   在 Fw.ActionMethod.ActionMethodDispatcher.Execute(IController controller, Object[] parameters) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionMethod\ActionMethodDispatcher.cs:行号 24
+   在 Fw.Reflection.ReflectionHelper.ExecuteMethod(Type type, String methodName, List`1 parames, Boolean isXml) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 126
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(List`1 assemblyName, String className, String methodName, List`1 parames, Boolean isXml) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 99
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(String className, String methodName, List`1 parames) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 92
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 107
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+文件“E:\Levcn\FD\FD.Core\FD.Core.Test.Web\Resourse\PageConfig\Default\MainPage1\Page.cfg”正由另一进程使用，因此该进程无法访问此文件。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   在 System.IO.File.WriteAllText(String path, String contents)
+   在 StaffTrain.SVFw.UIPage.PageAction.SavePageConfig(PageConfig pc) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\UIPage\PageAction.cs:行号 33
+   在 lambda_method(Closure , IController , Object[] )
+   在 Fw.ActionMethod.ActionMethodDispatcher.Execute(IController controller, Object[] parameters) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionMethod\ActionMethodDispatcher.cs:行号 24
+   在 Fw.Reflection.ReflectionHelper.ExecuteMethod(Type type, String methodName, List`1 parames, Boolean isXml) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 126
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(List`1 assemblyName, String className, String methodName, List`1 parames, Boolean isXml) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 99
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(String className, String methodName, List`1 parames) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 92
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 107
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 116
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 116
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 116
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 116
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 116
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================
+未能加载文件或程序集“System.Xml, Version=5.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e”或它的某一个依赖项。系统找不到指定的文件。
+   在 fastJSON.Reflection.GetGetters(Type type, JSONParameters unknown, Object obj)
+   在 fastJSON.JSONSerializer.WriteObject(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 350
+   在 fastJSON.JSONSerializer.WriteValue(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 109
+   在 fastJSON.JSONSerializer.ConvertToJSON(Object obj) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JsonSerializer.cs:行号 30
+   在 fastJSON.JSON.ToJSON(Object obj, JSONParameters param) 位置 d:\KuPan\lib\fastJSON\fastJSON_v2.0.10\fastJSON\JSON.cs:行号 127
+   在 Fw.Serializer.JsonHelper.FastJsonSerializer(Object t) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Serializer\JsonHelper.cs:行号 208
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 112
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 63
+==============================================================

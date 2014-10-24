@@ -1,0 +1,11 @@
+﻿<Application x:Class="ProjectCreater.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:settings="clr-namespace:ProjectCreater.Settings"
+             xmlns:converts="clr-namespace:WPFControls.Converts;assembly=WPFControls"
+             StartupUri="SObjects\SObjectMainPage.xaml">
+    <Application.Resources>
+        <settings:UserHabit x:Key="Habit"></settings:UserHabit>
+        <converts:GridLengthToInt x:Key="GridLengthToInt"></converts:GridLengthToInt>
+    </Application.Resources>
+</Application>

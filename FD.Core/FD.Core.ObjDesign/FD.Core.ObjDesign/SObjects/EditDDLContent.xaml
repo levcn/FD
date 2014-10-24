@@ -1,0 +1,80 @@
+﻿<wpfControls:BaseWindow x:Class="ProjectCreater.SObjects.EditDDLContent"
+        x:Name="aa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfControls="clr-namespace:WPFControls;assembly=WPFControls"
+        Title="编辑关联表信息" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+<!--        <GroupBox Header="关联表信息" Grid.Row="0" Margin="5">-->
+<!--            <Grid>-->
+<!--                <Grid.RowDefinitions>-->
+<!--                    <RowDefinition Height="Auto"></RowDefinition>-->
+<!--                    <RowDefinition Height="Auto"></RowDefinition>-->
+<!--                    <RowDefinition Height="Auto"></RowDefinition>-->
+<!--                </Grid.RowDefinitions>-->
+<!--                <Grid Margin="5" Grid.Row="0">-->
+<!--                    <Grid.ColumnDefinitions>-->
+<!--                        <ColumnDefinition Width="100"></ColumnDefinition>-->
+<!--                        <ColumnDefinition Width="*"></ColumnDefinition>-->
+<!--                    </Grid.ColumnDefinitions>-->
+<!--                    <TextBlock HorizontalAlignment="Right" Text="关联表："></TextBlock>-->
+<!--                    <ComboBox DisplayMemberPath="KeyTableName" SelectedValuePath="KeyTableName" IsEditable="True" Text="{Binding ElementName=aa,Path=Relation.RelTableName,Mode=TwoWay}" Grid.Column="1" Name="CB_RelTableName" MinWidth="80" SelectionChanged="CB_RelTableName_OnSelectionChanged">-->
+<!--                    </ComboBox>-->
+<!--                </Grid>-->
+<!--                <Grid Margin="5" Grid.Row="1">-->
+<!--                    <Grid.ColumnDefinitions>-->
+<!--                        <ColumnDefinition Width="100"></ColumnDefinition>-->
+<!--                        <ColumnDefinition Width="*"></ColumnDefinition>-->
+<!--                    </Grid.ColumnDefinitions>-->
+<!--                    <TextBlock HorizontalAlignment="Right" Text="主表关联字段："></TextBlock>-->
+<!--                    <ComboBox DisplayMemberPath="Code" SelectedValuePath="Code"  IsEditable="True" Text="{Binding ElementName=aa,Path=Relation.RelMasertKey,Mode=TwoWay}"  Grid.Column="1" Name="CB_RelMainField" MinWidth="80"></ComboBox>-->
+<!--                </Grid>-->
+<!--                <Grid Margin="5" Grid.Row="2">-->
+<!--                    <Grid.ColumnDefinitions>-->
+<!--                        <ColumnDefinition Width="100"></ColumnDefinition>-->
+<!--                        <ColumnDefinition Width="*"></ColumnDefinition>-->
+<!--                    </Grid.ColumnDefinitions>-->
+<!--                    <TextBlock HorizontalAlignment="Right" Text="字典表关联字段："></TextBlock>-->
+<!--                    <ComboBox DisplayMemberPath="KeyTableName" SelectedValuePath="KeyTableName" IsEditable="True"  Text="{Binding ElementName=aa,Path=Relation.RelDictKey,Mode=TwoWay}" Grid.Column="1" Name="CB_RelDicField" MinWidth="80"></ComboBox>-->
+<!--                </Grid>-->
+<!--            </Grid>-->
+<!--        </GroupBox>-->
+        <GroupBox Header="下拉框内容" Grid.Row="1" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Margin="5" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding ElementName=aa,Path=Text,Mode=TwoWay}" Grid.Column="1" Height="200" />
+                </Grid>
+                <Grid Margin="5" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid Margin="5" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <StackPanel Grid.Row="2" Margin="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Right">
+            <Button Content="确定" Click="OnResult1" IsDefault="true" Margin="10" Width="50"></Button>
+            <Button Content="取消(_C)" Click="OnResult2" IsCancel="True"  Margin="10" Width="50"></Button>
+        </StackPanel>
+    </Grid>
+</wpfControls:BaseWindow>

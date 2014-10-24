@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- $Id: MSBuild.Community.Tasks.Targets 303 2007-02-23 15:49:46Z pwelter34 $ -->
+
+	<PropertyGroup>
+		<TelerikMSBuildTasksPath Condition="'$(TelerikMSBuildTasksPath)' == ''">..\Tools\Telerik.MSBuildTasks\</TelerikMSBuildTasksPath>
+		<TelerikMSBuildTasksLib>$(TelerikMSBuildTasksPath)Telerik.MSBuildTasks.dll</TelerikMSBuildTasksLib>
+
+		<TelerikMSBuildTasksImported>true</TelerikMSBuildTasksImported>
+	</PropertyGroup>
+
+	<UsingTask AssemblyFile="$(TelerikMSBuildTasksLib)" TaskName="Telerik.MSBuildTasks.Replace" />
+</Project>

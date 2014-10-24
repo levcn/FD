@@ -1,0 +1,82 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation">
+<!--    <FontFamily x:Key="FontFamily">NSimsun</FontFamily>-->
+<!--    <FontFamily x:Key="FontFamily">/FD.Core.SLControl;component/Images/STCAIYUN.TTF#STCaiyun</FontFamily>-->
+    <FontFamily x:Key="FontFamily">SimHei</FontFamily>
+    <system:Double x:Key="FontSize_Comm">16</system:Double>
+    <system:Double x:Key="FontSize_Bigger">18</system:Double>
+    <system:Double x:Key="FontSize_Bigger1">22</system:Double>
+    <system:Double x:Key="FontSize_Bigger2">26</system:Double>
+    <system:Double x:Key="FontSize_Bigger3">30</system:Double>
+    <system:Double x:Key="FontSize_Smaller">14</system:Double>
+    <Style TargetType="HyperlinkButton">
+<!--        宋体（英文不等宽）Simsun-->
+<!--宋体（英文等宽）NSimsun-->
+<!--楷体KaiTi-->
+<!--黑体SimHei-->
+<!--仿宋FangSong-->
+<!--微软正黑体Microsoft JhengHei-->
+<!--细明体MingLiu-->
+<!--微软雅黑Microsoft YaHei-->
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"></Setter>
+    </Style>
+    <Style TargetType="sl:EditItemText">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"></Setter>
+    </Style>
+    <Style TargetType="sl:MainFrame">
+        <Setter Property="FontFamily" Value="NSimsun"></Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="BaseButtonStyle">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"/>
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="sl:SelectedButton"  x:Key="BaseSelectedButton">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="ComboBox">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="sl:LevcnPager">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="telerik:RadButton" x:Key="BaseRadButtonStyle">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+    <Style TargetType="telerik:RadButton" BasedOn="{StaticResource BaseRadButtonStyle}">
+    </Style>
+<!--    <Style TargetType="sl:UserSelector" x:Key="BaseUserSelectorStyle">-->
+<!--        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />-->
+<!--        <Setter Property="FontSize" Value="16" />-->
+<!--    </Style>-->
+<!--    <Style TargetType="sl:UserSelector" BasedOn="{StaticResource BaseUserSelectorStyle}">-->
+<!--    </Style>-->
+    <Style TargetType="sl:SubFrame" x:Key="BaseSubFrameStyle">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+<!--    <Style TargetType="sl:SubFrame" BasedOn="{StaticResource BaseSubFrameStyle}">-->
+<!--    </Style>-->
+    
+</ResourceDictionary>

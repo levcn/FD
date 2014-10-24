@@ -1,0 +1,190 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FD.Core.SLControl;Component/Themes/Main.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="左侧导航" TargetType="Button">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+<!--                                    <Storyboard>-->
+<!--                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>-->
+<!--                                    </Storyboard>-->
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" BorderBrush="#64FFFFFF" BorderThickness="0,0,0,1">
+                            <Grid Margin="0" Cursor="Hand">
+                                <Border x:Name="BackgroundAnimation" Opacity="0"/>
+                                <Rectangle x:Name="BackgroundGradient" Fill="#FF3E3E3E"/>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="左侧点击后" TargetType="Button">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+<!--                                    <Storyboard>-->
+<!--                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>-->
+<!--                                    </Storyboard>-->
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" BorderBrush="#64FFFFFF" BorderThickness="0">
+                            <Grid Margin="0" Cursor="Hand">
+                                <Border x:Name="BackgroundAnimation" Opacity="0"/>
+                                <Rectangle x:Name="BackgroundGradient" Fill="White" StrokeThickness="0" Margin="0,0,-2,3" RadiusX="3" RadiusY="3"/>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--    主菜单选中样式-->
+    <telerik:HierarchicalDataTemplate x:Key="MainFrame_SelectedTemplate">
+        <sl:FDGrid DataContext="{Binding}" >
+            <Button MinWidth="170" Content="{Binding Name}" HorizontalContentAlignment="Right" Height="45" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource 左侧点击后}" />
+        </sl:FDGrid>
+    </telerik:HierarchicalDataTemplate>
+<!--    主菜单未选中样式-->
+    <telerik:HierarchicalDataTemplate x:Key="MainFrame_UnSelectedTemplate">
+        <sl:FDGrid  DataContext="{Binding}">
+            <Button MinWidth="170" Content="{Binding Name}" HorizontalContentAlignment="Right" Height="45" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource 左侧导航}" />
+        </sl:FDGrid>
+    </telerik:HierarchicalDataTemplate>
+<!--样式选择器-->
+   <sl:SelectableTemplateSelector x:Key="MainFrame_SelectableTemplateSelector1" 
+                                           SelectedTemplate="{StaticResource MainFrame_SelectedTemplate}" 
+                                           UnSelectedTemplate="{StaticResource MainFrame_UnSelectedTemplate}"
+                                           />
+    <SolidColorBrush x:Key="BorderStyle1" >#ababab</SolidColorBrush>
+    <Style TargetType="sl:SubFrame" x:Key="SubFrame_Style2">
+        <Setter Property="FontFamily" Value="{StaticResource FontFamily}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sl:SubFrame">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--菜单部分-->
+                            <Grid Grid.Column="0" Background="#FF3E3E3E">
+                                <Border BorderThickness="0 0 0 1" BorderBrush="{StaticResource BorderStyle1}" Margin="0 0 0 6">
+                                    
+                                </Border>
+                                <telerik:ItemsControl Margin="20 10 0 0" ItemTemplateSelector="{StaticResource                                         MainFrame_SelectableTemplateSelector1}"
+                                                      x:Name="PART_MenuItemsControl" ItemsSource="{TemplateBinding ItemsSource}">
+                                    <telerik:ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Vertical"></StackPanel>
+                                        </ItemsPanelTemplate>
+                                    </telerik:ItemsControl.ItemsPanel>
+                                </telerik:ItemsControl>
+                                
+                            </Grid>
+                            <!--菜单部分-->
+
+                            <!--内容部分-->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                            <ContentPresenter Grid.Row="1" x:Name="contentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Stretch" Margin="0 0 0 0" VerticalAlignment="Stretch"/>
+                            </Grid>
+                            <!--内容部分-->
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

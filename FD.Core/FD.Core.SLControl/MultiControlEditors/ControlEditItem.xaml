@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SLControls.MultiControlEditors.ControlEditItem"
+             x:Name="aa"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding Path=Text,ElementName=aa}"></TextBlock>
+
+        <TextBox Grid.Column="1" Visibility="{Binding Path=TextVisibility,ElementName=aa,Mode=TwoWay}" Text="{Binding Path=Value,ElementName=aa,Mode=TwoWay}"></TextBox>
+        <ComboBox Grid.Column="1" Visibility="{Binding Path=ComboBoxVisibility,ElementName=aa,Mode=TwoWay}" ItemsSource="{Binding Path=ItemSource,ElementName=aa,Mode=TwoWay}" SelectedItem="{Binding Path=Value,ElementName=aa,Mode=TwoWay}"></ComboBox>
+    </Grid>
+</UserControl>

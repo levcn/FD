@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BinariesOutDir Condition=" '$(BinariesOutDir)' == '' ">..\..\Binaries\</BinariesOutDir>
+    <BuildFolderPath Condition=" '$(BuildFolderPath)' == '' ">$(BinariesOutDir)..\Build\</BuildFolderPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType Condition=" '$(OutputType)' == '' ">Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <CodeAnalysisRuleSet Condition=" '$(CodeAnalysisRuleSet)' == '' ">CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <RootNamespace Condition=" '$(RootNamespace)' == '' ">Telerik.Windows.Controls</RootNamespace>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication Condition=" '$(SilverlightApplication)' == '' ">false</SilverlightApplication>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AssemblyOriginatorKeyFile Condition=" '$(AssemblyOriginatorKeyFile)' == '' ">sn.snk</AssemblyOriginatorKeyFile>
+    <CodeAnalysisRuleSet Condition=" '$(CodeAnalysisRuleSet)' == '' ">CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+    <SignAssembly Condition=" '$(SignAssembly)' == '' ">true</SignAssembly>
+    <ExpressionBlendVersion>3.0.1921.0</ExpressionBlendVersion>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoXaml Condition="$(SilverlightApplication)">true</NoXaml>
+    <NoExtMap Condition="$(SilverlightApplication)">true</NoExtMap>
+    <NoVersion Condition="$(SilverlightApplication)">true</NoVersion>
+    <NoCopyBinaries Condition="$(SilverlightApplication)">true</NoCopyBinaries>
+    <SupportedCultures Condition=" '$(SupportedCultures)' == '' ">
+    </SupportedCultures>
+    <ErrorReport>prompt</ErrorReport>
+    <NoXamlCop>true</NoXamlCop>  
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TestProject)' != '' ">
+    <NoWE>true</NoWE>
+	<NoSA>true</NoSA>
+	<NoCA>true</NoCA>
+    <NoXaml>true</NoXaml>
+    <NoXMLDoc>true</NoXMLDoc>
+    <NoPdb>true</NoPdb>
+    <NoExtMap>true</NoExtMap>
+    <NoVersion>true</NoVersion>
+    <NoCopyBinaries>true</NoCopyBinaries>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>  
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+    <StyleCopEnabled>false</StyleCopEnabled>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug.NoXaml|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+	<StyleCopEnabled>false</StyleCopEnabled>
+	<NoXaml>true</NoXaml>
+	<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>	
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+    <DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+    <DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+    <DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+    <Optimize>true</Optimize>
+    <SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+    <TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+    <StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNoCA|AnyCPU' ">
+	<NoSA>true</NoSA>
+	<NoCA>true</NoCA>
+	<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+	<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+	<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+	<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+	<Optimize>true</Optimize>
+	<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+	<DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+	<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+	<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>	
+	
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release.NoXaml|AnyCPU' ">
+	<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+	<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+	<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+	<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+	<Optimize>true</Optimize>
+	<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+	<DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+	<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+	<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<NoXaml>true</NoXaml>  
+	<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	<SLPlatform>SL5</SLPlatform>  
+  </PropertyGroup>	
+	
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU' ">
+    <DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+    <DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+    <DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+    <DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+    <Optimize>true</Optimize>
+    <SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+    <DefineConstants>TRACE;SILVERLIGHT;TRIAL</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+    <TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+    <StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial.NoXaml|AnyCPU' ">
+	<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+	<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+	<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+	<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+	<Optimize>true</Optimize>
+	<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+	<DefineConstants>TRACE;SILVERLIGHT;TRIAL</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+	<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+	<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<NoXaml>true</NoXaml>
+	<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	<SLPlatform>SL5</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug1040|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SLFrameworkVersion>4.0</SLFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+    <StyleCopEnabled>false</StyleCopEnabled>
+    <SLPlatform>SL4</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug1040.NoXaml|AnyCPU' ">
+	<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+	<SLFrameworkVersion>4.0</SLFrameworkVersion>
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+	<StyleCopEnabled>false</StyleCopEnabled>
+	<SLPlatform>SL4</SLPlatform>
+	<NoXaml>true</NoXaml>
+	<GenerateImplicitStyles>true</GenerateImplicitStyles>  
+  </PropertyGroup>	
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release1040|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SLFrameworkVersion>4.0</SLFrameworkVersion>
+    <DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+    <DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+    <DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+    <DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+    <Optimize>true</Optimize>
+    <SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+    <TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+    <StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <SLPlatform>SL4</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release1040.NoXaml|AnyCPU' ">
+	<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+	<SLFrameworkVersion>4.0</SLFrameworkVersion>
+	<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+	<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+	<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+	<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+	<Optimize>true</Optimize>
+	<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+	<DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+	<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+	<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+	<NoStdLib>true</NoStdLib>
+	<NoConfig>true</NoConfig>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+	<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+	<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+	<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+	<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+	<SLPlatform>SL4</SLPlatform>
+	<NoXaml>true</NoXaml>
+	<GenerateImplicitStyles>true</GenerateImplicitStyles>  
+  </PropertyGroup>	
+	
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial1040|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SLFrameworkVersion>4.0</SLFrameworkVersion>
+    <DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+    <DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+    <DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+    <DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+    <Optimize>true</Optimize>
+    <SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+    <DefineConstants>TRACE;SILVERLIGHT;TRIAL</DefineConstants>
+    <DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+    <DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+    <TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+    <StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+    <OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+    <DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <SLPlatform>SL4</SLPlatform>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial1040.NoXaml|AnyCPU' ">
+		<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+		<SLFrameworkVersion>4.0</SLFrameworkVersion>
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;SILVERLIGHT;TRIAL</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<DefineConstants Condition=" '$(SLFrameworkVersion)' == '3.0' ">$(DefineConstants);SILVERLIGHT3</DefineConstants>
+		<DefineConstants Condition=" '$(SLFrameworkVersion)' == '4.0' ">$(DefineConstants);SILVERLIGHT4</DefineConstants>
+		<DefineConstants Condition=" '$(SLFrameworkVersion)' == '5.0' ">$(DefineConstants);SILVERLIGHT5</DefineConstants>
+		<NoStdLib>true</NoStdLib>
+		<NoConfig>true</NoConfig>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+		<OutputPath>bin\Silverlight\$(SLFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<SLPlatform>SL4</SLPlatform>
+	    <NoXaml>true</NoXaml>
+	    <GenerateImplicitStyles>true</GenerateImplicitStyles>
+  </PropertyGroup>	
+
+  <PropertyGroup>
+    <SilverlightVersion>v$(SLFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SubFolderPrefix>Silverlight</SubFolderPrefix>
+    <WPF>false</WPF>
+    <WPF35>false</WPF35>
+    <Silverlight>true</Silverlight>
+    <DefineConstants Condition=" '$(NoXaml)' == 'true' ">$(DefineConstants);NOXAML</DefineConstants>
+  </PropertyGroup>
+	
+</Project>

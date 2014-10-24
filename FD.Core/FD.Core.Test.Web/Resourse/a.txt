@@ -1,0 +1,195 @@
+﻿<Grid 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="1000" d:DesignWidth="800">
+
+    <Grid x:Name="LayoutRoot" Background="White" >
+        <Grid Margin="20,19,20,21">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                </Style>
+                <Style TargetType="TextBlock" x:Key="Header">
+                    <Setter Property="FontSize" Value="18"></Setter>
+                    <Setter Property="Margin" Value="3"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                </Style>
+                 <Style TargetType="TextBox" x:Key="HeaderTextBox">
+                    <Setter Property="FontSize" Value="18"></Setter>
+                    <Setter Property="Margin" Value="3"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                </Style>
+                <Style TargetType="Grid" x:Key="HeaderGrid">
+                    <Setter Property="Background" Value="Silver"></Setter>
+                    <Setter Property="Margin" Value="0 5"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="应聘职位：" Grid.Row="0" Grid.Column="0"></TextBlock>
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="应聘机构：" Grid.Row="1" Grid.Column="0"></TextBlock>
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="工作地点：" Grid.Row="2" Grid.Column="0"></TextBlock>
+                <TextBox Name="YingPinZhiWei" HorizontalAlignment="Left" Width="400" TextAlignment="Left" Text="" Grid.Row="0" Grid.Column="1"></TextBox>
+                <TextBox Name="YingPinJiGou" HorizontalAlignment="Left" Width="400" TextAlignment="Left" Text="" Grid.Row="1" Grid.Column="1"></TextBox>
+                <TextBox Name="GongZuoDiDian" HorizontalAlignment="Left" Width="400" TextAlignment="Left" Text="" Grid.Row="2" Grid.Column="1"></TextBox>
+                <TextBlock FontSize="30" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Text="智联招聘" Grid.RowSpan="3"></TextBlock>
+            </Grid>
+            <!--        第一行结束-->
+            <Grid Grid.Row="1" Style="{StaticResource HeaderGrid}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ID：" Style="{StaticResource Header}"></TextBlock>
+                    <TextBox Name="ID" BorderThickness="0" Background="Transparent" Text="JR125305094R902500050000" Style="{StaticResource HeaderTextBox}"></TextBox>
+                </StackPanel>
+            </Grid>
+            <!--        第二行结束-->
+            <Grid Grid.Row="2" Margin="0 5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="XingMing" FontSize="25" Width="200" FontWeight="ExtraBold" BorderThickness="0" Text="陈昶"></TextBox>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock FontSize="25" FontWeight="ExtraBold" Text="手机："></TextBlock>
+                        <TextBox Name="ShouJi" FontSize="25" Width="200" FontWeight="ExtraBold" BorderThickness="0" TextAlignment="Right" Text="18600430627"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <telerik:RadComboBox Name="XingBie" FontWeight="ExtraBold" Text="男"></telerik:RadComboBox>
+                            <TextBox Name="NianLing" Width="30" FontWeight="ExtraBold" Text="26"></TextBox>
+                            <TextBlock FontWeight="ExtraBold" Text="岁("></TextBlock>
+                            <TextBox Name="ChuSheng" Width="45" FontWeight="ExtraBold" Text="1988"></TextBox>
+<!--                            <TextBlock FontWeight="ExtraBold" Text="年"></TextBlock>-->
+<!--                            <TextBox Width="25" FontWeight="ExtraBold" Text="12"></TextBox>-->
+<!--                            <TextBlock FontWeight="ExtraBold" Text="月"></TextBlock>-->
+                            <TextBlock FontWeight="ExtraBold" Text=")"></TextBlock>
+                            <TextBox Name="GongZuoNian" TextAlignment="Right" Width="25" Margin="10 0 0 0" FontWeight="ExtraBold" Text="5"></TextBox>
+                            <TextBlock FontWeight="ExtraBold" Text="年工作经验"></TextBlock>
+                            <TextBox Name="XieLi" Width="50" Margin="10 0" FontWeight="ExtraBold" Text="本科"></TextBox>
+                            <TextBox Name="HunYin" Width="40" Margin="0 0" FontWeight="ExtraBold" Text="已婚"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="现居住地："></TextBlock>
+                            <TextBox Name="JiZhuDi" Text="北京 昌平" Width="100"></TextBox>
+                            <TextBlock Text="户口："></TextBlock>
+                            <TextBox Name="HuJi" Text="宜昌" Width="100"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="身份证："></TextBlock>
+                            <TextBox Name="ShenFenZheng" Text="42015475641234895" Width="200"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="邮编："></TextBlock>
+                            <TextBox Name="YouBian" Text="430000" Width="100"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="手机："></TextBlock>
+                            <TextBox Name="ShouJi1" Text="15789644578" Width="110"></TextBox>
+                            <TextBlock Text="| 家庭电话："></TextBlock>
+                            <TextBox Name="DianHua" Text="15789644578" Width="110"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="E-Mail："></TextBlock>
+                            <TextBox IsReadOnly="True" Name="YouXiang" Text="abc@163.com" Width="300"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <Grid Grid.Column="1">
+                        <Grid Margin="0 10 30 0" Background="#EEEEEE">
+<!--                            <Image Width="120" Height="170" ></Image>-->
+                            <sl:EditItemPicture Height="170" Width="200" Name="ZhaoPian" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <!--        第三行结束-->
+            <Grid Grid.Row="3" Style="{StaticResource HeaderGrid}">
+                <TextBlock Text="求职意向" Style="{StaticResource Header}"></TextBlock>
+            </Grid>
+            <!--        第二行结束-->
+            <Grid Grid.Row="4" Margin="0 5" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="期望工作地区："></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="期望月薪："></TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="目前状态："></TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="期望工作性质："></TextBlock>
+                <TextBlock VerticalAlignment="Top" Grid.Row="4" Grid.Column="0" Text="期望从事职业："></TextBlock>
+                <TextBlock VerticalAlignment="Top" Grid.Row="5" Grid.Column="0" Text="期望从事行业："></TextBlock>
+
+                <TextBox Name="QGongZuoDi" Grid.Row="0" Grid.Column="1" Text="北京"></TextBox>
+                <TextBox Name="QYueXin" Grid.Row="1" Grid.Column="1" Text="不显示"></TextBox>
+                <TextBox Name="MuXianZhuangKuang" Grid.Row="2" Grid.Column="1" Text="离职,可立即上岗"></TextBox>
+                <TextBox Name="QGongZuoXingZhi" Grid.Row="3" Grid.Column="1" Text="全职"></TextBox>
+                <TextBox VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Name="QZhiYie" Grid.Row="4" Grid.Column="1" AcceptsReturn="True" Height="50" Text=""></TextBox>
+                <TextBox VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Name="QHangYe" Grid.Row="5" Grid.Column="1" AcceptsReturn="True" Height="50" Text=""></TextBox>
+            </Grid>
+            <!--        第三行结束-->
+            <Grid Grid.Row="5" Style="{StaticResource HeaderGrid}">
+                <TextBlock Text="自我评价" Style="{StaticResource Header}"></TextBlock>
+            </Grid>
+            <!--        第二行结束-->
+            <Grid Grid.Row="6" Margin="0 5" >
+                <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Name="ZiWoPingJia" AcceptsReturn="True" Height="70" Text=""></TextBox>
+            </Grid>
+            <!--        第三行结束-->
+            <Grid Grid.Row="7" Style="{StaticResource HeaderGrid}">
+                <TextBlock Text="工作经历" Style="{StaticResource Header}"></TextBlock>
+            </Grid>
+            <!--        第二行结束-->
+            <StackPanel Grid.Row="8" Margin="0 5" Name="_Group1">
+                
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Grid>

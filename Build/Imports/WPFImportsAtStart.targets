@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Properties in use: 
+						NoXaml - switches off the XamlPreprocessor and XamlCop
+						NoSA - switches off the StyleCope
+						NoCA - switches off the Code analysis errors
+						NoWE - switches off the Errors as warnings
+						NoVersion - switches off the Versioning
+						NoCopyBinaries - switches off the CopyBinaries
+						NoExtMap - switches off the ExtMap generation
+						NoXMLDoc - excludes the generation of the XML documentation;
+						NoPdb - skips the creation of the PDB debug symbols
+  -->
+  
+  <!-- Defaults -->
+  <Import Project="config.targets" Condition=" '$(ConfigFileImported)' == '' "/>
+
+  <!-- Configrations -->
+  <Import Project="WPFConfigurations.targets" />  
+</Project>

@@ -1,0 +1,85 @@
+﻿<wpfControls:BaseWindow x:Class="ProjectCreater.SObjects.EditRelWindow"
+        x:Name="aa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfControls="clr-namespace:WPFControls;assembly=WPFControls"
+        Title="编辑关联表信息" Height="330" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Header="关联表信息" Grid.Row="0" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Margin="5" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="关联表："></TextBlock>
+                    <ComboBox DisplayMemberPath="KeyTableName" SelectedValuePath="KeyTableName" IsEditable="True" IsReadOnly="True" Text="{Binding ElementName=aa,Path=Relation.RelTableName,Mode=TwoWay}" Grid.Column="1" Name="CB_RelTableName" MinWidth="80" SelectionChanged="CB_RelTableName_OnSelectionChanged">
+                    </ComboBox>
+                </Grid>
+                <Grid Margin="5" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="主表关联字段："></TextBlock>
+                    <ComboBox DisplayMemberPath="Code" SelectedValuePath="Code"  IsEditable="True" IsReadOnly="True" Text="{Binding ElementName=aa,Path=Relation.RelMasertKey,Mode=TwoWay}"  Grid.Column="1" Name="CB_RelMainField" MinWidth="80"></ComboBox>
+                </Grid>
+                <Grid Margin="5" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="字典表关联字段："></TextBlock>
+                    <ComboBox DisplayMemberPath="Code" SelectedValuePath="Code" IsEditable="True" IsReadOnly="True" Text="{Binding ElementName=aa,Path=Relation.RelDictKey,Mode=TwoWay}" Grid.Column="1" Name="CB_RelDicField" MinWidth="80"></ComboBox>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="字典表信息" Grid.Row="1" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Margin="5" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="字典表："></TextBlock>
+                    <ComboBox DisplayMemberPath="KeyTableName" SelectedValuePath="KeyTableName" IsReadOnly="True" IsEditable="True" Text="{Binding ElementName=aa,Path=Relation.DictTableName,Mode=TwoWay}" Grid.Column="1" Name="CB_DicTableName" MinWidth="80" SelectionChanged="CB_DicTableName_OnSelectionChanged"></ComboBox>
+                </Grid>
+                <Grid Margin="5" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="主键字段："></TextBlock>
+                    <ComboBox DisplayMemberPath="Code" SelectedValuePath="Code" IsReadOnly="True" IsEditable="True" Text="{Binding ElementName=aa,Path=Relation.DictKey,Mode=TwoWay}" SelectionChanged="CB_DicMainField_OnSelectionChanged"  Grid.Column="1" Name="CB_DicMainField" MinWidth="80"></ComboBox>
+                </Grid>
+                <Grid Margin="5" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Right" Text="显示名字段："></TextBlock>
+                    <ComboBox DisplayMemberPath="Code" SelectedValuePath="Code" IsReadOnly="True" IsEditable="True"  Text="{Binding ElementName=aa,Path=Relation.DictShowName,Mode=TwoWay}" Grid.Column="1" Name="CB_DicName" MinWidth="80"></ComboBox>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <StackPanel Grid.Row="2" Margin="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Right">
+            <Button Content="确定" Click="OnResult1" IsDefault="true" Margin="10" Width="50"></Button>
+            <Button Content="取消(_C)" Click="OnResult2" IsCancel="True"  Margin="10" Width="50"></Button>
+        </StackPanel>
+    </Grid>
+</wpfControls:BaseWindow>

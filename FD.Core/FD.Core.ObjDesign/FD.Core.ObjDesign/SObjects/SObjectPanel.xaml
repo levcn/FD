@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="ProjectCreater.SObjects.SObjectPanel"
+             x:Name="aa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" Width="100" BorderThickness="1" HorizontalAlignment="Left">
+            <Grid Cursor="Hand" Background="{Binding ElementName=aa,Path=MBackground}" MouseDown="Header_OnMouseDown" MouseUp="Header_OnMouseUp">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ElementName=aa,Path=DataContext.ObjectName}"></TextBlock>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" Background="{Binding ElementName=aa,Path=MBackground}" >
+            <Border BorderBrush="Black"  BorderThickness="1" HorizontalAlignment="Stretch">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <ItemsControl Name="aaa" ItemsSource="{Binding ElementName=aa,Path=DataContext.Property}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                            <Grid Width="{Binding ElementName=aa,Path=ActualWidth}" Margin="5,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                                <ColumnDefinition Width=".5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock DataContext="{Binding }" Text="{Binding Name}" VerticalAlignment="Stretch" Margin="1" ></TextBlock>
+                                <TextBlock Grid.Column="1" DataContext="{Binding }" Text="{Binding ColumnType}" VerticalAlignment="Stretch"  Margin="3" ></TextBlock>
+                                <Rectangle Grid.Column="1" HorizontalAlignment="Stretch" StrokeThickness="1" VerticalAlignment="Bottom"></Rectangle>
+                            </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

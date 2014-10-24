@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="FD.Core.Test.Test.动态添加测试"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <telerik:RadDropDownButton x:Name="asdfa" DropDownOpened="RadDropDownButton_OnDropDownOpened" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Foreground="{StaticResource 不重要文字颜色}" Content="同事" KeepOpen="True" Width="50" Height="50" telerik:RadToolTipService.ToolTipContent="选择人员" >
+            <!--                                            telerik:RadToolTipService.ToolTipContentTemplate="{StaticResource ToolTipStyle}"-->
+            <telerik:RadDropDownButton.DropDownContent>
+                <Grid Width="800" Height="500" >
+                    <sl:UserSelector Name="aaa"></sl:UserSelector>
+                </Grid>
+            </telerik:RadDropDownButton.DropDownContent>
+        </telerik:RadDropDownButton>
+    </Grid>
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FD.Core.Test.Controls.SearchTextBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="30" d:DesignWidth="400">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <telerik:RadWatermarkTextBox BorderBrush="{StaticResource 不重要边框颜色}" >
+            <telerik:RadWatermarkTextBox.Background>
+                <ImageBrush ImageSource="/Images/Controls/放大镜.png" Stretch="Uniform"  AlignmentX="Right" AlignmentY="Center">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <MatrixTransform>
+                                <MatrixTransform.Matrix>
+                                    <Matrix OffsetX="0.22" OffsetY="0.2" M12="0"/>
+                                </MatrixTransform.Matrix>
+                            </MatrixTransform>
+                            <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </telerik:RadWatermarkTextBox.Background>
+        </telerik:RadWatermarkTextBox>
+        <telerik:RadButton Grid.Column="1" Width="80" Content="搜索" FontSize="18"></telerik:RadButton>
+    </Grid>
+</UserControl>

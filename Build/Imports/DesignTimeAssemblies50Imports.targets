@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- This target file is needed for Design.5.0*.csproj in order to set TargetFramework to 4.5 -->
+	
+	<PropertyGroup>
+		<IsDesignAssembly50>true</IsDesignAssembly50>
+	</PropertyGroup>
+
+	<Import Condition=" '$(SubFolderPrefix)' == 'Silverlight' " Project="SLDesignTimeAssembliesImports.targets"/>
+	<Import Condition=" '$(SubFolderPrefix)' == 'WPF' " Project="WPFDesignTimeAssembliesImports.targets"/>
+	
+</Project>

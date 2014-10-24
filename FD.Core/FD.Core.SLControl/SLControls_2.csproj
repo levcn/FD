@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1237397C-BA64-4EFA-ABA4-313BBDD66947}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLControls</RootNamespace>
+    <AssemblyName>SLControls</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fastJSON-SL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\StaffTrain\Lib\fastJSON-SL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\ProjectCreater\packages\Microsoft.Bcl.Async.1.0.165\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\ProjectCreater\packages\Microsoft.Bcl.Async.1.0.165\lib\sl4\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight">
+      <HintPath>..\ProjectCreater\packages\Microsoft.Bcl.Async.1.0.165\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\ProjectCreater\packages\Microsoft.Bcl.1.0.19\lib\sl5\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\ProjectCreater\packages\Microsoft.Bcl.1.0.19\lib\sl5\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ImageEditor">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>..\..\StaffTrain\Lib\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveMethod\ActiveHelper.cs" />
+    <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Cache\CacheItem.cs" />
+    <Compile Include="Cache\CacheManage.cs" />
+    <Compile Include="Cache\OverDateEventArgs.cs" />
+    <Compile Include="Collection\TList.cs" />
+    <Compile Include="Controls\BaseRichControl.cs" />
+    <Compile Include="Controls\ControlEditPanel.cs" />
+    <Compile Include="Controls\ControlEditPanel1.xaml.cs">
+      <DependentUpon>ControlEditPanel1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditableAttribute.cs" />
+    <Compile Include="Controls\GridView.cs" />
+    <Compile Include="Controls\LoginPanel.cs" />
+    <Compile Include="Controls\MessageHelper.cs" />
+    <Compile Include="Controls\PropTextEdit.xaml.cs">
+      <DependentUpon>PropTextEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SilverlightControl1.xaml.cs">
+      <DependentUpon>SilverlightControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClientTools\ActionCallBack.cs" />
+    <Compile Include="DataClientTools\ActionCmd.cs" />
+    <Compile Include="DataClientTools\ActionHelper.cs" />
+    <Compile Include="DataClientTools\ActionType.cs" />
+    <Compile Include="DataClientTools\ActionTypeConst.cs" />
+    <Compile Include="DataClientTools\Configs\ActionSetting.cs" />
+    <Compile Include="DataClientTools\CustomCmd.cs" />
+    <Compile Include="DataClientTools\DACommand.cs" />
+    <Compile Include="DataClientTools\DataAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataClientTools\PageInfo.cs" />
+    <Compile Include="DataClientTools\PagerListResult.cs" />
+    <Compile Include="DataClientTools\Position.cs" />
+    <Compile Include="DataClientTools\PostArgs.cs" />
+    <Compile Include="DataClientTools\PostResult.cs" />
+    <Compile Include="DataClientTools\ResultData.cs" />
+    <Compile Include="DataClientTools\SearchEntry.cs" />
+    <Compile Include="DataClientTools\SelectAcionParams.cs" />
+    <Compile Include="DataClientTools\STParamete.cs" />
+    <Compile Include="DataClientTools\WattingConfig.cs" />
+    <Compile Include="Download\DownloadFileItem.cs" />
+    <Compile Include="Download\DownloadFileList.cs" />
+    <Compile Include="Editors\BaseControl.cs" />
+    <Compile Include="Editors\BaseMultiControl.cs" />
+    <Compile Include="Editors\BasePage.cs" />
+    <Compile Include="Editors\BaseWindow.cs" />
+    <Compile Include="Editors\ContentEditItem.cs" />
+    <Compile Include="Editors\DropDowGridView.cs" />
+    <Compile Include="Editors\DropDownTextBox.cs" />
+    <Compile Include="Editors\DropDownTreeViewBox.cs" />
+    <Compile Include="Editors\EditItemDateTimePicker.cs" />
+    <Compile Include="Editors\EditItemNumberBox.cs" />
+    <Compile Include="Editors\ETextBox.cs" />
+    <Compile Include="Editors\FormEditor.cs" />
+    <Compile Include="Editors\LevcnPager.cs" />
+    <Compile Include="Editors\MessageBoxHelper.cs" />
+    <Compile Include="Editors\MultiControlDataEventArgs.cs" />
+    <Compile Include="Editors\NumberBox.cs" />
+    <Compile Include="Editors\ObjectEditConfig.cs" />
+    <Compile Include="Editors\ObjectEditorPanel.cs" />
+    <Compile Include="Editors\PageObject.cs" />
+    <Compile Include="Editors\PropItem.cs" />
+    <Compile Include="Editors\SelectedButton.cs" />
+    <Compile Include="Editors\UserGridViewConfig.cs" />
+    <Compile Include="Editors\UserGridViewSearchEventArgs.cs" />
+    <Compile Include="Editors\ViewMode.cs" />
+    <Compile Include="Errors\ErrorHelper.cs" />
+    <Compile Include="Extends\Linq\ConditionBuilder.cs" />
+    <Compile Include="Extends\Linq\ExpressionVisitor.cs" />
+    <Compile Include="Extends\Linq\PartialEvaluator.cs" />
+    <Compile Include="Extends\Linq\PropertyExpressionExtends.cs" />
+    <Compile Include="Extends\Linq\TableExtensions.cs" />
+    <Compile Include="Extends\TypeEx.cs" />
+    <Compile Include="FW.cs" />
+    <Compile Include="ListTags\TagView.cs" />
+    <Compile Include="ListTags\TagViewList.cs" />
+    <Compile Include="MultiControlEditors\ControlEditPanel.xaml.cs">
+      <DependentUpon>ControlEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultiControlEditors\ControlEditItem.xaml.cs">
+      <DependentUpon>ControlEditItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageConfigs\ControlConfig.cs" />
+    <Compile Include="PageConfigs\PageConfig.cs" />
+    <Compile Include="PageConfigs\PageConfigManage.cs" />
+    <Compile Include="PageConfigs\PageHelper.cs" />
+    <Compile Include="PageConfigs\PageObjectConfig.cs" />
+    <Compile Include="PException.cs" />
+    <Compile Include="Reflectors\CustomTypeHelper.cs" />
+    <Compile Include="Reflectors\ClassHelper.cs" />
+    <Compile Include="Reflectors\PropertyType.cs" />
+    <Compile Include="Reflectors\ReflectionHelper.cs" />
+    <Compile Include="Reflectors\ReflectionHelper1.cs" />
+    <Compile Include="Reflectors\SearchHelper.cs" />
+    <Compile Include="Reflectors\TableAndColumns.cs" />
+    <Compile Include="Reflectors\TableRelation.cs" />
+    <Compile Include="Serializer\JsonHelper.cs" />
+    <Compile Include="Serializer\XmlHelper.cs" />
+    <Compile Include="TEventHandler.cs" />
+    <Compile Include="Editors\MainEditItem.cs" />
+    <Compile Include="Editors\LevcnValidState.cs" />
+    <Compile Include="Editors\EditItemTextBox.cs" />
+    <Compile Include="Editors\LevcnValidTooltip.cs" />
+    <Compile Include="Editors\UserGridView.cs" />
+    <Compile Include="Extends\ExtensionUtil.cs" />
+    <Compile Include="Extends\LinqExtensions.cs" />
+    <Compile Include="Extends\ListExtends.cs" />
+    <Compile Include="Generators\SerializableDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemeManages\ThemeFileManage.cs" />
+    <Compile Include="ThemeManages\TTheme.cs" />
+    <Compile Include="Threads\Worker.cs" />
+    <Compile Include="Threads\ThreadHelper.cs" />
+    <Compile Include="Upload\FileUpload.cs" />
+    <Compile Include="Upload\UploadFileList.cs" />
+    <Compile Include="Upload\UploadFileItem.cs" />
+    <Compile Include="UserAttributes\DefaultOrderAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnAssociationAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnColumnAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnTableAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnValidateAttribute.cs" />
+    <Compile Include="UserAttributes\RelationType.cs" />
+    <Compile Include="Windows\BaseWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ControlEditPanel1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PropTextEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SilverlightControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MultiControlEditors\ControlEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultiControlEditors\ControlEditItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DownloadStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\FormEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TagViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\UploadStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ControlEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UserGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseEntity\SLBaseEntity.csproj">
+      <Project>{d85feef9-9629-430b-814e-de433764756c}</Project>
+      <Name>SLBaseEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\STComponse\SLComponse.csproj">
+      <Project>{AC68EB94-8EC9-479C-858B-AD4E320B5469}</Project>
+      <Name>SLComponse</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BigFields\" />
+    <Folder Include="T\" />
+    <Folder Include="UserControlEditors\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\ProjectCreater\packages\Microsoft.Bcl.Build.1.0.4\tools\Microsoft.Bcl.Build.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

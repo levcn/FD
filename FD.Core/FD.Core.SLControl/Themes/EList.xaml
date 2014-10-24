@@ -1,0 +1,75 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor1="clr-namespace:SLControls.Editor1">
+
+
+<!--    <Style TargetType="editor1:EList">-->
+<!--        <Setter Property="Template">-->
+<!--            <Setter.Value>-->
+<!--                <ControlTemplate TargetType="editor1:EList">-->
+<!--                    <Border Background="{TemplateBinding Background}"-->
+<!--                            BorderBrush="{TemplateBinding BorderBrush}"-->
+<!--                            BorderThickness="{TemplateBinding BorderThickness}">-->
+<!--                        <StackPanel>-->
+<!--                            <ContentControl ContentTemplate="{TemplateBinding HeaderTemplate}"></ContentControl>-->
+<!--                            <ContentControl ContentTemplate="{TemplateBinding ContentTemplate}"></ContentControl>-->
+<!--                        </StackPanel>-->
+<!--                    </Border>-->
+<!--                </ControlTemplate>-->
+<!--            </Setter.Value>-->
+<!--        </Setter>-->
+<!--    </Style>-->
+        <SolidColorBrush x:Key="FocusBrush" Color="#ffbd69" />
+        <!--ItemsControl Style-->
+    <Style TargetType="editor1:EItemsControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                <ControlTemplate TargetType="editor1:EItemsControl">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames
+												Storyboard.TargetName="FocusVisualElement"
+												Storyboard.TargetProperty="Visibility">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border Padding="{TemplateBinding Padding}"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                      <ItemsPresenter Grid.Row="0"/>
+<!--                                <ContentControl Grid.Row="1" ContentTemplate="{TemplateBinding ContentTemplate}"></ContentControl>-->
+                                </Grid>
+                              
+                            </Border>
+                            <Border x:Name="FocusVisualElement" IsHitTestVisible="False"
+								Visibility="Collapsed" BorderThickness="0"
+								BorderBrush="{StaticResource FocusBrush}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+</ResourceDictionary>

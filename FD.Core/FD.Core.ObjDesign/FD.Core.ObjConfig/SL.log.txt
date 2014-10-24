@@ -1,0 +1,152 @@
+Microsoft(R) 生成引擎版本 4.0.30319.33440
+[Microsoft .NET Framework 版本 4.0.30319.34014]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+在此解决方案中一次生成一个项目。若要启用并行生成，请添加“/m”开关。
+生成启动时间为 2014/9/11 9:29:33。
+项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.sln”在节点 1 上(Rebuild 个目标)。
+ValidateSolutionConfiguration:
+  正在生成解决方案配置“Debug|Any CPU”。
+项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.sln”(1)正在节点 1 上生成“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj”(2) (Rebuild 个目标)。
+CoreClean:
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\FD.Core.ObjConfigSL.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\FD.Core.ObjConfigSL.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\fastJSON-SL.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\System.ComponentModel.DataAnnotations.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.Navigation.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\System.Windows.Data.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\fastJSON-SL.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.Navigation.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.Navigation.xml”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\Telerik.Windows.Controls.xml”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ar\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\bg\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ca\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\cs\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\da\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\de\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\el\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\es\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\et\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\eu\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\fi\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\fr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\he\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\hr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\hu\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\id\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\it\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ja\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ko\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\lt\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\lv\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ms\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\nl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\no\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\pl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\pt\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\pt-BR\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ro\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\ru\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\sk\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\sl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\sv\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\th\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\tr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\uk\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\vi\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfigSL.csprojResolveAssemblyReference.cache”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\SilverlightControl1.g.cs”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfigSL.g.resources”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfigSL.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfigSL.pdb”。
+GenerateTargetFrameworkMonikerAttribute:
+正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+CoreCompile:
+  C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /define:TRACE;DEBUG;SILVERLIGHT;SL /highentropyva- /reference:E:\Levcn\FD\Lib\fastJSON-SL.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\mscorlib.dll" /reference:"C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Net.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Windows.Browser.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Windows.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v5.0\System.Xml.dll" /reference:E:\Levcn\FD\Lib\Telerik.Windows.Controls.Navigation.dll /debug+ /debug:full /optimize- /out:obj\Debug\FD.Core.ObjConfigSL.dll /resource:obj\Debug\FD.Core.ObjConfigSL.g.resources /target:library /utf8output CFG\DataObject.cs CFG\DecimalConfig.cs CFG\EDataObjectEx.cs CFG\EntityBase.cs CFG\FwConfig.cs CFG\FwConfigEx.cs CFG\LogicConfig.cs CFG\Property.cs CFG\PropertyValidate.cs CFG\Relation.cs CFG\RelConfig.cs CFG\RelConfigEx.cs CFG\SPParameter.cs CFG\StaticEx.cs CFG\StoredProcedure.cs CFG\VarcharConfig.cs DB\ChangeType.cs DB\EDB.cs DB\EDBCompare.cs DB\EField.cs DB\ETable.cs DB\ICloneable.cs DB\SearchEntry.cs Ex\ObservableCollectionEx.cs GCode\BigFields.cs GCode\FwConfigCodeEx.cs GCode\GClass.cs GCode\GProperty.cs ObjectConfig\SObejct.cs ObjectConfig\SProperty.cs ObjectConfig\SValivate.cs PException.cs Properties\AssemblyInfo.cs SilverlightControl1.xaml.cs TableConfigs\SField.cs TableConfigs\SIndex.cs TableConfigs\STable.cs Validate\ColumnValidataConfig.cs Validate\ValidataConfig.cs E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\SilverlightControl1.g.cs "C:\Users\tht\AppData\Local\Temp\Silverlight,Version=v5.0.AssemblyAttributes.cs"
+CFG\StaticEx.cs(23,29): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+CFG\StaticEx.cs(34,30): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+GCode\GProperty.cs(73,30): warning CS0168: 声明了变量“e”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+_CopyFilesMarkedCopyLocal:
+  正在将文件从“E:\Levcn\FD\Lib\fastJSON-SL.dll”复制到“Bin\Debug\fastJSON-SL.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll”复制到“Bin\Debug\System.ComponentModel.DataAnnotations.dll”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.Navigation.dll”复制到“Bin\Debug\Telerik.Windows.Controls.Navigation.dll”。
+  正在将文件从“E:\Levcn\FD\Lib\System.Windows.Data.dll”复制到“Bin\Debug\System.Windows.Data.dll”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.dll”复制到“Bin\Debug\Telerik.Windows.Controls.dll”。
+  正在将文件从“E:\Levcn\FD\Lib\fastJSON-SL.pdb”复制到“Bin\Debug\fastJSON-SL.pdb”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.Navigation.pdb”复制到“Bin\Debug\Telerik.Windows.Controls.Navigation.pdb”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.Navigation.xml”复制到“Bin\Debug\Telerik.Windows.Controls.Navigation.xml”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.pdb”复制到“Bin\Debug\Telerik.Windows.Controls.pdb”。
+  正在将文件从“E:\Levcn\FD\Lib\Telerik.Windows.Controls.xml”复制到“Bin\Debug\Telerik.Windows.Controls.xml”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ar\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ar\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\bg\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\bg\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ca\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ca\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\cs\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\cs\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\da\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\da\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\de\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\de\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\el\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\el\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\es\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\es\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\et\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\et\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\eu\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\eu\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\fi\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\fi\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\fr\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\fr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\he\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\he\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\hr\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\hr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\hu\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\hu\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\id\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\id\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\it\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\it\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ja\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ja\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ko\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ko\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\lt\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\lt\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\lv\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\lv\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ms\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ms\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\nl\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\nl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\no\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\no\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\pl\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\pl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\pt\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\pt\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\pt-BR\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\pt-BR\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ro\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ro\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\ru\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\ru\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\sk\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\sk\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\sl\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\sl\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\sr-Cyrl-CS\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\sr-Latn-CS\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\sv\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\sv\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\th\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\th\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\tr\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\tr\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\uk\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\uk\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\vi\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\vi\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\zh-Hans\System.ComponentModel.DataAnnotations.resources.dll”。
+  正在将文件从“C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll”复制到“Bin\Debug\zh-Hant\System.ComponentModel.DataAnnotations.resources.dll”。
+CopyFilesToOutputDirectory:
+  正在将文件从“obj\Debug\FD.Core.ObjConfigSL.dll”复制到“Bin\Debug\FD.Core.ObjConfigSL.dll”。
+  FD.Core.ObjConfigSL -> E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\FD.Core.ObjConfigSL.dll
+  正在将文件从“obj\Debug\FD.Core.ObjConfigSL.pdb”复制到“Bin\Debug\FD.Core.ObjConfigSL.pdb”。
+CopyBinriesToReferenceFolder:
+  CopyBinaries from: E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig  to: E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\
+  DEBUG INFO: ConfigSubFolder: \
+  E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\
+  正在将文件从“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\FD.Core.ObjConfigSL.dll”复制到“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\FD.Core.ObjConfigSL.dll”。
+  正在将文件从“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\Bin\Debug\FD.Core.ObjConfigSL.pdb”复制到“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\FD.Core.ObjConfigSL.pdb”。
+已完成生成项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj”(Rebuild 个目标)的操作。
+已完成生成项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.sln”(Rebuild 个目标)的操作。
+
+已成功生成。
+
+“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.sln”(Rebuild 目标) (1) ->
+“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj”(Rebuild 目标) (2) ->
+(CoreCompile 目标) -> 
+  CFG\StaticEx.cs(23,29): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+  CFG\StaticEx.cs(34,30): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+  GCode\GProperty.cs(73,30): warning CS0168: 声明了变量“e”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj]
+
+    3 个警告
+    0 个错误
+
+已用时间 00:00:01.59

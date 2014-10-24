@@ -1,0 +1,377 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor1="clr-namespace:SLControls.Editor1"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:chromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Telerik.Windows.Controls"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FD.Core.SLControl;Component/Themes/EditItemsStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <SolidColorBrush x:Key="PickerForeground_Normal" Color="#FF000000" />
+    <SolidColorBrush x:Key="ControlOuterBorder_Normal" Color="#FF848484" />
+    <SolidColorBrush x:Key="PickerBackground_Normal" Color="#FFFFFFFF" />
+    <CornerRadius x:Key="ControlOuterBorder_CornerRadius">1</CornerRadius>
+    <CornerRadius x:Key="SplitButton_SpanCornerRadius">1</CornerRadius>
+    <SolidColorBrush x:Key="ControlOuterBorder_MouseOver" Color="#FFFFC92B" />
+    <SolidColorBrush x:Key="ControlOuterBorder_Disabled" Color="#FF989898" />
+    <SolidColorBrush x:Key="ControlBackground_Disabled" Color="#FFE0E0E0" />
+    <telerik:Office_BlackTheme x:Key="Theme" />
+    <SolidColorBrush x:Key="ControlOuterBorder_Focused" Color="#FFFFC92B" />
+    <SolidColorBrush x:Key="ControlInnerBorder_Focused" Color="Transparent" />
+    <CornerRadius x:Key="SplitButton_SpanInnerCornerRadius">0</CornerRadius>
+
+
+
+    <SolidColorBrush x:Key="ControlBackground_ReadOnly" Color="#5EC9C9C9" />
+
+    <Style x:Key="RadWatermarkTextBoxStyle" TargetType="telerik:RadWatermarkTextBox">
+
+        <Setter Property="Foreground" Value="{StaticResource PickerForeground_Normal}" />
+        <Setter Property="Padding" Value="5 3" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="AllowDrop" Value="True" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlOuterBorder_Normal}" />
+        <Setter Property="Background" Value="{StaticResource PickerBackground_Normal}" />
+        <Setter Property="BorderThickness" Value="1" />
+
+
+        <Setter Property="TabNavigation" Value="Once" />
+
+
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadWatermarkTextBox">
+                    <Grid x:Name="RootElement" Cursor="IBeam">
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity">
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.150" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.150">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Opacity">
+                                            <LinearDoubleKeyFrame KeyTime="0:0:0.115" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MouseOverVisual" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement" />
+
+                                        <DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ContentElement" />
+
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+<!--                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ReadOnlyVisualElement" />-->
+                                        <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BrowserGrid" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border123" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <!--                                        <DoubleAnimation To="1" Duration="0" Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="Opacity" />-->
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="WatermarkStates">
+                                <VisualState x:Name="WatermarkHidden">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="WatermarkVisualElement" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="WatermarkVisible" />
+                            </VisualStateGroup>
+
+
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid"/>
+                                <VisualState x:Name="InvalidUnfocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="InvalidFocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationTooltip" Storyboard.TargetProperty="IsOpen">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <system:Boolean>True</system:Boolean>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+
+
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Grid x:Name="BrowserGrid" Opacity="1">
+                        <Border x:Name="Border123"
+								BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{StaticResource ControlOuterBorder_CornerRadius}"
+                                Opacity="1" />
+                        <Border x:Name="ReadOnlyVisualElement"
+                                Background="{StaticResource ControlBackground_ReadOnly}"
+                                CornerRadius="{StaticResource ControlOuterBorder_CornerRadius}"
+                                Opacity="0" />
+                        <Border x:Name="MouseOverVisual" Grid.RowSpan="2" Grid.ColumnSpan="2" CornerRadius="{StaticResource SplitButton_SpanCornerRadius}"
+								BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource ControlOuterBorder_MouseOver}"
+								IsHitTestVisible="False" Opacity="0" Visibility="Collapsed" />
+                        <Border x:Name="DisabledVisualElement"
+                                BorderBrush="{StaticResource ControlOuterBorder_Disabled}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{StaticResource ControlBackground_Disabled}"
+                                CornerRadius="{StaticResource ControlOuterBorder_CornerRadius}"
+                                IsHitTestVisible="False" Opacity="0" />
+                        
+                        <Border x:Name="FocusVisual" Opacity="0" IsHitTestVisible="False" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+                                BorderBrush="{StaticResource ControlOuterBorder_Focused}"
+                                CornerRadius="{StaticResource SplitButton_SpanCornerRadius}" BorderThickness="{TemplateBinding BorderThickness}">
+                        
+                        <Border BorderBrush="{StaticResource ControlInnerBorder_Focused}"
+                                    CornerRadius="{StaticResource SplitButton_SpanInnerCornerRadius}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" />
+                        </Border>
+                        </Grid>
+                        <ScrollViewer x:Name="ContentElement" 
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      BorderThickness="0" 
+									  Cursor="Arrow"
+                                      IsTabStop="False"
+                                      Padding="{TemplateBinding Padding}" 
+									  Margin="{TemplateBinding BorderThickness}"
+                                      telerik:StyleManager.Theme="{StaticResource Theme}" />
+
+
+
+                        
+
+                        <ContentControl x:Name="WatermarkVisualElement" IsTabStop="False"
+                                        Opacity="0.5"
+                                        FontStyle="Italic"
+                                Content="{TemplateBinding WatermarkContent}"
+                                ContentTemplate="{TemplateBinding WatermarkTemplate}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                IsHitTestVisible="False"
+                                Padding="{TemplateBinding Padding}"
+
+				Foreground="{TemplateBinding Foreground}"
+				Margin="2 0 0 0">
+                            <!--                                BorderThickness="{TemplateBinding BorderThickness}"-->
+                            <ContentControl.Template>
+                                <ControlTemplate TargetType="ContentControl">
+<!--                                    <Border BorderThickness="{TemplateBinding BorderThickness}">-->
+                                        <ContentPresenter Margin="{TemplateBinding Padding}" />
+<!--                                    </Border>-->
+                                </ControlTemplate>
+                            </ContentControl.Template>
+                        </ContentControl>
+
+
+                        <chromes:ValidationTooltip x:Name="ValidationTooltip" 
+								Grid.ColumnSpan="2" Visibility="Collapsed"
+								telerik:StyleManager.Theme="{StaticResource Theme}"
+								TooltipPlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" TooltipContent="{Binding Path=(Validation.Errors), RelativeSource={RelativeSource TemplatedParent}}">
+                        </chromes:ValidationTooltip>
+
+
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--telerik:RadWatermarkTextBox-->
+    <Style TargetType="telerik:RadWatermarkTextBox" x:Key="RadWatermarkTextBoxStyle1" BasedOn="{StaticResource RadWatermarkTextBoxStyle}" />
+
+
+
+
+    <Style TargetType="editor1:EditItemText">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="editor1:EditItemText">
+					<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}" >
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="FocusStates">
+								<VisualState x:Name="Unfocused"/>
+								<VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Text">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState> 
+                            </VisualStateGroup>
+							<VisualStateGroup x:Name="BrowsStates">
+								<VisualState x:Name="Edit"/>
+								<VisualState x:Name="Brows">
+									<Storyboard>
+<!--										<ColorAnimation Duration="0" To="#00000000" Storyboard.TargetProperty="(Control.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="CheckInDate" d:IsOptimized="True"/>-->
+<!--                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Img_Grid" >-->
+<!--											<DiscreteObjectKeyFrame KeyTime="0">-->
+<!--												<DiscreteObjectKeyFrame.Value>-->
+<!--													<Visibility>Collapsed</Visibility>-->
+<!--												</DiscreteObjectKeyFrame.Value>-->
+<!--											</DiscreteObjectKeyFrame>-->
+<!--										</ObjectAnimationUsingKeyFrames>-->
+<!--                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Text_Grid">-->
+<!--											<DiscreteObjectKeyFrame KeyTime="0">-->
+<!--												<DiscreteObjectKeyFrame.Value>-->
+<!--													<Visibility>Collapsed</Visibility>-->
+<!--												</DiscreteObjectKeyFrame.Value>-->
+<!--											</DiscreteObjectKeyFrame>-->
+<!--										</ObjectAnimationUsingKeyFrames>-->
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="ValidationStates">
+								<VisualState x:Name="Valid">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Image_Checked">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+										<!--                                        <DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckInDate"/>-->
+									</Storyboard>
+								</VisualState>
+                                
+								<VisualState x:Name="InvalidUnfocused">
+									<Storyboard>
+										<!--                                        <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckInDate"/>-->
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="InValidBorder">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Image_UnChecked">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="InvalidFocused">
+									<Storyboard>
+										<!--                                        <DoubleAnimation Duration="0" To="0.2" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckInDate"/>-->
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Text">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="InValidBorder">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Validation_Image_Focused">
+											<DiscreteObjectKeyFrame KeyTime="0">
+												<DiscreteObjectKeyFrame.Value>
+													<Visibility>Visible</Visibility>
+												</DiscreteObjectKeyFrame.Value>
+											</DiscreteObjectKeyFrame>
+										</ObjectAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Border x:Name="InValidBorder" BorderThickness="0" BorderBrush="Red" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+                            <telerik:RadWatermarkTextBox IsReadOnly="{TemplateBinding IsReadOnly}" Height="{TemplateBinding TextBoxHeight}" Grid.Row="0" Grid.Column="0" x:Name="CheckInDate"
+								Text="{Binding Text, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource RadWatermarkTextBoxStyle1}" />
+                            <Grid Grid.Row="0" Grid.Column="1" x:Name="Validation_Img_Grid" >
+							<Image VerticalAlignment="Center" Margin="3" x:Name="Validation_Image_Checked" Source="/FD.Core.SLControl;Component/Images/action_check.png" Visibility="Collapsed" Stretch="None"/>
+							<Image VerticalAlignment="Center" Margin="3" x:Name="Validation_Image_UnChecked" Source="/FD.Core.SLControl;Component/Images/action_delete.png" Visibility="Collapsed" Stretch="None"/>
+							<Image VerticalAlignment="Center" Margin="3" x:Name="Validation_Image_Focused"  Source="/FD.Core.SLControl;Component/Images/star.png" Visibility="Collapsed" Stretch="None"/>
+                            </Grid>
+                            <Grid x:Name="Validation_Text_Grid" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" >
+							<TextBlock Style="{StaticResource InValidTextBlock}" Margin="2" x:Name="Validation_Text" Text="{TemplateBinding Memo}" Visibility="Collapsed"/>
+                            </Grid>
+                        </Grid>
+						<!--                        Text="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource TemplatedParent},Mode=OneWay}" -->
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

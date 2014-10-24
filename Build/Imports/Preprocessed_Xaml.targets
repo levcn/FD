@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="PreprocessXaml" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Import Project="Telerik.MSBuildTasks.targets" Condition=" '$(TelerikMSBuildTasksImported)' != 'true' " />
+
+	<PropertyGroup>
+		<!--<CoreCompileDependsOn Condition=" '$(WPF)' == 'true' ">
+			$(CoreCompileDependsOn);
+			GetCurrentPlatform;
+			PreprocessXaml;
+			CreateItemsForWPF;
+			CreateItemsForSilverlight;
+		</CoreCompileDependsOn>-->
+
+		<GenerateVersionSpecificTheme Condition=" '$(GenerateVersionSpecificTheme)' == '' ">false</GenerateVersionSpecificTheme>
+        <GenerateImplicitStyles Condition=" '$(GenerateImplicitStyles)' == '' ">false</GenerateImplicitStyles>
+		<StripStyleManagerAssemblyName Condition=" '$(StripStyleManagerAssemblyName)' == '' ">Telerik.Windows.Controls</StripStyleManagerAssemblyName>
+		<StripStyleManagerNamespaceUri Condition=" '$(StripStyleManagerNamespaceUri)' == '' ">http://schemas.telerik.com/2008/xaml/presentation</StripStyleManagerNamespaceUri>
+
+		<BuildDependsOn>
+			GenerateVersionInfo;
+			GetCurrentPlatform;
+			PreprocessXaml;
+			$(BuildDependsOn);
+		</BuildDependsOn>
+
+		<CleanDependsOn>
+			$(CleanDependsOn);
+			CleanPreprocessedFiles;
+		</CleanDependsOn>
+	</PropertyGroup>
+
+	<Target Name="CleanPreprocessedFiles">
+		<Delete Files="%(PreprocessedXaml.OutputFile)" ContinueOnError="true" />
+	</Target>
+
+	<Target Name="CreateLastBuildPlatformFile" Condition="!Exists('$(ProjectDir)Themes\LastBuildPlatform.txt')">
+		<CreateItem Include="$(ProjectDir)Themes\LastBuildPlatform.txt" AdditionalMetadata="Generator=MSBuild:None" />
+		<WriteLinesToFile File="$(ProjectDir)Themes\LastBuildPlatform.txt" Lines="Silverlight" Condition="'$(Silverlight)'=='true'" />
+		<WriteLinesToFile File="$(ProjectDir)Themes\LastBuildPlatform.txt" Lines="WPF" Condition="'$(WPF)'=='true'" />
+	</Target>
+
+	<Target Name="GetCurrentPlatform" DependsOnTargets="CreateLastBuildPlatformFile">
+		<ReadLinesFromFile File="$(ProjectDir)Themes\LastBuildPlatform.txt">
+			<Output PropertyName="CurrentBuildPlatform" TaskParameter="Lines"/>
+		</ReadLinesFromFile>
+		<Message Text="Read from file -> $(ProjectDir)Themes\LastBuildPlatform.txt" />
+		<Message Text="CurrentBuildPlatform -> $(CurrentBuildPlatform)" />
+	</Target>
+
+	<!--<Target Name="DeleteXamlWPF" DependsOnTargets="GetCurrentPlatform" Condition=" '$(WPF)' == 'true' ">
+		<CallTarget Targets="CleanPreprocessedFiles" Condition=" '$(CurrentBuildPlatform)' == 'Silverlight' " ContinueOnError="true" />
+		<WriteLinesToFile Lines="WPF" File="$(ProjectDir)Themes\LastBuildPlatform.txt" Overwrite="true"  />
+	</Target>
+
+	<Target Name="DeleteXamlSilverlight" DependsOnTargets="GetCurrentPlatform" Condition=" '$(Silverlight)' == 'true' ">
+		<CallTarget Targets="CleanPreprocessedFiles" Condition=" '$(CurrentBuildPlatform)' == 'WPF' " ContinueOnError="true" />
+		<WriteLinesToFile Lines="Silverlight" File="$(ProjectDir)Themes\LastBuildPlatform.txt" Overwrite="true"  />
+	</Target>-->
+
+	<Target Name="PreparePreprocessXamlItems">
+		<ItemGroup>
+			<PreprocessedXaml Condition=" '%(PreprocessedXaml.OutputFile)' == '' ">
+				<OutputFile>$([System.String]::Concat('%(PreprocessedXaml.RelativeDir)%(Filename)%(Extension)', '').Replace('_x.xaml', '.xaml'))</OutputFile>
+			</PreprocessedXaml>
+			<PreprocessedXaml Condition=" '%(PreprocessedXaml.ThemeType)' == '' AND '%(PreprocessedXaml.Generator)' != 'MSBuild:Compile' ">
+				<ThemeType>%(PreprocessedXaml.Generator)</ThemeType>
+			</PreprocessedXaml>
+			
+			<PreprocessedXaml Condition=" '%(PreprocessedXaml.ThemeType)' == '' ">
+				<ThemeType>$(ThemeType)</ThemeType>
+			</PreprocessedXaml>
+		</ItemGroup>
+	</Target>
+
+	<PropertyGroup>
+		<PreprocessXamlDependsOn Condition="'$(WPF)'=='true'">
+			PreprocessXamlForCustomThemes;
+			PreparePreprocessXamlItems;
+			PreprocessXamlAtThemesFolder;
+			CreateItemsForWPF;
+		</PreprocessXamlDependsOn>
+
+		<PreprocessXamlDependsOn Condition=" '$(Silverlight)' == 'true' AND '$(IsExternalTheme)' == '' ">
+			PreparePreprocessXamlItems;
+			PreparePreprocessedFilesFolders;
+			PreprocessXamlAtOutputFolder;
+			CreateItemsForSilverlight;
+		</PreprocessXamlDependsOn>
+
+		<PreprocessXamlDependsOn Condition=" '$(Silverlight)' == 'true' AND '$(IsExternalTheme)' != '' ">
+			PreparePreprocessXamlItems;
+			PreparePreprocessedFilesFolders;
+			PreprocessXamlAtThemesFolder;
+			CreateItemsForSilverlightFromThemesFolder;
+		</PreprocessXamlDependsOn>
+	</PropertyGroup>
+
+	<Target Name="PreprocessXamlForCustomThemes" Condition=" '$(VersionSpecificThemes)' == 'true' ">
+		<ItemGroup>
+			<AllXamlFilesUnderProject Include="$(ProjectDir)**\*.xaml" />
+		</ItemGroup>
+
+		<PropertyGroup>
+			<AssemblyPublicKeyToken>5803cfa389c90ce7</AssemblyPublicKeyToken>
+			<Replacement>$1,Version=$(VersionString),Culture=neutral,PublicKeyToken=$(AssemblyPublicKeyToken);$5</Replacement>
+		</PropertyGroup>
+
+		<Replace
+			Files="@(AllXamlFilesUnderProject)"
+			Pattern="(&lt;ResourceDictionary\s*Source=&quot;/Telerik\.Windows[^,;]*)((;)|(,Version=[^;]*;))(component/[^&quot;]*&quot; /&gt;)"
+			Replacement="$(Replacement)"
+			IgnoreCase="true"
+			Multiline="true"
+		/>
+
+	</Target>
+
+	<Target Name="PreprocessXaml" DependsOnTargets="$(PreprocessXamlDependsOn)" />
+
+	<Target Name="PreparePreprocessedFilesFolders" Inputs="@(PreprocessedXaml);@(PreprocessedXamlInclude)" Outputs="@(PreprocessedXaml -> '$(ProjectDir)$(OutputPath)%(OutputFile)')">		
+		<MakeDir Directories="$([System.IO.Path]::GetDirectoryName( $(ProjectDir)$(OutputPath)%(PreprocessedXaml.OutputFile) ))" ContinueOnError="true" />
+	</Target>
+	
+	<Target Name="PreprocessXamlAtOutputFolder" Inputs="@(PreprocessedXaml);@(PreprocessedXamlInclude)" Outputs="@(PreprocessedXaml -> '$(ProjectDir)$(OutputPath)%(OutputFile)')">
+		<PreprocessXaml SourceFile="%(PreprocessedXaml.FullPath)"
+					AssemblyVersion="$(VersionString)"
+					GenerateVersionSpecificTheme="$(GenerateVersionSpecificTheme)"
+                    GenerateImplicitStyles="$(GenerateImplicitStyles)"
+					IsExternalTheme="$(IsExternalTheme)"
+					DestinationFile="$(ProjectDir)$(OutputPath)%(PreprocessedXaml.OutputFile)"
+					ThemeType="%(PreprocessedXaml.ThemeType)"
+				    StripStyleManagerAssemblyName="$(StripStyleManagerAssemblyName)"
+					StripStyleManagerNamespaceUri="$(StripStyleManagerNamespaceUri)"
+					WPF="$(WPF)" WPF35="$(WPF35)" Silverlight="$(Silverlight)" SLPlatform="$(SLPlatform)" />
+	</Target>
+
+	<Target Name="PreprocessXamlAtThemesFolder" Inputs="@(PreprocessedXaml);@(PreprocessedXamlInclude)" Outputs="@(PreprocessedXaml -> '$(ProjectDir)%(OutputFile)')">
+		<PreprocessXaml SourceFile="%(PreprocessedXaml.FullPath)"
+							AssemblyVersion="$(VersionString)"
+							GenerateVersionSpecificTheme="$(GenerateVersionSpecificTheme)"
+                            GenerateImplicitStyles="$(GenerateImplicitStyles)"
+							IsExternalTheme="$(IsExternalTheme)"
+							DestinationFile="$(ProjectDir)%(PreprocessedXaml.OutputFile)"
+							ThemeType="%(PreprocessedXaml.ThemeType)"
+						    StripStyleManagerAssemblyName="$(StripStyleManagerAssemblyName)"
+						    StripStyleManagerNamespaceUri="$(StripStyleManagerNamespaceUri)"	
+							WPF="$(WPF)" WPF35="$(WPF35)" Silverlight="$(Silverlight)" SLPlatform="$(SLPlatform)" />
+	</Target>	
+
+	<Target Name="CreateItemsForWPF">
+		<Message Text="DEBUG INFO - NoXaml: $(NoXaml)" Importance="high" />
+		<Message Text="DEBUG INFO - GenerateImplicitStyles: $(GenerateImplicitStyles)" Importance="high" />
+		<Message Text="DEBUG INFO - IsThemesBuild: $(IsThemesBuild)" Importance="high" />
+		<Message Text="DEBUG INFO - StripStyleManagerAssemblyName: $(StripStyleManagerAssemblyName)" Importance="high" />
+		<Message Text="DEBUG INFO - StripStyleManagerNamespaceUri: $(StripStyleManagerNamespaceUri)" Importance="high" />
+		<CreateItem
+				Include="%(PreprocessedXaml.OutputFile)"
+				AdditionalMetadata="Generator=MSBuild:Compile;SubType=Designer"
+				Condition="!('$(VersionSpecificThemes)' == 'true' AND $([System.String]::Concat('%(PreprocessedXaml.OutputFile)', '').EndsWith('Themes\Generic.xaml', System.StringComparison.InvariantCultureIgnoreCase))) ">
+			<Output TaskParameter="Include" ItemName="Page" />
+		</CreateItem>
+	</Target>
+
+	<Target Name="CreateItemsForSilverlight">
+		<Message Text="DEBUG INFO - NoXaml: $(NoXaml)" Importance="high" />
+		<Message Text="DEBUG INFO - GenerateImplicitStyles: $(GenerateImplicitStyles)" Importance="high" />
+		<Message Text="DEBUG INFO - IsThemesBuild: $(IsThemesBuild)" Importance="high" />
+		<Message Text="DEBUG INFO - StripStyleManagerAssemblyName: $(StripStyleManagerAssemblyName)" Importance="high" />
+		<Message Text="DEBUG INFO - StripStyleManagerNamespaceUri: $(StripStyleManagerNamespaceUri)" Importance="high" />
+		<Message Text="CreateItemsForSilverlight: $(OutputPath)%(PreprocessedXaml.OutputFile)" Importance="high" />
+		<CreateItem Include="$(OutputPath)%(PreprocessedXaml.OutputFile)" AdditionalMetadata="Generator=MSBuild:MarkupCompilePass1;SubType=Designer;Link=%(PreprocessedXaml.OutputFile)">
+			<Output TaskParameter="Include" ItemName="Resource" />
+		</CreateItem>
+	</Target>
+
+	<Target Name="CreateItemsForSilverlightFromThemesFolder">
+		<Message Text="DEBUG INFO - GenerateImplicitStyles: $(GenerateImplicitStyles)" Importance="high" />
+		<Message Text="CreateItemsForSilverlight: %(PreprocessedXaml.OutputFile)" Importance="high" />
+		<CreateItem Include="%(PreprocessedXaml.OutputFile)" AdditionalMetadata="Generator=MSBuild:MarkupCompilePass1;SubType=Designer">
+			<Output TaskParameter="Include" ItemName="Resource" />
+		</CreateItem>
+	</Target>
+</Project>

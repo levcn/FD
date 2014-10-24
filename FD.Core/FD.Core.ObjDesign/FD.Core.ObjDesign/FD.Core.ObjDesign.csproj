@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectCreater</RootNamespace>
+    <AssemblyName>ProjectCreater</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="fastJSON">
+      <HintPath>..\..\..\Lib\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="DB\ColumnInfo.cs" />
+    <Compile Include="DB\DBHelper.cs" />
+    <Compile Include="Settings\BasePageHabitConfig.cs" />
+    <Compile Include="Settings\CodeStyle.cs" />
+    <Compile Include="Settings\DBConfig.cs" />
+    <Compile Include="Settings\MainPageConfig.cs" />
+    <Compile Include="Settings\ObjectMainEditConfig.cs" />
+    <Compile Include="Settings\SettingConfig.cs" />
+    <Compile Include="Settings\UserHabit.cs" />
+    <Compile Include="Settings\UserHabitEx.cs" />
+    <Compile Include="Settings\VersionManage.cs" />
+    <Compile Include="SObjects\AddNewVersionWindow.xaml.cs">
+      <DependentUpon>AddNewVersionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\BaseGridViewPanel.cs" />
+    <Compile Include="SObjects\EditDDLContent.xaml.cs">
+      <DependentUpon>EditDDLContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\EditDictWindow.xaml.cs">
+      <DependentUpon>EditDictWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectBaseEdit.xaml.cs">
+      <DependentUpon>SObjectBaseEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectMainEdit.xaml.cs">
+      <DependentUpon>SObjectMainEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectList.xaml.cs">
+      <DependentUpon>SObjectList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectListContextMenuHelper.cs" />
+    <Compile Include="SObjects\SObjectMainPage.xaml.cs">
+      <DependentUpon>SObjectMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectPanel.xaml.cs">
+      <DependentUpon>SObjectPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SBigFieldPropList.xaml.cs">
+      <DependentUpon>SBigFieldPropList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectPropList.xaml.cs">
+      <DependentUpon>SObjectPropList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SObjectRelList.xaml.cs">
+      <DependentUpon>SObjectRelList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\Test.cs" />
+    <Compile Include="SObjects\GenerateUpdateSqlWindow.xaml.cs">
+      <DependentUpon>GenerateUpdateSqlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\EditRelWindow.xaml.cs">
+      <DependentUpon>EditRelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\TEventHandler.cs" />
+    <Compile Include="SObjects\EditDBConfigWindow.xaml.cs">
+      <DependentUpon>EditDBConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SettingConfigWindow.xaml.cs">
+      <DependentUpon>SettingConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\TextMessageBox.xaml.cs">
+      <DependentUpon>TextMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\UIConfigs\CodeStyleConfig.xaml.cs">
+      <DependentUpon>CodeStyleConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SPMainEdit.xaml.cs">
+      <DependentUpon>SPMainEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SPBaseEdit.xaml.cs">
+      <DependentUpon>SPBaseEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SPPropList.xaml.cs">
+      <DependentUpon>SPPropList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SObjects\SPList.xaml.cs">
+      <DependentUpon>SPList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\dbTest.cs" />
+    <Compile Include="Test\NewFolder1\BaseListEntity.cs" />
+    <Compile Include="Test\NewFolder1\SYS_Department.cs" />
+    <Compile Include="Test\NewFolder1\SYS_Role.cs" />
+    <Compile Include="Test\NewFolder1\SYS_User.cs" />
+    <Compile Include="Test\NewFolder1\SYS_UserDepartmentRel.cs" />
+    <Compile Include="Test\NewFolder1\SYS_UserDetail.cs" />
+    <Compile Include="Test\NewFolder1\SYS_UserRoleInfo.cs" />
+    <Compile Include="Test\NewFolder1\SYS_UserType.cs" />
+    <Compile Include="Threading\PCTask.cs" />
+    <Compile Include="Threading\PCThreadPool.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SObjects\AddNewVersionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\EditDDLContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\EditDictWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SObjectBaseEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SObjectMainEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SObjectList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SObjectMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SObjectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SBigFieldPropList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SObjectPropList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SObjectRelList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\GenerateUpdateSqlWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\EditRelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\EditDBConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SettingConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\TextMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\UIConfigs\CodeStyleConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SObjects\SPMainEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SPBaseEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SPPropList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SObjects\SPList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FD.Core.FW\FD.Core.FW.csproj">
+      <Project>{ba7feedf-c773-4017-b0e5-051455f4e98c}</Project>
+      <Name>FD.Core.FW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj">
+      <Project>{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}</Project>
+      <Name>FD.Core.ObjConfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FD.Core.ObjDesign.WPFControls\FD.Core.ObjDesign.WPFControls.csproj">
+      <Project>{6724ebeb-5ac8-48c5-938b-ae37d3378fd5}</Project>
+      <Name>FD.Core.ObjDesign.WPFControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControlTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

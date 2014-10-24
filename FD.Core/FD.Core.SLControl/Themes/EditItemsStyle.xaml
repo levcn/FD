@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:editor1="clr-namespace:SLControls.Editor1">
+    <editor1:Converter1 x:Key="aaa" />
+    <Brush x:Key="InValidForeground">Red</Brush>
+
+
+    <Style x:Key="InValidTextBlock" TargetType="TextBlock" >
+        <Setter Property="Foreground" Value="Red"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+</ResourceDictionary>

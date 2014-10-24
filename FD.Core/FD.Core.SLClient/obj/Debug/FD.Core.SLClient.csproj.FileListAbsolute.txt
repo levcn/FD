@@ -1,0 +1,5 @@
+E:\Levcn\FD\FD.Core\FD.Core.SLClient\Bin\Debug\FD.Core.SLClient.dll
+E:\Levcn\FD\FD.Core\FD.Core.SLClient\Bin\Debug\FD.Core.SLClient.pdb
+E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.csprojResolveAssemblyReference.cache
+E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.dll
+E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.pdb

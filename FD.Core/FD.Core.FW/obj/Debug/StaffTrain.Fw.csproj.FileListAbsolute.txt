@@ -1,0 +1,15 @@
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\ServerFw.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\ServerFw.pdb
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\Aspose.Words.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\fastJSON.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\Newtonsoft.Json.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\NPOI.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\NPOI.OOXML.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\NPOI.OpenXml4Net.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\fastJSON.pdb
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\Newtonsoft.Json.xml
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Debug\NPOI.xml
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\obj\Debug\ServerFw.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\obj\Debug\ServerFw.pdb

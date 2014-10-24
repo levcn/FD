@@ -1,0 +1,34 @@
+﻿<wpfControls:BaseWindow x:Class="ProjectCreater.SObjects.AddNewVersionWindow"
+        x:Name="aa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfControls="clr-namespace:WPFControls;assembly=WPFControls"
+        Title="AddNewVersionWindow" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Text="名称："></TextBlock>
+            <TextBox Grid.Column="1" Width="200" HorizontalAlignment="Left" Text="{Binding ElementName=aa,Path=VersionName,Mode=TwoWay}"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Right" Text="备注："></TextBlock>
+            <TextBox Grid.Column="1" AcceptsReturn="True" Height="60" Width="200" HorizontalAlignment="Left" Text="{Binding ElementName=aa,Path=Remark}"></TextBox>
+        </Grid>
+        <StackPanel Grid.Row="2" Margin="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Right">
+            <Button Content="确定" Click="OnResult1" IsDefault="true" Margin="10" Width="50"></Button>
+            <Button Content="取消(_C)" Click="OnResult2" IsCancel="True"  Margin="10" Width="50"></Button>
+        </StackPanel>
+    </Grid>
+</wpfControls:BaseWindow>

@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BFF1900-4707-4663-B649-E2A80A8E98EF}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FD.Core.SLControl</RootNamespace>
+    <AssemblyName>FD.Core.SLControl</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ActiveMethod\ActiveHelper.cs" />
+    <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Cache\CacheItem.cs" />
+    <Compile Include="Cache\CacheManage.cs" />
+    <Compile Include="Cache\OverDateEventArgs.cs" />
+    <Compile Include="Client\Doubles.cs" />
+    <Compile Include="Collection\TList.cs" />
+    <Compile Include="Controls\BaseRichControl.cs" />
+    <Compile Include="Controls\ControlEditPanel.cs" />
+    <Compile Include="Controls\ControlEditPanel1.xaml.cs">
+      <DependentUpon>ControlEditPanel1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EditableAttribute.cs" />
+    <Compile Include="Controls\GridView.cs" />
+    <Compile Include="Controls\LoginPanel.cs" />
+    <Compile Include="Controls\MessageHelper.cs" />
+    <Compile Include="Controls\NavigatorMenu.cs" />
+    <Compile Include="Controls\PropTextEdit.xaml.cs">
+      <DependentUpon>PropTextEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropValidEditor.xaml.cs">
+      <DependentUpon>PropValidEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SilverlightControl1.xaml.cs">
+      <DependentUpon>SilverlightControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClientTools\ActionCallBack.cs" />
+    <Compile Include="DataClientTools\ActionCmd.cs" />
+    <Compile Include="DataClientTools\ActionHelper.cs" />
+    <Compile Include="DataClientTools\ActionType.cs" />
+    <Compile Include="DataClientTools\ActionTypeConst.cs" />
+    <Compile Include="DataClientTools\Configs\ActionSetting.cs" />
+    <Compile Include="DataClientTools\CustomCmd.cs" />
+    <Compile Include="DataClientTools\DACommand.cs" />
+    <Compile Include="DataClientTools\DataAccess.cs" />
+    <Compile Include="DataClientTools\PageInfo.cs" />
+    <Compile Include="DataClientTools\PagerListResult.cs" />
+    <Compile Include="DataClientTools\Position.cs" />
+    <Compile Include="DataClientTools\PostArgs.cs" />
+    <Compile Include="DataClientTools\PostResult.cs" />
+    <Compile Include="DataClientTools\ResultData.cs" />
+    <Compile Include="DataClientTools\SearchEntry.cs" />
+    <Compile Include="DataClientTools\SelectAcionParams.cs" />
+    <Compile Include="DataClientTools\STParamete.cs" />
+    <Compile Include="DataClientTools\WattingConfig.cs" />
+    <Compile Include="Download\DownLoadEventArgs.cs" />
+    <Compile Include="Download\DownloadFileItem.cs" />
+    <Compile Include="Download\DownloadFileList.cs" />
+    <Compile Include="Download\DownLoadState.cs" />
+    <Compile Include="Download\ExceptionActions.cs" />
+    <Compile Include="Download\ExceptionEventArgs.cs" />
+    <Compile Include="Download\FileDownload.cs" />
+    <Compile Include="Download\HttpWebClient.cs" />
+    <Compile Include="Download\ThreadCallbackHandler.cs" />
+    <Compile Include="Download\ThreadProcessEventArgs.cs" />
+    <Compile Include="Editor1\Converter1.cs" />
+    <Compile Include="Editor1\ECheckBox.cs" />
+    <Compile Include="Editor1\EditItemDateTime.cs" />
+    <Compile Include="Editor1\EditItemText.cs" />
+    <Compile Include="Editor1\EditLayer.cs" />
+    <Compile Include="Editor1\EditorPanel.cs" />
+    <Compile Include="Editor1\EditTextBox.cs" />
+    <Compile Include="Editor1\EItemsControl.cs" />
+    <Compile Include="Editor1\ETextBox.cs" />
+    <Compile Include="Editor1\IBrowseble.cs" />
+    <Compile Include="Editor1\ItemContainer.cs" />
+    <Compile Include="Editor1\ListPanel.cs" />
+    <Compile Include="Editor1\RadWindowLayer.cs" />
+    <Compile Include="Editors\BaseControl.cs" />
+    <Compile Include="Editors\BaseMultiControl.cs" />
+    <Compile Include="Editors\BasePage.cs" />
+    <Compile Include="Editors\BaseWindow.cs" />
+    <Compile Include="Editors\BigFieldEditor.cs" />
+    <Compile Include="Editors\ContentEditItem.cs" />
+    <Compile Include="Editors\DropDowGridView.cs" />
+    <Compile Include="Editors\DropDownTextBox.cs" />
+    <Compile Include="Editors\DropDownTreeViewBox.cs" />
+    <Compile Include="Editors\EditItemDateTimePicker.cs" />
+    <Compile Include="Editors\EditItemNumberBox.cs" />
+    <Compile Include="Editors\EditItemPicture.cs" />
+    <Compile Include="Editors\EditItemTextBox.cs" />
+    <Compile Include="Editors\ETextBox.cs" />
+    <Compile Include="Editors\FormEditor.cs" />
+    <Compile Include="Editors\LevcnPager.cs" />
+    <Compile Include="Editors\LevcnValidState.cs" />
+    <Compile Include="Editors\LevcnValidTooltip.cs" />
+    <Compile Include="Editors\MainEditItem.cs" />
+    <Compile Include="Editors\MessageBoxHelper.cs" />
+    <Compile Include="Editors\MultiControlDataEventArgs.cs" />
+    <Compile Include="Editors\NumberBox.cs" />
+    <Compile Include="Editors\ObjectEditConfig.cs" />
+    <Compile Include="Editors\ObjectEditorPanel.cs" />
+    <Compile Include="Editors\PageObject.cs" />
+    <Compile Include="Editors\PropItem.cs" />
+    <Compile Include="Editors\SelectedButton.cs" />
+    <Compile Include="Editors\UserGridView.cs" />
+    <Compile Include="Editors\UserGridViewConfig.cs" />
+    <Compile Include="Editors\UserGridViewSearchEventArgs.cs" />
+    <Compile Include="Editors\ViewMode.cs" />
+    <Compile Include="Errors\ErrorHelper.cs" />
+    <Compile Include="Extends\ExtensionUtil.cs" />
+    <Compile Include="Extends\LinqExtensions.cs" />
+    <Compile Include="Extends\Linq\ConditionBuilder.cs" />
+    <Compile Include="Extends\Linq\ExpressionVisitor.cs" />
+    <Compile Include="Extends\Linq\PartialEvaluator.cs" />
+    <Compile Include="Extends\Linq\PropertyExpressionExtends.cs" />
+    <Compile Include="Extends\Linq\TableExtensions.cs" />
+    <Compile Include="Extends\ListExtends.cs" />
+    <Compile Include="Extends\TypeEx.cs" />
+    <Compile Include="FW.cs" />
+    <Compile Include="Generators\SerializableDictionary.cs" />
+    <Compile Include="helpers\AlertHelper.cs" />
+    <Compile Include="ListTags\TagView.cs" />
+    <Compile Include="ListTags\TagViewList.cs" />
+    <Compile Include="MultiControlEditors\ControlEditItem.xaml.cs">
+      <DependentUpon>ControlEditItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultiControlEditors\ControlEditPanel.xaml.cs">
+      <DependentUpon>ControlEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageConfigs\ControlConfig.cs" />
+    <Compile Include="PageConfigs\PageConfig.cs" />
+    <Compile Include="PageConfigs\PageConfigManage.cs" />
+    <Compile Include="PageConfigs\PageHelper.cs" />
+    <Compile Include="PageConfigs\PageObjectConfig.cs" />
+    <Compile Include="PException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflectors\ClassHelper.cs" />
+    <Compile Include="Reflectors\CustomTypeHelper.cs" />
+    <Compile Include="Reflectors\PropertyType.cs" />
+    <Compile Include="Reflectors\ReflectionHelper.cs" />
+    <Compile Include="Reflectors\ReflectionHelper1.cs" />
+    <Compile Include="Reflectors\SearchHelper.cs" />
+    <Compile Include="Reflectors\TableAndColumns.cs" />
+    <Compile Include="Reflectors\TableRelation.cs" />
+    <Compile Include="Serializer\JsonHelper.cs" />
+    <Compile Include="Serializer\XmlHelper.cs" />
+    <Compile Include="TEventHandler.cs" />
+    <Compile Include="ThemeManages\ThemeFileManage.cs" />
+    <Compile Include="ThemeManages\TTheme.cs" />
+    <Compile Include="Threads\ThreadHelper.cs" />
+    <Compile Include="Threads\Worker.cs" />
+    <Compile Include="Upload\FileUpload.cs" />
+    <Compile Include="Upload\UploadFileItem.cs" />
+    <Compile Include="Upload\UploadFileList.cs" />
+    <Compile Include="UserAttributes\DefaultOrderAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnAssociationAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnColumnAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnTableAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnValidateAttribute.cs" />
+    <Compile Include="UserAttributes\RelationType.cs" />
+    <Compile Include="Windows\BaseWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ControlEditPanel1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PropTextEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PropValidEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SilverlightControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultiControlEditors\ControlEditItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MultiControlEditors\ControlEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BigFieldEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ControlEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DownloadStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ECheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditItemDateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditItemPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditItemsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditItemText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditItemTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EditorPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ETextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\FormEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ItemContainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ListPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\NavigatorMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\RadWindowLayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\TagViewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UploadStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\UserGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\action_check.png" />
+    <Resource Include="Images\action_delete.png" />
+    <Resource Include="Images\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BigFields\" />
+    <Folder Include="UserControlEditors\" />
+    <Folder Include="Validate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="system" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.1.1625.1050, Culture=neutral, PublicKeyToken=d3625f8bf04286d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\KuPan\My\StaffTrain\Lib\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

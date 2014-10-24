@@ -1,0 +1,289 @@
+﻿<UserControl x:Class="FD.Core.Test.Test.保存成功提示"
+             x:Name="aa"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:editors="clr-namespace:FD.Core.SLControl.Editors;assembly=FD.Core.SLControl"
+    mc:Ignorable="d"
+    d:DesignHeight="700" d:DesignWidth="1000">
+
+
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="BusyIndicatorBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0"/>
+            <GradientStop Color="#A9DCDADA" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="BusyIndicatorBorderBrush" Color="#FFD0D0D0"/>
+        <LinearGradientBrush x:Key="BusyIndicatorIndeterminateBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFFFC92B" Offset="0"/>
+            <GradientStop Color="#FFFFF7A9" Offset="1"/>
+            <GradientStop Color="#FFFFFBCD" Offset="0.254"/>
+            <GradientStop Color="#FFFFC92B" Offset="0.5"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="BusyIndicatorIndeterminateBorderBrush" Color="#FFFFC92B"/>
+        <RadialGradientBrush x:Key="BusyIndicatorIndeterminateCommetFill" Center="0.5,-0.23" GradientOrigin="0.8,0.25" RadiusY="0.68" RadiusX="0.68">
+            <GradientStop Color="#BFFFFFFF" Offset="0"/>
+            <GradientStop Color="#00FFFFFF" Offset="1"/>
+            <GradientStop Color="#21FFFFFF" Offset="0.65"/>
+        </RadialGradientBrush>
+        <SolidColorBrush x:Key="BusyIndicatorProgressBackground" Color="#FFFEE05E"/>
+        <Style x:Key="BusyIndicatorProgressBarStyle" TargetType="telerik:RadProgressBar">
+            <Setter Property="Margin" Value="15 15 15 5"/>
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadProgressBar">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Determinate"/>
+                                    <VisualState x:Name="Indeterminate">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="IndeterminateDonut">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)" Storyboard.TargetName="IndeterminateDonut">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:01" Value="360"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Path x:Name="IndeterminateBackgroundDonut" Fill="{StaticResource BusyIndicatorIndeterminateBackground}" Height="44" RenderTransformOrigin="0.5 0.5" Stroke="{StaticResource BusyIndicatorIndeterminateBorderBrush}" Width="44">
+                                <Path.Data>
+                                    <GeometryGroup FillRule="EvenOdd">
+                                        <EllipseGeometry Center="22 22" RadiusY="20" RadiusX="20"/>
+                                        <EllipseGeometry Center="22 22" RadiusY="14" RadiusX="14"/>
+                                    </GeometryGroup>
+                                </Path.Data>
+                            </Path>
+                            <Path x:Name="IndeterminateDonut" Fill="{StaticResource BusyIndicatorIndeterminateCommetFill}" Height="44" RenderTransformOrigin="0.5 0.5" Visibility="Collapsed" Width="44">
+                                <Path.Data>
+                                    <GeometryGroup FillRule="EvenOdd">
+                                        <EllipseGeometry Center="22 22" RadiusY="20" RadiusX="20"/>
+                                        <EllipseGeometry Center="22 22" RadiusY="14" RadiusX="14"/>
+                                    </GeometryGroup>
+                                </Path.Data>
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Grid x:Name="ProgressBarTrack" Height="24" RenderTransformOrigin="0.5 0.5" Width="24">
+                                <Grid.Clip>
+                                    <EllipseGeometry Center="12 12" RadiusY="12" RadiusX="12"/>
+                                </Grid.Clip>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RenderTransform>
+                                    <RotateTransform Angle="-90"/>
+                                </Grid.RenderTransform>
+                                <Rectangle x:Name="SkipValueSpacer"/>
+                                <Rectangle x:Name="ProgressBarIndicator" Grid.Column="1" Fill="{StaticResource BusyIndicatorProgressBackground}"/>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="BusyIndicatorBusyOverlayBrush" Color="#88FFFFFF"/>
+        <Style x:Key="MessageBoxLayer" TargetType="telerik:RadBusyIndicator">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="DisplayAfter" Value="00:00:00.1"/>
+            <Setter Property="Background" Value="{StaticResource BusyIndicatorBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BusyIndicatorBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ProgressBarStyle" Value="{StaticResource BusyIndicatorProgressBarStyle}"/>
+            <Setter Property="telerik:AnimationManager.AnimationSelector">
+                <Setter.Value>
+                    <telerik:AnimationSelector>
+                        <telerik:FadeAnimation AnimationName="Hide" Direction="Out" TargetElementName="Indicator"/>
+                        <telerik:FadeAnimation AnimationName="Show" Direction="In" TargetElementName="Indicator"/>
+                    </telerik:AnimationSelector>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="OverlayStyle">
+                <Setter.Value>
+                    <Style TargetType="Rectangle">
+                        <Setter Property="Fill" Value="{StaticResource BusyIndicatorBusyOverlayBrush}"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="telerik:RadBusyIndicator">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="VisibilityStates">
+                                    <VisualState x:Name="Hidden">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Indicator">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Overlay">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Visible">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Indicator">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Overlay">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="BusyStatusStates">
+                                    <VisualState x:Name="Idle">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:02.001" Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="Content">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <system:Boolean>True</system:Boolean>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ProgressBar">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="0" Storyboard.TargetProperty="IsIndeterminate" Storyboard.TargetName="ProgressBar">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <system:Boolean>False</system:Boolean>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Busy">
+                                        <Storyboard>
+<!--                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.001" Storyboard.TargetProperty="(Control.IsEnabled)" Storyboard.TargetName="Content">-->
+<!--                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">-->
+<!--                                                    <DiscreteObjectKeyFrame.Value>-->
+<!--                                                        <system:Boolean>False</system:Boolean>-->
+<!--                                                    </DiscreteObjectKeyFrame.Value>-->
+<!--                                                </DiscreteObjectKeyFrame>-->
+<!--                                            </ObjectAnimationUsingKeyFrames>-->
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentControl x:Name="Content" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsTabStop="False" IsEnabled="False" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            
+                            
+                            <!--BorderBrush="{TemplateBinding BorderBrush}"-->
+                            <Border Visibility="Collapsed">
+                                <Grid>
+                                    <Rectangle x:Name="Overlay" Style="{TemplateBinding OverlayStyle}"/>
+                                
+                            <telerik:RadProgressBar Visibility="Collapsed" x:Name="ProgressBar" IsIndeterminate="{TemplateBinding IsIndeterminate}" Style="{TemplateBinding ProgressBarStyle}" Value="{TemplateBinding ProgressValue}"/>
+                                </Grid>
+                            </Border>
+                            <Border  x:Name="Indicator"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2" HorizontalAlignment="Center" MinWidth="180" VerticalAlignment="Center">
+                                <StackPanel>
+                                    <ContentPresenter ContentTemplate="{TemplateBinding BusyContentTemplate}" Content="{TemplateBinding BusyContent}" HorizontalAlignment="Center" Margin="15 15 15 15"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <telerik:RadDateTimePicker SelectedValue="{Binding Text,ElementName=aa, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" InputMode="DatePicker" ParseMode="Always" Height="35" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"></telerik:RadDateTimePicker>
+        <telerik:RadButton Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Content="asdfas" Width="100" Margin="40,88,0,0" Style="{StaticResource Button绿色按钮样式}"></telerik:RadButton>
+        <telerik:RadButton Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Content="asdfas" Width="100" Margin="40,27,0,0" Style="{StaticResource Button确定按钮样式}"></telerik:RadButton>
+        <telerik:RadButton Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Content="asdfas" Width="100" Margin="40,169,0,0" />
+
+        <telerik:RadComboBox Margin="78,488,466,177" Height="35"></telerik:RadComboBox>
+        <Grid Margin="271,35,189,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            
+            
+            <editors:ListDownPanel DetailVisibility="Collapsed" OpenedButtonContent="精简筛选条件&lt;&lt;" ClosedButtonContent="展开筛选条件>>">
+            <editors:ListDownPanel.DefaultContent>
+                        <sl:SearchBox Width="300"></sl:SearchBox>
+            </editors:ListDownPanel.DefaultContent>
+            <editors:ListDownPanel.HiddenContent>
+                    <StackPanel Orientation="Vertical">
+                        <Button Content="1312312" Width="200" Margin="10"></Button>
+                        <Button Content="1312312" Width="200" Margin="10"></Button>
+                        <Button Content="1312312" Width="200" Margin="10"></Button>
+                        <Button Content="1312312" Width="200" Margin="10"></Button>
+                        <Button Content="1312312" Width="200" Margin="10"></Button>
+                    </StackPanel>
+            </editors:ListDownPanel.HiddenContent>
+        </editors:ListDownPanel>
+            
+            
+            
+            
+            <Button Content="asdfasdfasdfasdfasd&lt;&lt;" VerticalAlignment="Top" Grid.Row="1" Height="300"></Button>
+        </Grid>
+        <Grid>
+            <Button Width="100" Height="100" Click="ButtonBase_OnClick1"></Button>
+<!--            <Popup  x:Name="DropDownPopup" IsOpen="True">-->
+<!--                <Border Background="BlueViolet" Width="100" Height="100"></Border>-->
+<!--            </Popup>-->
+        </Grid>
+        
+        <telerik:RadDropDownButton Click="DropdownButton_OnClick" DropDownPlacement="Bottom" Visibility="Visible" x:Name="dropdownButton" IsOpen="True"  HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="18" Foreground="{StaticResource 不重要文字颜色}" Content="添加" KeepOpen="True" Width="100" Height="50" telerik:RadToolTipService.ToolTipContent="选择人员" >
+            <!--                                            telerik:RadToolTipService.ToolTipContentTemplate="{StaticResource ToolTipStyle}"-->
+            <telerik:RadDropDownButton.DropDownContent>
+                <Grid Width="800" Height="500" x:Name="aaaaaaaa">
+                    <telerik:RadBusyIndicator x:Name="sss" BusyContent="保存成功" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="18" IsBusy="False" Style="{StaticResource MessageBoxLayer}">
+                        <sl:UserSelector Name="aaa" OK="Aaa_OnOK" Cancel="Aaa_OnCancel"></sl:UserSelector>
+                    </telerik:RadBusyIndicator>
+                </Grid>
+            </telerik:RadDropDownButton.DropDownContent>
+        </telerik:RadDropDownButton>
+        
+        <!--        Style="{StaticResource RadBusyIndicatorStyle1}"-->
+        
+    </Grid>
+</UserControl>

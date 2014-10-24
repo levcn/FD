@@ -1,0 +1,26 @@
+﻿<wpfControls:BaseWindow x:Class="ProjectCreater.SObjects.SettingConfigWindow"
+        x:Name="aa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfControls="clr-namespace:WPFControls;assembly=WPFControls"
+        xmlns:uiConfigs="clr-namespace:ProjectCreater.SObjects.UIConfigs"
+        Title="数据库设置" Height="300" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TabControl SelectedIndex="{Binding ElementName=aa,Path=StartIndex}">
+            <TabItem Header="基本设置">
+                
+            </TabItem>
+            <TabItem Header="C#代码样式">
+                <uiConfigs:CodeStyleConfig SavePath="{Binding ElementName=aa,Path=SettingConfig.CodeStyle.SavePath,Mode=TwoWay}" FilterTagPix="{Binding ElementName=aa,Path=SettingConfig.CodeStyle.FilterTagPix,Mode=TwoWay}" TagPix="{Binding ElementName=aa,Path=SettingConfig.CodeStyle.TagPix,Mode=TwoWay}"></uiConfigs:CodeStyleConfig>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Margin="0" Orientation="Horizontal" Height="50" HorizontalAlignment="Right">
+            <Button Content="确定" Click="OnResult1" IsDefault="true" Margin="10" Width="50"></Button>
+            <Button Content="取消(_C)" Click="OnResult2" IsCancel="True"  Margin="10" Width="50"></Button>
+        </StackPanel>
+    </Grid>
+</wpfControls:BaseWindow>

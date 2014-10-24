@@ -1,0 +1,55 @@
+﻿<UserControl
+    Name="aaa"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="FD.Core.SLControl.Controls.UserTree"
+    mc:Ignorable="d"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    FontSize="13" d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <!-- Template for Edit mode of TreeViewItem -->
+        <telerik:HierarchicalDataTemplate x:Key="TreeViewMainEditTemplate" ItemsSource="{Binding Children,Mode=TwoWay}">
+            <TextBox Name="textBox" Text="{Binding Text,Mode=TwoWay}" KeyDown="TextBox_OnKeyDown" LostFocus="TextBox_LostFocus_1" ></TextBox>
+        </telerik:HierarchicalDataTemplate>
+        <!-- Template for Read mode for TreeViewItem IsThreeState="{Binding HasSubcomponents}"-->
+        <telerik:HierarchicalDataTemplate x:Key="TreeViewMainReadTemplate" ItemsSource="{Binding Children,Mode=TwoWay}">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox Visibility="{Binding CheckBoxVisibility, ElementName=aaa}" x:Name="checkBox" IsTabStop="False"                       
+                        IsThreeState="False"
+                          IsEnabled="{Binding CheckBoxIsEnabled, Mode=TwoWay,ElementName=aaa}"
+                        IsChecked="{Binding IsSelected, Mode=TwoWay}"
+                        Click="ItemCheckbox_Click"
+                          />
+<!--                Text="{Binding Text, Converter={StaticResource toolTipConverter},ConverterParameter=20}"-->
+                <TextBlock Margin="0,0,0,0" FontSize="{Binding Path=TreeFontSize,ElementName=aaa}" FontWeight="{Binding Path=TreeFontWeight,ElementName=aaa}" Text="{Binding Text}" ToolTipService.ToolTip="{Binding Text,Mode=TwoWay}" 
+MouseRightButtonDown="TreeViewMain_MouseRightButtonDown"
+MouseRightButtonUp="TreeViewMain_MouseRightButtonUp"
+MouseLeftButtonDown="TreeViewMain_MouseLeftButtonDown" MouseEnter="UIElement_OnMouseEnter" MouseLeave="UIElement_OnMouseLeave">
+                </TextBlock >
+            </StackPanel>
+        </telerik:HierarchicalDataTemplate>
+
+        <!--<Style  TargetType="">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>-->
+    </UserControl.Resources>
+
+    <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" x:Name="LayoutRoot" MouseRightButtonDown="TreeViewMain_MouseRightButtonDown">
+        <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderThickness="0" BorderBrush="{x:Null}">-->
+        <telerik:RadTreeView BorderThickness="0" Name="TreeViewMain" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"
+ItemTemplate="{StaticResource TreeViewMainReadTemplate}"
+MouseRightButtonDown="TreeViewMain_MouseRightButtonDown"
+MouseRightButtonUp="TreeViewMain_MouseRightButtonUp"
+MouseLeftButtonDown="TreeViewMain_MouseLeftButtonDown"
+             >
+        </telerik:RadTreeView>
+        <!--</ScrollViewer>-->
+<!--        TreeViewDragDropTarget有问题 会导致GC无法回收所有父亲控件-->
+<!--        <toolkit:TreeViewDragDropTarget Margin="0" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" AllowDrop="True"  >-->
+<!--        </toolkit:TreeViewDragDropTarget>-->
+
+    </Grid>
+</UserControl>

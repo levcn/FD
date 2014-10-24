@@ -1,0 +1,27 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d">
+
+
+    <Style TargetType="sl:ControlEditPanel">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sl:ControlEditPanel">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <telerik:RadPropertyGrid x:Name="CTL_PropertyGrid"
+								 Item="{TemplateBinding Item}"
+								 LabelColumnWidth="180"
+								 AutoGeneratePropertyDefinitions="False"></telerik:RadPropertyGrid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

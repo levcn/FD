@@ -1,0 +1,12 @@
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\bin\Debug\WPFControls.dll
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\bin\Debug\WPFControls.pdb
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls_MarkupCompile.cache
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls_MarkupCompile.lref
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\Themes\Generic.baml
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls.g.resources
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls.Properties.Resources.resources
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\FD.Core.ObjDesign.WPFControls.csproj.GenerateResource.Cache
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls.dll
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\WPFControls.pdb
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign.WPFControls\obj\Debug\FD.Core.ObjDesign.WPFControls.csprojResolveAssemblyReference.cache

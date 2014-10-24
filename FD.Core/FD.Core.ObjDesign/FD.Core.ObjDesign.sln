@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.ObjConfig", "FD.Core.ObjConfig\FD.Core.ObjConfig.csproj", "{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.ObjDesign", "FD.Core.ObjDesign\FD.Core.ObjDesign.csproj", "{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.ObjDesign.WPFControls", "FD.Core.ObjDesign.WPFControls\FD.Core.ObjDesign.WPFControls.csproj", "{6724EBEB-5AC8-48C5-938B-AE37D3378FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.FW", "..\FD.Core.FW\FD.Core.FW.csproj", "{BA7FEEDF-C773-4017-B0E5-051455F4E98C}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 5
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FD.Core.ObjConfig\\FD.Core.ObjConfig.csproj
+		SccProjectName1 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjConfig\u0022,\u0020ESBAAAAA
+		SccLocalPath1 = FD.Core.ObjConfig
+		SccProjectUniqueName2 = FD.Core.ObjDesign\\FD.Core.ObjDesign.csproj
+		SccProjectName2 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjDesign\u0022,\u0020ZQAAAAAA
+		SccLocalPath2 = FD.Core.ObjDesign
+		SccProjectUniqueName3 = FD.Core.ObjDesign.WPFControls\\FD.Core.ObjDesign.WPFControls.csproj
+		SccProjectName3 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjDesign.WPFControls\u0022,\u0020STBAAAAA
+		SccLocalPath3 = FD.Core.ObjDesign.WPFControls
+		SccProjectUniqueName4 = ..\\FD.Core.FW\\FD.Core.FW.csproj
+		SccProjectName4 = \u0022$/FD/source/FD.Core/FD.Core.FW\u0022,\u0020UBAAAAAA
+		SccLocalPath4 = ..\\FD.Core.FW
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31854FBA-D8EB-4D25-A5AB-9184F0E80AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6DF7AE-0498-4C99-8D57-3DB92AAC04FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6724EBEB-5AC8-48C5-938B-AE37D3378FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6724EBEB-5AC8-48C5-938B-AE37D3378FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6724EBEB-5AC8-48C5-938B-AE37D3378FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6724EBEB-5AC8-48C5-938B-AE37D3378FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

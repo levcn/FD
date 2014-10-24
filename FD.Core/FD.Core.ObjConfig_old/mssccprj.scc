@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[SLComponse.csproj]
+SCC_Aux_Path = "\\192.168.32.1\vssProject\Product"
+SCC_Project_Name = "$/StaffTrain2014/ProjectCreater/ProjectCreater/STComponse", GUNBAAAA
+
+[STComponse.csproj]
+SCC_Aux_Path = "\\192.168.32.1\vssProject\Product"
+SCC_Project_Name = "$/StaffTrain2014/ProjectCreater/ProjectCreater/STComponse", GUNBAAAA

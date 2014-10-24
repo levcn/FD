@@ -1,0 +1,6 @@
+未找到指定的类:PageAction1
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(List`1 assemblyName, String className, String methodName, List`1 parames, Boolean isXml) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 98
+   在 Fw.Reflection.ReflectionHelper.ExecuteClientMethod(String className, String methodName, List`1 parames) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\Reflection\ReflectionHelper.cs:行号 92
+   在 SComm.ActionBase.BaseActionHandler.ExecuteCustomMethod(CustomCmd customCmd) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 107
+   在 SComm.ActionBase.BaseActionHandler.RunAction(HttpContext context) 位置 e:\Levcn\FD\FD.Core\FD.Core.FW\ActionBase\BaseActionHandler.cs:行号 67
+==============================================================

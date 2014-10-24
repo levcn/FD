@@ -1,0 +1,11 @@
+F:\新建文件夹\StaffTrainTest\STComponse\bin\Debug\STComponse.dll
+F:\新建文件夹\StaffTrainTest\STComponse\bin\Debug\STComponse.pdb
+F:\新建文件夹\StaffTrainTest\STComponse\bin\Debug\fastJSON.dll
+F:\新建文件夹\StaffTrainTest\STComponse\obj\Debug\STComponse.dll
+F:\新建文件夹\StaffTrainTest\STComponse\obj\Debug\STComponse.pdb
+E:\Levcn\StaffTrainTest\STComponse\bin\Debug\STComponse.dll
+E:\Levcn\StaffTrainTest\STComponse\bin\Debug\STComponse.pdb
+E:\Levcn\StaffTrainTest\STComponse\bin\Debug\fastJSON.dll
+E:\Levcn\StaffTrainTest\STComponse\bin\Debug\fastJSON.pdb
+E:\Levcn\StaffTrainTest\STComponse\obj\Debug\STComponse.dll
+E:\Levcn\StaffTrainTest\STComponse\obj\Debug\STComponse.pdb

@@ -1,0 +1,48 @@
+Microsoft(R) 生成引擎版本 4.0.30319.33440
+[Microsoft .NET Framework 版本 4.0.30319.34014]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2014/9/11 9:29:35。
+项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj”在节点 1 上(Rebuild 个目标)。
+CoreClean:
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\STComponse.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\STComponse.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\fastJSON.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\fastJSON.pdb”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfig.csprojResolveAssemblyReference.cache”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\STComponse.dll”。
+  正在删除文件“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\STComponse.pdb”。
+GenerateTargetFrameworkMonikerAttribute:
+正在跳过目标“GenerateTargetFrameworkMonikerAttribute”，因为所有输出文件相对于输入文件而言都是最新的。
+CoreCompile:
+  C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /define:DEBUG;TRACE /highentropyva- /reference:E:\Levcn\FD\Lib\fastJSON.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.ComponentModel.DataAnnotations.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.Linq.dll" /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\STComponse.dll /target:library /utf8output CFG\DecimalConfig.cs CFG\EDataObjectEx.cs CFG\EntityBase.cs CFG\FwConfig.cs CFG\FwConfigEx.cs CFG\LogicConfig.cs CFG\Property.cs CFG\DataObject.cs CFG\PropertyValidate.cs CFG\Relation.cs CFG\RelConfig.cs CFG\RelConfigEx.cs CFG\SPParameter.cs CFG\StaticEx.cs CFG\StoredProcedure.cs CFG\VarcharConfig.cs DB\ChangeType.cs DB\EDB.cs DB\EDBCompare.cs DB\EField.cs DB\ETable.cs Ex\ObservableCollectionEx.cs GCode\BigFields.cs GCode\FwConfigCodeEx.cs GCode\GClass.cs GCode\GProperty.cs PException.cs Properties\Annotations.cs Properties\AssemblyInfo.cs StringData\CData.cs StringData\CDataConfig.cs "C:\Users\tht\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cs"
+CFG\StaticEx.cs(23,29): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+CFG\StaticEx.cs(34,30): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+GCode\GProperty.cs(73,30): warning CS0168: 声明了变量“e”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+_CopyFilesMarkedCopyLocal:
+  正在将文件从“E:\Levcn\FD\Lib\fastJSON.dll”复制到“bin\Debug\fastJSON.dll”。
+  正在将文件从“E:\Levcn\FD\Lib\fastJSON.pdb”复制到“bin\Debug\fastJSON.pdb”。
+CopyFilesToOutputDirectory:
+  正在将文件从“obj\Debug\STComponse.dll”复制到“bin\Debug\STComponse.dll”。
+  FD.Core.ObjConfig -> E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\STComponse.dll
+  正在将文件从“obj\Debug\STComponse.pdb”复制到“bin\Debug\STComponse.pdb”。
+CopyBinriesToReferenceFolder:
+  CopyBinaries from: E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig  to: E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\
+  DEBUG INFO: ConfigSubFolder: \
+  E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\
+  正在将文件从“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\STComponse.dll”复制到“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\STComponse.dll”。
+  正在将文件从“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\STComponse.pdb”复制到“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\..\..\..\Lib\STComponse.pdb”。
+已完成生成项目“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj”(Rebuild 个目标)的操作。
+
+已成功生成。
+
+“E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj”(Rebuild 目标) (1) ->
+(CoreCompile 目标) -> 
+  CFG\StaticEx.cs(23,29): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+  CFG\StaticEx.cs(34,30): warning CS0168: 声明了变量“eee”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+  GCode\GProperty.cs(73,30): warning CS0168: 声明了变量“e”，但从未使用过 [E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfig.csproj]
+
+    3 个警告
+    0 个错误
+
+已用时间 00:00:00.73

@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.SLControl", "FD.Core.SLControl\FD.Core.SLControl.csproj", "{5BFF1900-4707-4663-B649-E2A80A8E98EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.Test", "FD.Core.Test\FD.Core.Test.csproj", "{C8DC1773-3716-4B2F-8C4F-4E81DBB6B2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.Test.Web", "FD.Core.Test.Web\FD.Core.Test.Web.csproj", "{96BBD0DD-B143-4E27-9507-6A66159323B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.SLClient", "FD.Core.SLClient\FD.Core.SLClient.csproj", "{BBA417B0-D41F-4ED1-BA1A-5E052AB8255C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.FW", "FD.Core.FW\FD.Core.FW.csproj", "{BA7FEEDF-C773-4017-B0E5-051455F4E98C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.ObjConfigSL", "FD.Core.ObjDesign\FD.Core.ObjConfig\FD.Core.ObjConfigSL.csproj", "{AC68EB94-8EC9-479C-858B-AD4E320B5469}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 7
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FD.Core.SLControl\\FD.Core.SLControl.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = FD.Core.SLControl\\
+		SccProjectUniqueName2 = FD.Core.Test\\FD.Core.Test.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = FD.Core.Test\\
+		SccProjectUniqueName3 = FD.Core.Test.Web\\FD.Core.Test.Web.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = FD.Core.Test.Web\\
+		SccProjectUniqueName4 = FD.Core.SLClient\\FD.Core.SLClient.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = FD.Core.SLClient\\
+		SccProjectUniqueName5 = FD.Core.FW\\FD.Core.FW.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = FD.Core.FW\\
+		SccProjectUniqueName6 = FD.Core.ObjDesign\\FD.Core.ObjConfig\\FD.Core.ObjConfigSL.csproj
+		SccProjectName6 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjConfig\u0022,\u0020ESBAAAAA
+		SccLocalPath6 = FD.Core.ObjDesign\\FD.Core.ObjConfig
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BFF1900-4707-4663-B649-E2A80A8E98EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFF1900-4707-4663-B649-E2A80A8E98EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFF1900-4707-4663-B649-E2A80A8E98EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFF1900-4707-4663-B649-E2A80A8E98EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8DC1773-3716-4B2F-8C4F-4E81DBB6B2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DC1773-3716-4B2F-8C4F-4E81DBB6B2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DC1773-3716-4B2F-8C4F-4E81DBB6B2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DC1773-3716-4B2F-8C4F-4E81DBB6B2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BBD0DD-B143-4E27-9507-6A66159323B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BBD0DD-B143-4E27-9507-6A66159323B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BBD0DD-B143-4E27-9507-6A66159323B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BBD0DD-B143-4E27-9507-6A66159323B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA417B0-D41F-4ED1-BA1A-5E052AB8255C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA417B0-D41F-4ED1-BA1A-5E052AB8255C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA417B0-D41F-4ED1-BA1A-5E052AB8255C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA417B0-D41F-4ED1-BA1A-5E052AB8255C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7FEEDF-C773-4017-B0E5-051455F4E98C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Style TargetType="sl:EditItemTextBox">
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sl:EditItemTextBox">
+                    <Border >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="BrowserStates">
+                                <VisualState x:Name="Browser">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="TB_TextBox">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="TB_TextBrowse">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Editor">
+                                    <Storyboard>
+                                       
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid  Margin="0,0,0,0" x:Name="LayoutRoot">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <!--                            标签部分-->
+                            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Width="{TemplateBinding LableWidth}">
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
+                                    <TextBlock x:Name="TB_ItemLableRequired" Visibility="Collapsed" TextWrapping="Wrap" Foreground="Red"  Text="*"  Margin="0,8,0,0"/>
+                                    <TextBlock x:Name="TB_ItemLable" Text="{TemplateBinding LabelText}" FontSize="12" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Grid>
+                            <!--                            文本框部分-->
+                            <Grid Grid.Column="1" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" >
+                                    <!--第一行的文本框和验证-->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <telerik:RadWatermarkTextBox VerticalAlignment="Stretch" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" VerticalContentAlignment="Top"
+                            BorderThickness="{TemplateBinding BorderThickness}" x:Name="TB_TextBox" Grid.Column="0" HorizontalAlignment="Stretch"  Margin="0" WatermarkContent="{TemplateBinding WatermarkContent}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Height="{TemplateBinding TextBoxHeight}" AcceptsReturn="{TemplateBinding AcceptsReturn}" TextWrapping="Wrap" FontSize="12" Text="{TemplateBinding TextBoxText}" />
+                                    <TextBlock VerticalAlignment="Stretch" x:Name="TB_TextBrowse" Margin="6,4,0,0" Grid.Column="0" HorizontalAlignment="Stretch" Visibility="Collapsed" Height="{TemplateBinding TextBoxHeight}" TextWrapping="Wrap" FontSize="12" Text="{TemplateBinding TextBoxText}" Grid.RowSpan="2" />
+                                    <Grid Grid.Row="0" Grid.Column="1" Visibility="{TemplateBinding ValidateVisibiliti}">
+                                        <sl:LevcnValidTooltip x:Name="Tip1"  
+                                                                   State="{TemplateBinding ValidState}"
+                                                                   FocusMsg="{TemplateBinding FocusMsg}" 
+                                                                   PassMsg="{TemplateBinding PassMsg}" 
+                                                                   DefaultMsg="{TemplateBinding DefaultMsg}" 
+                                                                   RequiredErrorMsg="{TemplateBinding RequiredErrorMsg}" 
+                                                                   OverMaxLengthErrorMsg="{TemplateBinding OverMaxLengthErrorMsg}" 
+                                                                   OverMaxErrorMsg="{TemplateBinding OverMaxErrorMsg}" 
+                                                                   LowMinErrorMsg="{TemplateBinding LowMinErrorMsg}" 
+                                                                   ShowIcon="True" ShowText="True" 
+                                                                   />
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="1" Visibility="{TemplateBinding ValidateVisibiliti}">
+                                    <sl:LevcnValidTooltip ErrorMsg="{TemplateBinding ErrorMsg}" 
+                                                                   State="{TemplateBinding ValidState}" 
+                                                                   PassMsg="{TemplateBinding PassMsg}" 
+                                                                   FocusMsg="{TemplateBinding FocusMsg}" 
+                                                                   DefaultMsg="{TemplateBinding DefaultMsg}" 
+                                                                   RequiredErrorMsg="{TemplateBinding RequiredErrorMsg}" 
+                                                                   OverMaxLengthErrorMsg="{TemplateBinding OverMaxLengthErrorMsg}" 
+                                                                   OverMaxErrorMsg="{TemplateBinding OverMaxErrorMsg}" 
+                                                                   LowMinErrorMsg="{TemplateBinding LowMinErrorMsg}" 
+                                                               x:Name="Tip2" OnlyNotPassShow="True" ShowIcon="True" BlurHidden="True"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

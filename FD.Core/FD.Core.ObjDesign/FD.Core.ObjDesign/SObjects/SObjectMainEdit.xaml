@@ -1,0 +1,48 @@
+﻿<wpfControls:BaseWindow x:Class="ProjectCreater.SObjects.SObjectMainEdit"
+        x:Name="aa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sObjects="clr-namespace:ProjectCreater.SObjects"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wpfControls="clr-namespace:WPFControls;assembly=WPFControls"
+                        Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.WWidth,Mode=TwoWay}" 
+        Height="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.WHeight,Mode=TwoWay}" 
+        Title="SObjectMainEdit" d:DesignHeight="500" d:DesignWidth="700">
+    <Grid>
+        <TabControl SelectedIndex="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.TabIndex,Mode=TwoWay}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="基本信息">
+                <Grid Background="#FFE5E5E5">
+                    <sObjects:SObjectBaseEdit IsVirtual="{Binding ElementName=aa,Path=IsVirtual}"  Editable="{Binding ElementName=aa,Path=Editable}" EDataObject="{Binding ElementName=aa,Path=EDataObject,Mode=TwoWay}" ></sObjects:SObjectBaseEdit>
+                </Grid>
+            </TabItem>
+            <TabItem Header="属性">
+                <Grid Background="#FFE5E5E5">
+                    <sObjects:SObjectPropList IsVirtual="{Binding ElementName=aa,Path=IsVirtual}" Editable="{Binding ElementName=aa,Path=Editable}" ItemSource="{Binding ElementName=aa,Path=EDataObject.Property,Mode=TwoWay}" EDataObject="{Binding ElementName=aa,Path=EDataObject,Mode=TwoWay}" DeleteBefore="BaseGridViewPanel_OnDeleteBefore" >
+                        
+                    </sObjects:SObjectPropList>
+                </Grid>
+            </TabItem>
+            <TabItem Header="关系" Name="Tab_Comm">
+                <Grid Background="#FFE5E5E5">
+                    <sObjects:SObjectRelList Editable="{Binding ElementName=aa,Path=Editable}" EDataObject="{Binding ElementName=aa,Path=EDataObject,Mode=TwoWay}" ItemSource="{Binding ElementName=aa,Path=EDataObject.Relation,Mode=TwoWay}" x:Name="relList">
+
+                    </sObjects:SObjectRelList>
+                </Grid>
+            </TabItem>
+            <TabItem Header="存储过程参数" Name="Tab_ST">
+                <Grid Background="#FFE5E5E5">
+<!--                    <sObjects:SObjectRelList Editable="{Binding ElementName=aa,Path=Editable}" EDataObject="{Binding ElementName=aa,Path=EDataObject,Mode=TwoWay}" ItemSource="{Binding ElementName=aa,Path=EDataObject.SPParameters,Mode=TwoWay}" Grid.ColumnSpan="2" x:Name="relList1">-->
+<!---->
+<!--                    </sObjects:SObjectRelList>-->
+
+                    <sObjects:SPPropList IsEditValue="True" Editable="{Binding ElementName=aa,Path=Editable}" ItemSource="{Binding ElementName=aa,Path=EDataObject.SPParameters,Mode=TwoWay}" DeleteBefore="BaseGridViewPanel_OnDeleteBefore" >
+
+                    </sObjects:SPPropList>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</wpfControls:BaseWindow>

@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- 
+		Legend:
+
+						NoXaml - switches off the XamlPreprocessor and XamlCop
+						NoSA - switches off the StyleCope
+						NoCA - switches off the Code analysis errors
+						NoWE - switches off the Errors as warnings
+						NoVersion - switches off the Versioning
+						NoCopyBinaries - switches off the CopyBinaries
+						NoExtMap - switches off the ExtMap generation
+						NoXMLDoc - excludes the generation of the XML documentation;
+						NoPdb - skips the creation of the PDB debug symbols
+
+	-->
+
+	<PropertyGroup>
+		<!-- Suppress CA in .NET 4 - it doesn't work ... -->
+		<!--<NoCA Condition=" '$(WPFFrameworkVersion)' == '4.0' ">true</NoCA>-->
+
+		<BinariesOutDir Condition=" '$(BinariesOutDir)' == '' AND '$(TestProject)' == 'true' ">..\..\..\Binaries\</BinariesOutDir>
+		<BinariesOutDir Condition=" '$(BinariesOutDir)' == '' ">..\..\Binaries\</BinariesOutDir>
+		<BuildFolderPath Condition=" '$(BuildFolderPath)' == '' ">$(BinariesOutDir)..\Build\</BuildFolderPath>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion Condition=" '$(ProductVersion)' == '' ">9.0.30729</ProductVersion>
+		<SchemaVersion Condition=" '$(SchemaVersion)' == '' ">2.0</SchemaVersion>
+		<OutputType Condition=" '$(OutputType)' == '' ">library</OutputType>
+		<AppDesignerFolder Condition=" '$(AppDesignerFolder)' == '' ">Properties</AppDesignerFolder>
+		<RootNamespace Condition=" '$(RootNamespace)' == '' ">Telerik.Windows.Controls</RootNamespace>		
+		<TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v$(WPFFrameworkVersion)</TargetFrameworkVersion>		
+		<FileAlignment Condition=" '$(FileAlignment)' == '' ">512</FileAlignment>
+		<ProjectTypeGuids Condition=" '$(ProjectTypeGuids)' == '' ">{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<WarningLevel Condition=" '$(WarningLevel)' == '' ">4</WarningLevel>
+		<SccProjectName Condition=" '$(SccProjectName)' == '' ">SAK</SccProjectName>
+		<SccLocalPath Condition=" '$(SccLocalPath)' == '' ">SAK</SccLocalPath>
+		<SccAuxPath Condition=" '$(SccAuxPath)' == '' ">SAK</SccAuxPath>
+		<SccProvider Condition=" '$(SccProvider)' == '' ">SAK</SccProvider>
+		<SignAssembly Condition=" '$(SignAssembly)' == '' ">true</SignAssembly>
+		<AssemblyOriginatorKeyFile Condition=" '$(AssemblyOriginatorKeyFile)' == '' ">sn.snk</AssemblyOriginatorKeyFile>
+		<CodeAnalysisRuleSet Condition=" '$(CodeAnalysisRuleSet)' == '' ">CodeAnalysisRuleSet.ruleset</CodeAnalysisRuleSet>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+		<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+		<NoXamlCop>true</NoXamlCop>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(TestProject)' == 'true' ">
+		<NoWE>true</NoWE>
+		<NoSA>true</NoSA>
+		<NoCA>true</NoCA>
+		<NoXaml>true</NoXaml>
+		<NoXMLDoc>true</NoXMLDoc>
+		<NoPdb>true</NoPdb>
+		<NoExtMap>true</NoExtMap>
+		<NoVersion>true</NoVersion>
+		<NoCopyBinaries>true</NoCopyBinaries>
+	</PropertyGroup>
+
+	<!-- Default configurations -->
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+
+		<WPF35>false</WPF35>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == ''">Client</TargetFrameworkProfile>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug.NoXaml|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+
+		<WPF35>false</WPF35>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == ''">Client</TargetFrameworkProfile>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' != 'true' ">Client</TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNoCA|AnyCPU' ">
+		<NoSA>true</NoSA>
+		<NoCA>true</NoCA>
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' != 'true' ">Client</TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release.NoXaml|AnyCPU' ">
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' != 'true' ">Client</TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial|AnyCPU' ">
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' != 'true' ">Client</TargetFrameworkProfile>
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<WPF35>false</WPF35>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial.NoXaml|AnyCPU' ">
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' != 'true' ">Client</TargetFrameworkProfile>
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+		<WPF35>false</WPF35>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+	
+	<!--.NET 3.5 configurations-->
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug35|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug35.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release35|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release35.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial35|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial35.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>3.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+		<WPF35>true</WPF35>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<TargetFrameworkProfile Condition=" '$(TestProject)' == '' AND '$(NeedsFullDotNetFramework)' == '' ">Client</TargetFrameworkProfile>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<!-- .NET 4.5 configurations -->
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug45|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+		
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+		
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+		<DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug45.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+		
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;WPF</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<SourceAnalysisTreatErrorsAsWarnings>true</SourceAnalysisTreatErrorsAsWarnings>
+		<StyleCopEnabled>false</StyleCopEnabled>
+		<WPF35>false</WPF35>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release45|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+		
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+		<WPF40>true</WPF40>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release45.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial45|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTrial45.NoXaml|AnyCPU' ">
+		<WPFFrameworkVersion>4.5</WPFFrameworkVersion>
+		<TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+		<WPF35>false</WPF35>
+		<WPF40>false</WPF40>
+		<WPF45>true</WPF45>
+		
+		<DebugSymbols Condition=" '$(NoPdb)' != 'true' ">true</DebugSymbols>
+		<DebugSymbols Condition=" '$(NoPdb)' == 'true' ">false</DebugSymbols>
+		<DebugType Condition=" '$(NoPdb)' != 'true' ">pdbonly</DebugType>
+		<DebugType Condition=" '$(NoPdb)' == 'true' ">none</DebugType>
+		<Optimize>true</Optimize>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SourceAnalysisTreatErrorsAsWarnings>false</SourceAnalysisTreatErrorsAsWarnings>
+		<DefineConstants>TRACE;WPF;TELERIK_WPF;TRIAL;</DefineConstants>
+		<DefineConstants Condition=" '$(NoCA)' == '' ">$(DefineConstants);CODE_ANALYSIS</DefineConstants>
+		<RunCodeAnalysis Condition=" '$(NoCA)' == '' ">true</RunCodeAnalysis>
+		<TreatWarningsAsErrors Condition=" '$(NoWE)' == '' ">true</TreatWarningsAsErrors>
+		<StyleCopEnabled Condition=" '$(NoSA)' == '' ">true</StyleCopEnabled>
+
+		<OutputPath>bin\WPF\$(WPFFrameworkVersion)\$(Configuration)\</OutputPath>
+		<DocumentationFile Condition=" '$(NoXMLDoc)' == '' ">$(OutputPath)\$(AssemblyName).XML</DocumentationFile>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '3.5' ">$(DefineConstants);WPF35</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.0' ">$(DefineConstants);WPF40</DefineConstants>
+    <DefineConstants Condition=" '$(WPFFrameworkVersion)' == '4.5' ">$(DefineConstants);WPF45;WPF40</DefineConstants>
+		<NoXaml>true</NoXaml>
+		<GenerateImplicitStyles>true</GenerateImplicitStyles>
+	</PropertyGroup>
+
+	<!-- ========================== -->
+
+	<PropertyGroup>
+		<!-- This property is not used - it is added to make the code look the same for SL and WPF -->
+		<WPFVersion>v$(WPFFrameworkVersion)</WPFVersion>
+
+		<SubFolderPrefix>WPF</SubFolderPrefix>
+		<WPF>true</WPF>
+		<Silverlight>false</Silverlight>
+		<DefineConstants Condition=" '$(NoXaml)' == 'true' ">$(DefineConstants);NOXAML</DefineConstants>
+	</PropertyGroup>
+
+</Project>

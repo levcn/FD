@@ -1,0 +1,97 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FD.Core.SLControl;Component/Themes/Main.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="sl:SearchBox">
+        <Setter Property="Height" Value="35"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sl:SearchBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="MouseNormal">
+                                    <!--                                    <Rectangle.RenderTransform>-->
+                                    <!--                                        <TransformGroup>-->
+                                    <!--                                            <ScaleTransform ScaleX="0.8" ScaleY="0.9"></ScaleTransform>-->
+                                    <!--                                        </TransformGroup>-->
+                                    <!--                                    </Rectangle.RenderTransform>-->
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="EditStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Selectable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Masker">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Masker">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="EditButton">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="LayoutRoot" Background="White">
+                            <Border BorderBrush="{StaticResource 不重要边框颜色}" BorderThickness="2"></Border>
+
+                            <Grid x:Name="LayoutRoot1" Background="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <telerik:RadWatermarkTextBox BorderBrush="{StaticResource Button一般按钮OutSolidColorBrush}" >
+                                    <telerik:RadWatermarkTextBox.Background>
+                                        <ImageBrush ImageSource="/Images/Controls/放大镜.png" Stretch="Uniform"  AlignmentX="Right" AlignmentY="Center">
+                                            <ImageBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <MatrixTransform>
+                                                        <MatrixTransform.Matrix>
+                                                            <Matrix OffsetX="0.22" OffsetY="0.2" M12="0"/>
+                                                        </MatrixTransform.Matrix>
+                                                    </MatrixTransform>
+                                                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                                                </TransformGroup>
+                                            </ImageBrush.RelativeTransform>
+                                        </ImageBrush>
+                                    </telerik:RadWatermarkTextBox.Background>
+                                </telerik:RadWatermarkTextBox>
+                                <telerik:RadButton Margin="-2 0 0 0" Background="{StaticResource Button一般按钮灰色背景}" Style="{StaticResource Button一般按钮样式}" Visibility="{TemplateBinding ButtonVisibility}" Grid.Column="1" Width="80" Content="{TemplateBinding SearchText}" FontSize="18"></telerik:RadButton>
+                            </Grid>
+                            <Rectangle x:Name="Masker" Visibility="Collapsed" Fill="#FFF4F4F5" Opacity=".3" Stroke="Black" />
+                            <Button x:Name="EditButton" Visibility="Collapsed" Width="30" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Content="编辑"></Button>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

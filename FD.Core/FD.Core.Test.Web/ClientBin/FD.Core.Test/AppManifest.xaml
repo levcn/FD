@@ -1,0 +1,31 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="FD.Core.Test" EntryPointType="FD.Core.Test.App" RuntimeVersion="5.0.61118.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="FD.Core.Test" Source="FD.Core.Test.dll" />
+    <AssemblyPart x:Name="FD.Core.ObjConfigSL" Source="FD.Core.ObjConfigSL.dll" />
+    <AssemblyPart x:Name="FD.Core.SLControl" Source="FD.Core.SLControl.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks" Source="Microsoft.Threading.Tasks.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions" Source="Microsoft.Threading.Tasks.Extensions.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions.Silverlight" Source="Microsoft.Threading.Tasks.Extensions.Silverlight.dll" />
+    <AssemblyPart x:Name="System.IO" Source="System.IO.dll" />
+    <AssemblyPart x:Name="System.Runtime" Source="System.Runtime.dll" />
+    <AssemblyPart x:Name="System.Threading.Tasks" Source="System.Threading.Tasks.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls" Source="Telerik.Windows.Controls.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Themes.Windows8Touch" Source="Telerik.Windows.Themes.Windows8Touch.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Navigation" Source="Telerik.Windows.Controls.Navigation.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Input" Source="Telerik.Windows.Controls.Input.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Data" Source="Telerik.Windows.Controls.Data.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.GridView" Source="Telerik.Windows.Controls.GridView.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml" Source="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Data" Source="Telerik.Windows.Data.dll" />
+    <AssemblyPart x:Name="System.Xml.Serialization" Source="System.Xml.Serialization.dll" />
+    <AssemblyPart x:Name="fastJSON-SL" Source="fastJSON-SL.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
+    <AssemblyPart x:Name="System.Windows.Data" Source="System.Windows.Data.dll" />
+    <AssemblyPart x:Name="Microsoft.CSharp" Source="Microsoft.CSharp.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Documents" Source="Telerik.Windows.Documents.dll" />
+    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.Composition" Source="System.ComponentModel.Composition.dll" />
+    <AssemblyPart Source="zh-Hans/System.Xml.Serialization.resources.dll" />
+    <AssemblyPart Source="zh-Hans/Microsoft.CSharp.resources.dll" />
+  </Deployment.Parts>
+</Deployment>

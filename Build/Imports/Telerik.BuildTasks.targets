@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- $Id: MSBuild.Community.Tasks.Targets 303 2007-02-23 15:49:46Z pwelter34 $ -->
+
+	<PropertyGroup>
+		<TelerikBuildTasksPath Condition="'$(TelerikBuildTasksPath)' == ''">..\Tools\Telerik.BuildTasks\</TelerikBuildTasksPath>
+		<TelerikBuildTasksLib>$(TelerikBuildTasksPath)Telerik.BuildTasks.dll</TelerikBuildTasksLib>
+		<TelerikBuildTasksImported>true</TelerikBuildTasksImported>
+	</PropertyGroup>
+
+	<UsingTask AssemblyFile="$(TelerikBuildTasksLib)" TaskName="PreprocessXaml" />
+	<UsingTask AssemblyFile="$(TelerikBuildTasksLib)" TaskName="GenerateReleaseVersionNumber" />
+	<UsingTask AssemblyFile="$(TelerikBuildTasksLib)" TaskName="ConvertToVB" />
+	<UsingTask AssemblyFile="$(TelerikBuildTasksLib)" TaskName="ScheduleBuild"/>
+</Project>

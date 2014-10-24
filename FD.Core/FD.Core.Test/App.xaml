@@ -1,0 +1,51 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             x:Class="FD.Core.Test.App"
+             >
+    
+    
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FD.Core.SLControl;Component/Themes/Generic.xaml" />
+                <ResourceDictionary Source="/FD.Core.Test;Component/Styles/Main.xaml" />
+                <ResourceDictionary Source="/FD.Core.Test;Component/Styles/MainMenuStyle1.xaml" />
+                <ResourceDictionary Source="/FD.Core.Test;Component/Styles/SubFrame_Style2.xaml" />
+                <ResourceDictionary Source="/FD.Core.Test;Component/Styles/SubFrame_Style3.xaml" />
+                <ResourceDictionary Source="/FD.Core.Test;Component/ButtonStyle1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="PickerForeground_Normal" Color="#FF000000"/>
+            <SolidColorBrush x:Key="一般背景色" Color="#EFEFEF"/>
+            <SolidColorBrush x:Key="不重要文字颜色" Color="#FF848484"/>
+            <SolidColorBrush x:Key="不重要边框颜色" Color="#CDCDCD"/>
+
+<!--            通用控件边框色-->
+            <SolidColorBrush x:Key="ControlOuterBorder" Color="#6090BE"/>
+            <!--            确认按钮-->
+            <SolidColorBrush x:Key="ControlBackground_MouseOver" Color="#6090BE"/>
+            
+            <SolidColorBrush x:Key="ButtonOutSolidColorBrush" Color="#6090BE"/>
+            <SolidColorBrush x:Key="ButtonEnterBackGroundNormal" Color="#51A0EB"/>
+            <SolidColorBrush x:Key="ButtonEnterForegroundNormal" Color="#FFFFFF"/>
+            
+            
+            
+            
+            <SolidColorBrush x:Key="ControlOuterBorder_Normal" Color="#FF848484"/>
+            <SolidColorBrush x:Key="PickerBackground_Normal" Color="#FFFFFFFF"/>
+            <CornerRadius x:Key="ControlOuterBorder_CornerRadius">1</CornerRadius>
+            <SolidColorBrush x:Key="ControlBackground_ReadOnly" Color="#5EC9C9C9"/>
+            <SolidColorBrush x:Key="ControlOuterBorder_MouseOver" Color="#FFFFC92B"/>
+            <CornerRadius x:Key="SplitButton_SpanCornerRadius">1</CornerRadius>
+            <SolidColorBrush x:Key="ControlOuterBorder_Disabled" Color="#FF989898"/>
+            <SolidColorBrush x:Key="ControlBackground_Disabled" Color="#FFE0E0E0"/>
+            <telerik:Office_BlackTheme x:Key="Theme"/>
+            <SolidColorBrush x:Key="ControlOuterBorder_Focused" Color="#FFFFC92B"/>
+            <SolidColorBrush x:Key="ControlInnerBorder_Focused" Color="Transparent"/>
+            <CornerRadius x:Key="SplitButton_SpanInnerCornerRadius">0</CornerRadius>
+<!--            <SolidColorBrush x:Key="ControlBackground_Focused" Color="Transparent"/>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

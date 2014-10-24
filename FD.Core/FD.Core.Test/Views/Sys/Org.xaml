@@ -1,0 +1,47 @@
+﻿<sl:BasePage x:Class="FD.Core.Test.Views.Sys.Org"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:viewModel="clr-namespace:FD.Core.Test.ViewModel"
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="1500">
+    <sl:BasePage.Resources>
+        <viewModel:Sys_OrgModel x:Name="entity"></viewModel:Sys_OrgModel>
+    </sl:BasePage.Resources>
+
+    <sl:BasePage.DataContext>
+        <StaticResource ResourceKey="entity" />
+    </sl:BasePage.DataContext>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid MaxWidth="500" MinWidth="200">
+            <sl:UserTree x:Name="tree" DataSource="{Binding ItemSource}"></sl:UserTree>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid Margin="50">
+                <Border BorderThickness="1" BorderBrush="{StaticResource BorderStyle1}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <TextBlock Text="运行部" FontSize="40" Margin=" 50 50 0 0"></TextBlock>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="主任："></TextBlock>
+                                <TextBlock Text="{Binding CurrentItem.Name}"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</sl:BasePage>

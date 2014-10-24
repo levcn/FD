@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="CopyBinaries" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="..\Tools\MSBuildExtensionPack\MSBuild.ExtensionPack.tasks" />
+
+	<!-- Plug assembly info generation right before the compiler runs -->
+	<PropertyGroup>
+		<BinariesOutDir></BinariesOutDir>
+		<BuildDependsOn>
+			$(BuildDependsOn);
+			CopyBinaries;
+		</BuildDependsOn>
+	</PropertyGroup>
+
+	<!-- expected param:
+	Configuration: the build configuration
+	AssemblyName: the output assembly name
+	TargetDir: the build config output dir (the one containing the assembly)
+	-->
+	<Target Name="CopyBinaries" DependsOnTargets="PrepareProperties;CopyBinriesToReferenceFolder">
+
+
+	</Target>
+
+	<Target Name="PrepareProperties">
+
+		<!--    <MSBuild.ExtensionPack.Framework.TextString TaskAction="Compare" String1="$(AssemblyName)" String2="Design" Comparison="contains" IgnoreCase="true">-->
+		<!--      <Output PropertyName="IsDesignAssembly" TaskParameter="Result"/>-->
+		<!--    </MSBuild.ExtensionPack.Framework.TextString>-->
+
+		<PropertyGroup>
+			<BinariesOutDir>..\..\..\Lib\</BinariesOutDir>
+
+			<ConfigSubFolder>$(ConfigSubFolder)\</ConfigSubFolder>
+
+			<!--      <ReferenceFolder>$(BinariesOutDir)</ReferenceFolder>-->
+
+			<!--      <CustomAssemblySubfolder Condition="$(IsDesignAssembly)">design\</CustomAssemblySubfolder>-->
+		</PropertyGroup>
+
+		<ItemGroup>
+<!--			web-->
+			
+			<_root Include="$(MSBuildProjectDirectory)\**\*.pdf" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.docx" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.doc" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.txt" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.jpg" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.png" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.gif" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.xap" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.dll" Exclude="obj" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.ashx" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.aspx" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.asax" Condition=" '$(IsWeb)' == '1' " />
+			<_root Include="$(MSBuildProjectDirectory)\**\*.config" Condition=" '$(IsWeb)' == '1' " />
+<!--			<_root Include="$(MSBuildProjectDirectory)\*.js"  Condition=" '$(IsWeb)' == '1' " />-->
+<!--			<_root Include="$(MSBuildProjectDirectory)\web.config"  Condition=" '$(IsWeb)' == '1' " />-->
+<!--			<_root Include="$(MSBuildProjectDirectory)\*.asax"  Condition=" '$(IsWeb)' == '1' " />-->
+<!--			<_root Include="$(MSBuildProjectDirectory)\*.aspx"  Condition=" '$(IsWeb)' == '1' " />-->
+<!--			webend-->
+			<Binaries Include="$(TargetDir)$(AssemblyName).dll" />
+			<Binaries Include="$(TargetDir)$(AssemblyName).xml" Condition="Exists('$(TargetDir)\$(AssemblyName).xml')" />
+			<Binaries Include="$(TargetDir)$(AssemblyName).extmap.xml" Condition="Exists('$(TargetDir)\$(AssemblyName).extmap.xml')" />
+			<Binaries Include="$(TargetDir)$(AssemblyName).pdb" Condition="Exists('$(TargetDir)\$(AssemblyName).pdb')" />
+			<ResourcesBinaries Include="$(TargetDir)\**\$(AssemblyName).resources.dll" />
+			<ReferenceFolders Include="$(BinariesOutDir)"/>
+		</ItemGroup>
+
+	</Target>
+
+	<Target Name="CopyBinriesToReferenceFolder" Outputs="%(ReferenceFolders.Identity)">
+
+		<!--<PropertyGroup>
+			<TargetReferenceFolder>%(ReferenceFolders.Identity)</TargetReferenceFolder>
+		</PropertyGroup>-->
+
+		<Message Text="CopyBinaries from: $(MSBuildProjectDirectory) @(ResourcesBinaries) to: $(MSBuildProjectDirectory)\$(BinariesOutDir)" Importance="High" />
+		<!--    <Message Text="NoXaml: $(NoXaml)" Importance="High" />-->
+		<!--    <Message Text="Binary file: %(Binaries.FullPath)" Importance="High" />-->
+
+		<Message Text ="DEBUG INFO: ConfigSubFolder: $(ConfigSubFolder)" />
+		<Message Text ="$(MSBuildProjectDirectory)\%(_root.RecursiveDir)%(_root.Filename)%(_root.Extension)"  Importance="High" />
+
+		<!--<MakeDir Directories="%(ReferenceFolders.Identity);$(TargetReferenceFolder)$(ConfigSubFolder)" Condition=" '$(ConfigSubFolder)' != '\' " />-->
+		<MakeDir Directories="$(BinariesOutDir)" Condition=" '$(ConfigSubFolder)' != '\' " />
+
+		<!--Copy dlls from ..\bin to ..\..\Binaries\TargetPlatform for builds which build all Controls (for example - HotFix and Release), because they use these folders for references-->
+		<!--    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(BinariesOutDir)Silverlight\$(CustomAssemblySubfolder)" Condition=" '$(Silverlight)' == 'true'" />-->
+		<Copy SourceFiles="@(Binaries)" DestinationFolder="$(MSBuildProjectDirectory)\$(BinariesOutDir)" />
+		
+		<Copy SourceFiles="@(_root)" DestinationFolder="$(MSBuildProjectDirectory)\$(BinariesOutDir)\web\%(_root.RecursiveDir)" Condition=" '$(IsWeb)' == '1' " />
+<!--		<Copy SourceFiles="@(_root)" DestinationFolder="$(MSBuildProjectDirectory)\$(BinariesOutDir)\web\" Condition=" '$(IsWeb)' == '1' " />-->
+ 
+		<!--Copy dlls from ..\bin to ..\..\Binaries\ConfigSubFolder for builds which build separate Control. These builds first copy dlls needed for references from K:\. -->
+		<!--This copy operation prepare newly built binaries under proper folder.-->
+		<!--    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(BinariesOutDir)$(ConfigSubFolder)$(CustomAssemblySubfolder)" Condition=" '$(ConfigSubFolder)' != '\' " />-->
+		<!--    <Copy SourceFiles="@(ResourcesBinaries)" DestinationFolder="$(BinariesOutDir)$(ConfigSubFolder)\%(RecursiveDir)" Condition=" '$(ConfigSubFolder)' != '\' " />-->
+
+	</Target>
+
+	<PropertyGroup>
+		<PostBuildEvent>
+		</PostBuildEvent>
+	</PropertyGroup>
+</Project>

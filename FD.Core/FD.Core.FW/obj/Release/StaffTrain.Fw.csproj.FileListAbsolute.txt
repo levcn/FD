@@ -1,0 +1,9 @@
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\ServerFw.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\ServerFw.pdb
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\Aspose.Words.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\fastJSON.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\Newtonsoft.Json.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\bin\Release\Newtonsoft.Json.xml
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\obj\Release\ServerFw.dll
+E:\Levcn\StaffTrain\5_21\StaffTrain\Fw\obj\Release\ServerFw.pdb

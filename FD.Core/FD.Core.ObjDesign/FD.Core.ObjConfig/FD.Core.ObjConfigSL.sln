@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.ObjConfigSL", "FD.Core.ObjConfigSL.csproj", "{AC68EB94-8EC9-479C-858B-AD4E320B5469}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = FD.Core.ObjConfigSL.csproj
+		SccProjectName0 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjConfig\u0022,\u0020ESBAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC68EB94-8EC9-479C-858B-AD4E320B5469}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

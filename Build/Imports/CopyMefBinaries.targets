@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="CopyMefBinaries" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Plug assembly info generation right before the compiler runs -->
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      CopyMefBinaries;
+    </BuildDependsOn>
+  </PropertyGroup>
+
+  <!-- expected param:
+	Configuration: the build configuration
+	AssemblyName: the output assembly name
+	TargetDir: the build config output dir (the one containing the assembly)
+	-->
+  <Target Name="CopyMefBinaries">
+    <PropertyGroup>
+      <BinariesOutDir Condition=" '$(BinariesOutDir)' != '' ">$(BinariesOutDir)\</BinariesOutDir>	
+      <CopyMefSubFolder Condition=" '$(Configuration)' == 'ReleaseTrial35' AND '$(WPF)' == 'true' ">35\Trial\</CopyMefSubFolder>
+	  <CopyMefSubFolder Condition=" '$(Configuration)' == 'Release35' AND '$(WPF)' == 'true' ">35\Dev\</CopyMefSubFolder>
+	  <CopyMefSubFolder Condition=" '$(Configuration)' == 'ReleaseTrial35.NoXaml' AND '$(WPF)' == 'true' ">35.NoXaml\Trial\</CopyMefSubFolder>
+	  <CopyMefSubFolder Condition=" '$(Configuration)' == 'Release35.NoXaml' AND '$(WPF)' == 'true' ">35.NoXaml\Dev\</CopyMefSubFolder>
+	  <ReferenceFolder>$(BinariesOutDir)$(SubFolderPrefix)</ReferenceFolder>	
+    </PropertyGroup>
+
+    <MakeDir Directories="$(ReferenceFolder);$(ReferenceFolder)$(CopyMefSubFolder)" Condition=" '$(CopyMefSubFolder)' != '\' " />
+
+    <ItemGroup>
+      <Binaries Include="$(TargetDir)System.ComponentModel.Composition.dll" />
+    </ItemGroup>
+
+    <Message Text="CopyMefBinaries from: $(MSBuildProjectDirectory) (Configuration: $(Configuration)) to: $(ReferenceFolder)$(CopyMefSubFolder)" Importance="High" />
+    <Message Text="Binary file: %(Binaries.FullPath)" Importance="High" />
+    <Copy Condition=" '$(Configuration)' == 'ReleaseTrial35' OR '$(Configuration)' == 'Release35' OR '$(Configuration)' == 'ReleaseTrial35.NoXaml' OR '$(Configuration)' == 'Release35.NoXaml'" SourceFiles="@(Binaries)" DestinationFolder="$(ReferenceFolder)" />
+    <Copy Condition=" ('$(Configuration)' == 'ReleaseTrial35' OR '$(Configuration)' == 'Release35' OR '$(Configuration)' == 'ReleaseTrial35.NoXaml' OR '$(Configuration)' == 'Release35.NoXaml') AND '$(CopyMefSubFolder)' != '\' " SourceFiles="@(Binaries)" DestinationFolder="$(ReferenceFolder)$(CopyMefSubFolder)"/>
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

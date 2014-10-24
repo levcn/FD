@@ -1,0 +1,7 @@
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\FD.Core.ObjConfig.dll
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\FD.Core.ObjConfig.pdb
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\fastJSON.dll
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\bin\Debug\fastJSON.pdb
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfig.csprojResolveAssemblyReference.cache
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfig.dll
+E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjConfig\obj\Debug\FD.Core.ObjConfig.pdb

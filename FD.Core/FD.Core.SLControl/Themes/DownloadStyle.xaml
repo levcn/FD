@@ -1,0 +1,71 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:download="clr-namespace:SLControls.Download">
+
+
+    <Style TargetType="download:DownloadFileItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="download:DownloadFileItem">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto" MaxWidth="150"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+                            <telerik:RadProgressBar x:Name="C_Process" Value="{TemplateBinding ProcessValue}"></telerik:RadProgressBar>
+
+
+
+                            <TextBlock Grid.Column="1"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding IntProcessValue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay }" VerticalAlignment="Center" Foreground="#FF707070"/>
+                            <TextBlock Grid.Column="2"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="%" VerticalAlignment="Center" Foreground="#FF707070"/>
+                            <TextBlock Grid.Column="3" Text="{TemplateBinding DisplayFileName}" VerticalAlignment="Center" Margin="17,0,14,0" Foreground="#FF212121" d:LayoutOverrides="Width" FontSize="13"/>
+                            <Button Grid.Column="4" x:Name="C_DeleteButton" Content="删除" VerticalAlignment="Center" FontWeight="Normal" Cursor="Hand" Foreground="#FF707070" HorizontalAlignment="Right" FontSize="13" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate DataType="download:DownloadFileItem" x:Key="DefaultUploadFileItem">
+        <download:DownloadFileItem>
+            </download:DownloadFileItem>
+    </DataTemplate>
+
+    <Style TargetType="download:DownloadFileList">
+        <Setter Property="ItemTemplate" Value="{StaticResource DefaultUploadFileItem}"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="download:DownloadFileList">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" x:Name="C_ListPanel" HorizontalAlignment="Stretch" Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,0,0">
+
+                            </StackPanel>
+<!--                            <Button Grid.Column="1" x:Name="C_AddFileButton"  HorizontalAlignment="Left"  Content="选择" FontSize="12" Width="80" Height="28" Foreground="#FF292929" />-->
+                        </Grid>
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

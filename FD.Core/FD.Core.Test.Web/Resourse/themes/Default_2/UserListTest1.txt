@@ -1,0 +1,70 @@
+﻿<Grid 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:editor1="clr-namespace:SLControls.Editor1;assembly=SLControls"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+ <sl:ListPanel Margin="100 200 0 0" Name="c" IsBrowsMode="False">
+
+            <sl:ListPanel.ItemsPanel>
+                <ItemsPanelTemplate>
+		    <StackPanel />
+                </ItemsPanelTemplate>
+            </sl:ListPanel.ItemsPanel>
+            <sl:ListPanel.ItemTemplate>
+                <DataTemplate>
+		<sl:ItemContainer VerticalAlignment="Stretch" Height="70" Margin="10" Selected="{Binding IsSelected,Mode=TwoWay}"
+		EditCommand="{Binding ElementName=c,Path=EditItemCommand}"
+		DeleteCommand="{Binding ElementName=c,Path=DeleteItemCommand}"
+		EditCommandParameter="{Binding}"
+		 DeleteCommandParameter="{Binding}">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Name,StringFormat='姓名:{0}'}"></TextBlock>
+
+                            <TextBlock Text="{Binding Age,StringFormat='年龄:{0}岁'}"></TextBlock>
+                        </StackPanel>
+		    </sl:ItemContainer>
+                </DataTemplate>
+            </sl:ListPanel.ItemTemplate>
+
+
+            <sl:ListPanel.EditorTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock VerticalAlignment="Center" Text="人员姓名："></TextBlock>
+                            <editor1:EditItemText Width="300" Text="{Binding Path=Name,Mode=TwoWay,NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Margin="5">
+                            <TextBlock VerticalAlignment="Center" Text="人员年龄："></TextBlock>
+                            <editor1:EditItemText Width="300" Text="{Binding Path=Age,Mode=TwoWay,NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </sl:ListPanel.EditorTemplate>
+
+	    <sl:ListPanel.BrowserTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="20">
+
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <TextBlock FontSize="30" VerticalAlignment="Center" Text="人员姓名："></TextBlock>
+                            <TextBlock FontSize="30"  Width="300" Text="{Binding Path=Name}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Margin="5">
+                            <TextBlock FontSize="30"  VerticalAlignment="Center" Text="人员年龄："></TextBlock>
+                            <TextBlock FontSize="30"  Width="300" Text="{Binding Path=Age}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </sl:ListPanel.BrowserTemplate>
+        </sl:ListPanel>
+
+</Grid>

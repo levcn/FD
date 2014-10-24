@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup Condition=" '$(ConfigFileImported)' == '' ">
+
+		<!--Version properties-->
+		<ConfigFileImported>true</ConfigFileImported>
+		<VersionYear Condition=" '$(VersionYear)' == '' ">2013</VersionYear>
+		<VersionReleaseNumber Condition=" '$(VersionReleaseNumber)' == '' ">1</VersionReleaseNumber>
+		<VersionServicePackNumber Condition=" '$(VersionServicePackNumber)' == '' ">1</VersionServicePackNumber>
+		<CompanyNameString>Levcn </CompanyNameString>
+		<CopyrightString>Copyright %A9 2008-2013 Levcn</CopyrightString>
+		<BranchSubdirName Condition=" '$(BranchSubdirName)' == '' ">Release</BranchSubdirName>
+		<BuildPrefix Condition=" '$(BuildPrefix)' == '' ">Release_</BuildPrefix>
+		<BuildSuffix Condition=" '$(BuildSuffix)' == '' ">_$(VersionYear)_Q$(VersionReleaseNumber)</BuildSuffix>
+		<!-- Override the BuildSuffix property. This is for Development only! -->
+		<BuildSuffix></BuildSuffix>
+		<WPFFrameworkVersion Condition=" '$(WPFFrameworkVersion)' == '' ">4.0</WPFFrameworkVersion>
+		<SLFrameworkVersion Condition=" '$(SLFrameworkVersion)' == '' ">5.0</SLFrameworkVersion>
+
+		<!--Distribution Folders-->
+		<Latest Condition=" '$(Latest)' == '' ">\\telerik.com\resources\Controls\DISTRIBUTIONS\XAML\$(BranchSubdirName)\</Latest>
+		<CurrentOfficialReleaseFolder Condition=" '$(CurrentOfficialReleaseFolder)' == '' ">$(Latest)..\2013 Q1\Q1 2013 Official\</CurrentOfficialReleaseFolder>
+		<SilverlightDeploymentFolder Condition=" '$(SilverlightDeploymentFolder)' == '' ">\\webteamnet4\silverlight\$(BranchSubdirName)\</SilverlightDeploymentFolder>
+		<SilverlightSecondsDeploymentFolder Condition=" '$(SilverlightSecondsDeploymentFolder)' == '' ">\\webteamnet4\silverlight$(DeploymentPlatformFolderSuffix)\$(BranchSubdirName)\</SilverlightSecondsDeploymentFolder>
+		<WebTeamTestLocation Condition=" '$(WebTeamTestLocation)' == '' ">\\webdemosrvbg01\WPF</WebTeamTestLocation>
+		<WPFDeploymentFolder Condition=" '$(WPFDeploymentFolder)' == '' ">$(WebTeamTestLocation)\$(BranchSubdirName)\</WPFDeploymentFolder>
+
+		<!--Tools Paths-->
+		<MSBuildExePath Condition=" '$(MSBuildExePath)' == '' ">%WINDIR%\microsoft.net\framework\v4.0.30319\MSBuild.exe</MSBuildExePath>
+		<NugetPath>&quot;$(MSBuildProjectDirectory)\..\Tools\nuget.exe&quot;</NugetPath>
+
+	</PropertyGroup>
+</Project>

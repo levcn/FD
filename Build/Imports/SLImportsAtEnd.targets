@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Properties in use: 
+            NoXaml - switches off the XamlPreprocessor and XamlCop
+            NoSA - switches off the StyleCope
+            NoCA - switches off the Code analysis errors
+            NoWE - switches off the Errors as warnings
+            NoVersion - switches off the Versioning
+            NoCopyBinaries - switches off the CopyBinaries
+            NoExtMap - switches off the ExtMap generation
+  -->
+
+  <!-- This should be first, because other target files try to add targets to its *DependsOn properties. -->
+  <!-- Framework selector - imports the correct .targets file -->
+  <Import Project="..\Imports\FrameworkSelector.targets" />
+  <PropertyGroup>
+    <ToDoBeforeBuild>
+    </ToDoBeforeBuild>
+  </PropertyGroup>
+
+  <!-- Versioning targets -->
+  <Import Project="TelerikAssemblyVersion.targets" Condition=" '$(NoVersion)' == '' AND '$(TelerikAssemblyVersionTargetsImported)' == '' "/>
+
+  <!-- Xaml preprocessor -->
+  <Import Project="Preprocessed_Xaml.targets" Condition=" ('$(NoXaml)' == '' AND '$(NoXamlPreprocessor)' == '') OR ('$(IsThemesBuild)' == 'true') " />
+
+  <!-- XAML Cop -->
+  <Import Project="RunXAMLCop.targets" Condition=" '$(NoXaml)' == '' AND '$(NoXamlCop)' == '' " />
+
+  <!-- Source Analysis -->
+	<Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.Targets" Condition=" '$(NoSA)' == '' AND Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.Targets') " />
+
+  <!-- ExtMap generation -->
+  <Import Project="GenerateExtMap.targets" Condition=" '$(NoExtMap)' == '' " />
+
+  <!-- Copy binaries to the Binaries folder -->
+  <Import Project="CopyBinaries.targets" Condition=" '$(NoCopyBinaries)' != 'true' " />
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(ToDoBeforeBuild);
+      $(BuildDependsOn);
+    </BuildDependsOn>
+  </PropertyGroup> 
+</Project>

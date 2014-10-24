@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="GenerateExtMap" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CoreCompileDependsOn>
+      $(CoreCompileDependsOn);
+      GenerateExtMap
+      </CoreCompileDependsOn>
+  </PropertyGroup>
+
+  <Import Project="config.targets" Condition=" '$(ConfigFileImported)' == '' "/>
+  <Import Project="..\Tools\MSBuildCommunityTasks\Telerik.MSBuild.Community.Tasks.Targets" Condition=" '$(MSBuildCommunityTasksImported)' == '' "/>
+
+  <!-- Script settings -->
+  <PropertyGroup>
+    <ExtMapTemplateFileName>ExtMapTemplate.xml</ExtMapTemplateFileName>
+    <AssemblyNameStringToReplace>\[\[ReplaceString:AssemblyName\]\]</AssemblyNameStringToReplace>
+    <AssemblyVersionStringToReplace>\[\[ReplaceString:AssemblyVersion\]\]</AssemblyVersionStringToReplace>
+    <PublicKeyTokenStringToReplace>\[\[ReplaceString:PublicKeyToken\]\]</PublicKeyTokenStringToReplace>
+  </PropertyGroup>
+
+  <!-- Script parameters -->
+  <PropertyGroup>
+    <BuildFolderPath Condition=" '$(BuildFolderPath)' == '' ">.\</BuildFolderPath>
+	<ImportsBuildFolderPath Condition=" '$(ImportsBuildFolderPath)' == '' ">$(BuildFolderPath)\Imports\</ImportsBuildFolderPath>	  
+    <AssemblyName Condition=" '$(AssemblyName)' == '' ">UnnamedAssembly</AssemblyName>
+    <AssemblyVersion Condition=" '$(AssemblyVersion)' == '' ">$(VersionString)</AssemblyVersion>
+    <PublicKeyToken Condition=" '$(PublicKeyToken)' == '' ">5803cfa389c90ce7</PublicKeyToken>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ExtmapFilePath>$(OutDir)$(AssemblyName).extmap.xml</ExtmapFilePath>
+  </PropertyGroup>
+
+  <Target Name="CopyTemplateToResultDir">
+    <ItemGroup>
+      <TemplateFile Include="$(ImportsBuildFolderPath)$(ExtMapTemplateFileName)" />
+      <ExtmapFile Include="$(ExtmapFilePath)" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(TemplateFile)" DestinationFiles="@(ExtmapFile)" />
+  </Target>
+
+  <Target Name="GenerateExtMap" DependsOnTargets="CopyTemplateToResultDir">
+    <Message Text="Creating ExtMap file: $(ExtmapFilePath)" Importance="high" />
+
+    <PropertyGroup>
+      <AssemblyVersion Condition=" '$(AssemblyVersion)' == '' ">$(VersionString)</AssemblyVersion>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <ExtmapFile Include="$(ExtmapFilePath)" />
+    </ItemGroup>
+
+    <FileUpdate Files="@(ExtmapFile)"
+          Regex="$(AssemblyNameStringToReplace)"
+          ReplacementText="$(AssemblyName)" />
+
+    <FileUpdate Files="@(ExtmapFile)"
+        Regex="$(AssemblyVersionStringToReplace)"
+        ReplacementText="$(AssemblyVersion)" />
+
+    <FileUpdate Files="@(ExtmapFile)"
+        Regex="$(PublicKeyTokenStringToReplace)"
+        ReplacementText="$(PublicKeyToken)" />
+  </Target>
+</Project>

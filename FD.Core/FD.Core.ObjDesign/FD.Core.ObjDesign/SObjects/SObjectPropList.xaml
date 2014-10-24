@@ -1,0 +1,90 @@
+﻿<sObjects:BaseGridViewPanel x:Class="ProjectCreater.SObjects.SObjectPropList"
+             x:Name="aa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sObjects="clr-namespace:ProjectCreater.SObjects"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1000">
+    <sObjects:BaseGridViewPanel.Resources>
+        <DataTemplate x:Key="BigFieldEditor">
+<!--            <Button Text="{Binding InitValue,Mode=TwoWay}"></Button>-->
+            <Button Width="70" Content="编辑" Click="BigFieldEdit_OnClick"></Button>
+
+        </DataTemplate>
+        <DataTemplate x:Key="CommEditor">
+            <TextBox Text="{Binding InitValue,Mode=TwoWay}"></TextBox>
+        </DataTemplate>
+        <DataTemplate x:Key="BigFieldBrower">
+                        <Button Width="70" Content="编辑" Click="BigFieldEdit_OnClick"></Button>
+        </DataTemplate>
+        <DataTemplate x:Key="CommBrower">
+            <TextBlock Text="{Binding InitValue,Mode=TwoWay}"></TextBlock>
+<!--            <Button Content="编辑" Click="BigFieldEdit_OnClick"></Button>-->
+
+        </DataTemplate>
+    </sObjects:BaseGridViewPanel.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <!--            <Button Content="属性" Width="40" Margin="2" Click="BT_Edit_OnClick"></Button>-->
+            <!--            <Button Content="验证" Width="40" Margin="2" Click="BT_Validate_OnClick"></Button>-->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="添加" Width="40" Margin="2" Command="{Binding ElementName=aa,Path=ItemAddCommand}" ></Button>
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="上移" Width="40" Margin="2" Command="{Binding ElementName=aa,Path=ItemUpCommand}" ></Button>
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}"  Content="下移" Width="40" Margin="2"  Command="{Binding ElementName=aa,Path=ItemDownCommand}"></Button>
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="删除" Width="40" Margin="2" Command="{Binding ElementName=aa,Path=ItemDeleteCommand}" ></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="添加名称" Width="60" Margin="2" Command="{Binding ElementName=aa,Path=AddNamePropCommand}" ></Button>
+                <Button IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="添加排序" Width="60" Margin="2" Command="{Binding ElementName=aa,Path=AddOrderPropCommand}" ></Button>
+                <Button   IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Content="添加注销" Width="60" Margin="2" Command="{Binding ElementName=aa,Path=AddCancelPropCommand}" ></Button>
+            </StackPanel>
+
+        </StackPanel>
+        <DataGrid CanUserSortColumns="False" ItemsSource="{Binding ElementName=aa,Path=ItemSource,Mode=TwoWay}"  IsEnabled="{Binding ElementName=aa,Path=Editable,Mode=TwoWay}" Name="dataGrid" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="名称" Binding="{Binding Name}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GNameWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="代码" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GCodeWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Code">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridComboBoxColumn  Header="数据类型" TextBinding="{Binding ColumnType}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GTypeWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="ItemsSource" Value="{Binding Path=DataTypes,ElementName=aa}" />
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="ItemsSource" Value="{Binding Path=DataTypes,ElementName=aa}" />
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
+                <DataGridTextColumn Header="长度" Binding="{Binding ColumnSize}"  Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GLenghtWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridTextColumn>
+<!--                <DataGridTextColumn Header="初始值" Binding="{Binding InitValue}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GDefaultValueWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridTextColumn>-->
+                <DataGridTemplateColumn Header="初始值"  Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GDefaultValueWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}">
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <sObjects:BigEditorTemplateSelector DefaultTemplate="{StaticResource CommEditor}" BigEditorTemplate="{StaticResource BigFieldEditor}">
+                            
+                        </sObjects:BigEditorTemplateSelector>
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <sObjects:BigEditorTemplateSelector DefaultTemplate="{StaticResource CommBrower}" BigEditorTemplate="{StaticResource BigFieldBrower}">
+
+                        </sObjects:BigEditorTemplateSelector>
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Header="是否主键" Binding="{Binding IsPrimaryKey}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GIsPKeyWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="是否关联字段" Binding="{Binding IsOutKey}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GIsRelWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="是否显示名" Binding="{Binding IsShow}" Width="{Binding Source={StaticResource Habit},Path=ObjectMainEdit.GIsShowWidth,Mode=TwoWay,Converter={StaticResource GridLengthToInt}}"></DataGridCheckBoxColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</sObjects:BaseGridViewPanel>

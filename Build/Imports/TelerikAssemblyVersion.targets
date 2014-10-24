@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="GenerateAssemblyInfo" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <TelerikAssemblyVersionTargetsImported>true</TelerikAssemblyVersionTargetsImported>
+    </PropertyGroup>
+
+    <!-- Plug assembly info generation right before the compiler runs -->
+    <PropertyGroup>
+        <CoreCompileDependsOn>
+            $(CoreCompileDependsOn);
+            GenerateAssemblyInfo;
+        </CoreCompileDependsOn>
+
+        <CleanDependsOn>
+            $(CleanDependsOn);
+            CleanAssemblyInfo;
+        </CleanDependsOn>
+    </PropertyGroup>
+
+    <Import Project="..\Tools\MSBuildCommunityTasks\Telerik.MSBuild.Community.Tasks.Targets" Condition=" '$(MSBuildCommunityTasksImported)' == '' "/>
+    <Import Project="Telerik.BuildTasks.Targets" Condition=" '$(TelerikBuildTasksImported)' == '' " />
+    <Import Project="Telerik.Versioning.Targets" Condition=" '$(TelerikVersioningTargetsImported)' == '' " />
+
+    <PropertyGroup>
+        <VersionAssemblyInfoFileName Condition=" '$(OutputFileName)' == '' ">VersionAssemblyInfo.cs</VersionAssemblyInfoFileName>
+    </PropertyGroup>
+
+    <Target Name="GenerateAssemblyInfo" DependsOnTargets="GenerateVersionInfo"
+              Inputs="@(Compile);@(Page);@(Resource);@(EmbeddedResource)"
+              Outputs="$(VersionAssemblyInfoFileName)" >
+        <Message Text="VersionString='$(VersionString)'" />
+
+        <AssemblyInfo CodeLanguage="CS"
+                          OutputFile="$(VersionAssemblyInfoFileName)"
+                          AssemblyCompany="$(CompanyNameString)"
+                          AssemblyCopyright="$(CopyrightString)"
+                          AssemblyVersion="$(VersionString)"
+                          AssemblyFileVersion="$(VersionString)" />
+
+        <CreateItem Include="$(VersionAssemblyInfoFileName)">
+            <Output TaskParameter="Include" ItemName="Compile" />
+        </CreateItem>
+    </Target>
+
+    <Target Name="CleanAssemblyInfo">
+        <Message Text="Cleaningn version info file" />
+        <ItemGroup>
+            <AssemblyInfoFile Include="$(VersionAssemblyInfoFileName)" />
+        </ItemGroup>
+
+        <Delete Files="@(AssemblyInfoFile)" ContinueOnError="true" />
+    </Target>
+</Project>

@@ -1,0 +1,27 @@
+﻿<sl:BasePage x:Class="SLTest.LoginTest"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:sl="http://schemas.levcn.com/2013/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignWidth="1366" d:DesignHeight="680">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+
+        <StackPanel Orientation="Horizontal">
+            <Button Height="40" Width="100" Content="编辑" Click="Edit_OnClick"></Button>
+            <Button Height="40" Width="100" Content="运行" Click="Run_OnClick"></Button>
+            <ListBox Width="100"/>
+        </StackPanel>
+        <Grid Grid.Row="1" x:Name="LayoutRoot" Background="White">
+<!--            <TextBox x:Name="CTL_UserName" telerik:StyleManager.Theme="{StaticResource Theme}" FontSize="{StaticResource FontSize_Bigger2}" Text="sdfasdfasd" BorderBrush="#FF0C9DE2" SelectionBackground="#22F7F6F6" Background="#22FFFFFF" TextWrapping="Wrap" Height="40" Margin="0"/>-->
+            <!--                    <sl:LoginPanel EditState="Normal" Height="120" Width="330" ShowValidCode="True" HorizontalAlignment="Stretch"></sl:LoginPanel>-->
+        </Grid>
+    </Grid>
+</sl:BasePage>

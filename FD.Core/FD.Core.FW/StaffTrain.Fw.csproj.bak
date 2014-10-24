@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EEBDDB8-9166-4368-AAFF-5F17D381C6F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fw</RootNamespace>
+    <AssemblyName>Fw</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\Lib\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="fastJSON">
+      <HintPath>..\Lib\fastJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.1.271, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionMethod\ActionExecutor.cs" />
+    <Compile Include="ActionMethod\ActionMethodDispatcher.cs" />
+    <Compile Include="ActionMethod\IController.cs" />
+    <Compile Include="AD\ADHelper.cs" />
+    <Compile Include="AD\UserInfoEx.cs" />
+    <Compile Include="AppSetting.cs" />
+    <Compile Include="Caches\CacheHelper.cs" />
+    <Compile Include="Caches\CacheItem.cs" />
+    <Compile Include="Caches\OverDateEventArgs.cs" />
+    <Compile Include="Collection\Class1.cs" />
+    <Compile Include="DataAccess\BaseDataAccess.cs" />
+    <Compile Include="DataAccess\DataAccessFactory.cs" />
+    <Compile Include="DataAccess\HttpModule\MyHttpHandlerFactory.cs" />
+    <Compile Include="DataAccess\HttpModule\MyHttpModule.cs" />
+    <Compile Include="DataAccess\MsSqlDataAccess.cs" />
+    <Compile Include="DataAccess\Plugins\IDataAccessPlugin.cs" />
+    <Compile Include="DataAccess\Plugins\ISelectAfter.cs" />
+    <Compile Include="DataAccess\Plugins\ISelectBefore.cs" />
+    <Compile Include="DataAccess\Plugins\SelectCustomField.cs" />
+    <Compile Include="DataAccess\SqlFactory.cs" />
+    <Compile Include="DataAccess\SqlFactoryBase.cs" />
+    <Compile Include="DataAccess\SqlOperType.cs" />
+    <Compile Include="DataAccess\TranParam.cs" />
+    <Compile Include="Documents\AsposeWordsExFile.cs" />
+    <Compile Include="Documents\AsposeWordsExContent.cs" />
+    <Compile Include="Encry\EncryptAction.cs" />
+    <Compile Include="Encry\SN\SNEncryClass.cs" />
+    <Compile Include="Encry\SN\Lis.cs" />
+    <Compile Include="Encry\SN\MainClass.cs" />
+    <Compile Include="Entity\ActionCmd.cs" />
+    <Compile Include="Entity\ActionType.cs" />
+    <Compile Include="Entity\CustomCmd.cs" />
+    <Compile Include="Entity\Header.cs" />
+    <Compile Include="Entity\PageInfo.cs" />
+    <Compile Include="Entity\ResultData.cs" />
+    <Compile Include="Entity\SearchEntry.cs" />
+    <Compile Include="Entity\SelectAcionParams.cs" />
+    <Compile Include="Entity\StoredProcedureParams.cs" />
+    <Compile Include="Events\TEventHandler.cs" />
+    <Compile Include="Extends\DateTimeExtends.cs" />
+    <Compile Include="Extends\ExtensionUtil.cs" />
+    <Compile Include="Extends\FileExtends.cs" />
+    <Compile Include="Extends\IntExtend.cs" />
+    <Compile Include="Extends\ListExtends.cs" />
+    <Compile Include="Extends\PropertyExpressionExtends.cs" />
+    <Compile Include="Extends\Update\ConditionBuilder.cs" />
+    <Compile Include="Extends\Update\ExpressionVisitor.cs" />
+    <Compile Include="Extends\Update\PartialEvaluator.cs" />
+    <Compile Include="Extends\Update\TableExtensions.cs" />
+    <Compile Include="FileUpload\FileEntity.cs" />
+    <Compile Include="FileUpload\FileEntityManage.cs" />
+    <Compile Include="FileUpload\FileUploadCompletedEvent.cs" />
+    <Compile Include="FileUpload\FileUploadCompletedEventArgs.cs" />
+    <Compile Include="FileUpload\FileUploadManage.cs" />
+    <Compile Include="FileUpload\FileUploadProcess.cs" />
+    <Compile Include="Helpers\EnvironmentCheckHelper.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Helpers\UpdateHelper.cs" />
+    <Compile Include="Helpers\ZipHelper.cs" />
+    <Compile Include="IO\BaseFileManage.cs" />
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\FileHelper.cs" />
+    <Compile Include="IO\KeyValueFileHelper.cs" />
+    <Compile Include="Net\IPExtends\IPExtendsMethod.cs" />
+    <Compile Include="Net\IPExtends\IPFilterConfig.cs" />
+    <Compile Include="Net\IPExtends\IPSection.cs" />
+    <Compile Include="Net\Web\TFile\DownloadFilleStream.cs" />
+    <Compile Include="Pools\Files\FileThread.cs" />
+    <Compile Include="Pools\Files\PoolFile.cs" />
+    <Compile Include="Pools\Files\PoolFileStream.cs" />
+    <Compile Include="Pools\Files\PoolManage.cs" />
+    <Compile Include="Pools\Files\ReadFileManage.cs" />
+    <Compile Include="Pools\Files\WriteFileManage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\EntityConvertor.cs" />
+    <Compile Include="Reflection\OptimizeReflection\DynamicMethodEmit.cs" />
+    <Compile Include="Reflection\OptimizeReflection\MethodWrapper.cs" />
+    <Compile Include="Reflection\OptimizeReflection\PropertyWrapper.cs" />
+    <Compile Include="Reflection\OptimizeReflection\ReflectionExtensions.cs" />
+    <Compile Include="Reflection\PropertyType.cs" />
+    <Compile Include="Reflection\ReflectionHelper.cs" />
+    <Compile Include="Reflection\TableAndColumns.cs" />
+    <Compile Include="Reflection\TableRelation.cs" />
+    <Compile Include="Serializer\JsonHelper.cs" />
+    <Compile Include="Serializer\JsonReader.cs" />
+    <Compile Include="Serializer\XmlHelper.cs" />
+    <Compile Include="Threads\ThreadHelper.cs" />
+    <Compile Include="Threads\ThreadPool.cs" />
+    <Compile Include="Threads\Worker.cs" />
+    <Compile Include="TMath\ReversePolishNotation.cs" />
+    <Compile Include="UserAttributes\DefaultOrderAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnAssociationAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnColumnsAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnSPColumnAttribute.cs" />
+    <Compile Include="UserAttributes\LevcnTable.cs" />
+    <Compile Include="UserAttributes\LevcnValidateAttribute.cs" />
+    <Compile Include="UserAttributes\RelationType.cs" />
+    <Compile Include="Web\WebConfigs.cs" />
+    <Compile Include="WindowsSystem\WSystemInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tool\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
