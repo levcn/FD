@@ -73,3 +73,6 @@ E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\ProjectCreater
 E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\FD.Core.ObjDesign.csproj.GenerateResource.Cache
 E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\ProjectCreater.exe
 E:\Levcn\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\ProjectCreater.pdb
+E:\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\bin\Debug\ProjectCreater.exe.config
+E:\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\ProjectCreater.exe
+E:\FD\FD.Core\FD.Core.ObjDesign\FD.Core.ObjDesign\obj\Debug\ProjectCreater.pdb

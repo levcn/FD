@@ -3,3 +3,8 @@ E:\Levcn\FD\FD.Core\FD.Core.SLClient\Bin\Debug\FD.Core.SLClient.pdb
 E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.csprojResolveAssemblyReference.cache
 E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.dll
 E:\Levcn\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.pdb
+E:\FD\FD.Core\FD.Core.SLClient\Bin\Debug\FD.Core.SLClient.dll
+E:\FD\FD.Core\FD.Core.SLClient\Bin\Debug\FD.Core.SLClient.pdb
+E:\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.csprojResolveAssemblyReference.cache
+E:\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.dll
+E:\FD\FD.Core\FD.Core.SLClient\obj\Debug\FD.Core.SLClient.pdb

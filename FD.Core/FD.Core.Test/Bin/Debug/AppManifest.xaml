@@ -10,9 +10,9 @@
     <AssemblyPart x:Name="System.Runtime" Source="System.Runtime.dll" />
     <AssemblyPart x:Name="System.Threading.Tasks" Source="System.Threading.Tasks.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Controls" Source="Telerik.Windows.Controls.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Input" Source="Telerik.Windows.Controls.Input.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Themes.Windows8Touch" Source="Telerik.Windows.Themes.Windows8Touch.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Controls.Navigation" Source="Telerik.Windows.Controls.Navigation.dll" />
-    <AssemblyPart x:Name="Telerik.Windows.Controls.Input" Source="Telerik.Windows.Controls.Input.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Controls.Data" Source="Telerik.Windows.Controls.Data.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Controls.GridView" Source="Telerik.Windows.Controls.GridView.dll" />
     <AssemblyPart x:Name="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml" Source="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll" />

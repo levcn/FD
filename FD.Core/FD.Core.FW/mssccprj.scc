@@ -1,9 +1,0 @@
-SCC = This is a Source Code Control file
-
-[StaffTrain.SVFw.csproj]
-SCC_Aux_Path = "\\192.168.32.1\vssProject\Product"
-SCC_Project_Name = "$/StaffTrain2014/ProjectCreater/ProjectCreater/SVFw", LWNBAAAA
-
-[FD.Core.FW.csproj]
-SCC_Aux_Path = "\\192.168.32.1\vssProject\FD"
-SCC_Project_Name = "$/FD/source/FD.Core/FD.Core.FW", UBAAAAAA

@@ -12,22 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD.Core.FW", "..\FD.Core.FW\FD.Core.FW.csproj", "{BA7FEEDF-C773-4017-B0E5-051455F4E98C}"
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 5
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = FD.Core.ObjConfig\\FD.Core.ObjConfig.csproj
-		SccProjectName1 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjConfig\u0022,\u0020ESBAAAAA
-		SccLocalPath1 = FD.Core.ObjConfig
-		SccProjectUniqueName2 = FD.Core.ObjDesign\\FD.Core.ObjDesign.csproj
-		SccProjectName2 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjDesign\u0022,\u0020ZQAAAAAA
-		SccLocalPath2 = FD.Core.ObjDesign
-		SccProjectUniqueName3 = FD.Core.ObjDesign.WPFControls\\FD.Core.ObjDesign.WPFControls.csproj
-		SccProjectName3 = \u0022$/FD/source/FD.Core/FD.Core.ObjDesign/FD.Core.ObjDesign.WPFControls\u0022,\u0020STBAAAAA
-		SccLocalPath3 = FD.Core.ObjDesign.WPFControls
-		SccProjectUniqueName4 = ..\\FD.Core.FW\\FD.Core.FW.csproj
-		SccProjectName4 = \u0022$/FD/source/FD.Core/FD.Core.FW\u0022,\u0020UBAAAAAA
-		SccLocalPath4 = ..\\FD.Core.FW
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
